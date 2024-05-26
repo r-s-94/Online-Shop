@@ -1,0 +1,844 @@
+@media screen and (min-width: 1300px) {
+  .online-shop-about-use {
+    margin-top: 0;
+    width: 100%;
+
+    &__headline {
+      padding: 5% 0 0 0;
+      font-size: 1.7rem;
+    }
+
+    &__description-div {
+      font-size: 1.3rem;
+      padding: 0 3%;
+      margin: 0 2% 5% 2%;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--first-description-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.5%;
+
+        &--first-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 420px;
+          height: auto;
+          margin-left: 1%;
+
+          .about-use-first-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-first-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 1.5% 1%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--second-description {
+          width: 430px;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .about-use-second-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-second-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 3% 3%;
+            width: 94%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--third-description {
+          width: 400px;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-right: 1%;
+
+          .about-use-third-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-third-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 1.5% 1.5%;
+            background-color: #dedfe4;
+          }
+        }
+      }
+
+      &--second-description-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3%;
+
+        &--headline {
+          color: white;
+          padding: 3% 15%;
+          font-size: 1.3rem;
+        }
+
+        &--img-div {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 0.1%;
+          padding: 0 1%;
+          margin: 3% 0 3% 0;
+
+          .airplane-img {
+            width: 23%;
+            height: auto;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .ship-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .truck-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .train-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .online-shop-about-use {
+    margin-top: 0;
+    width: 100%;
+
+    &__headline {
+      padding: 5% 0 0 0;
+      font-size: 1.3rem;
+    }
+
+    &__description-div {
+      font-size: 1rem;
+      padding: 0 3%;
+      margin: 0 2% 5% 2%;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--first-description-div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.5%;
+
+        &--first-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 310px;
+          height: auto;
+          margin-left: 2%;
+
+          .about-use-first-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-first-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 1.5% 1%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--second-description {
+          width: 320px;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .about-use-second-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-second-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 3% 3%;
+            width: 94%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--third-description {
+          width: 310px;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-right: 2%;
+
+          .about-use-third-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-third-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 1.5% 1.5%;
+            background-color: #dedfe4;
+          }
+        }
+      }
+
+      &--second-description-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3%;
+
+        &--headline {
+          color: white;
+          padding: 3% 15%;
+          font-size: 1rem;
+        }
+
+        &--img-div {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 0.1%;
+          padding: 0 1%;
+          margin: 3% 0 3% 0;
+
+          .airplane-img {
+            width: 23%;
+            height: auto;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .ship-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .truck-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+
+          .train-img {
+            width: 23%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .online-shop-about-use {
+    margin-top: 0;
+
+    &__headline {
+      padding: 5% 0 0 0;
+      font-size: 1.3rem;
+    }
+
+    &__description-div {
+      font-size: 1rem;
+      padding: 0 3%;
+      margin: 0 2% 5% 2%;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1% 0 1% 0;
+
+        &--first-description {
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          height: auto;
+          margin: 0 0 2.5% 0;
+
+          .about-use-first-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-first-text {
+            font-size: 1rem;
+            margin: 0;
+            width: 90%;
+            padding: 3% 5%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--second-description {
+          width: 90%;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-second-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-second-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 3% 3%;
+            width: 94%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--third-description {
+          height: auto;
+          width: 90%;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-third-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-third-text {
+            font-size: 1rem;
+            margin: 0;
+            padding: 5% 3%;
+            background-color: #dedfe4;
+          }
+        }
+      }
+
+      &--second-description-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3%;
+
+        &--headline {
+          color: white;
+          padding: 2% 15%;
+          font-size: 1rem;
+        }
+
+        &--img-div {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          .airplane-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 0 0 2.5% 0;
+          }
+
+          .ship-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .truck-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .train-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 7% 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .online-shop-about-use {
+    margin-top: 0;
+    width: 100%;
+
+    &__headline {
+      padding: 5% 0 0 0;
+      font-size: 0.8rem;
+    }
+
+    &__description-div {
+      font-size: 0.7rem;
+      padding: 0 3%;
+      margin: 0 2% 5% 2%;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1% 0 1% 0;
+
+        &--first-description {
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          height: auto;
+          margin: 0 0 2.5% 0;
+
+          .about-use-first-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-first-text {
+            font-size: 0.7rem;
+            margin: 0;
+            width: 90%;
+            padding: 3% 5%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--second-description {
+          width: 90%;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-second-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-second-text {
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 3% 3%;
+            width: 94%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--third-description {
+          height: auto;
+          width: 90%;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-third-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-third-text {
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 5% 3%;
+            background-color: #dedfe4;
+          }
+        }
+      }
+
+      &--second-description-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3%;
+
+        &--headline {
+          color: white;
+          padding: 2% 15%;
+          font-size: 0.7rem;
+        }
+
+        &--img-div {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          .airplane-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 0 0 2.5% 0;
+          }
+
+          .ship-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .truck-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .train-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 7% 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .online-shop-about-use {
+    margin-top: 0;
+    width: 100%;
+
+    &__headline {
+      padding: 5% 0 0 0;
+      font-size: 0.7rem;
+    }
+
+    &__description-div {
+      font-size: 0.6rem;
+      padding: 0 3%;
+      margin: 0 2% 5% 2%;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1% 0 1% 0;
+
+        &--first-description {
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          height: auto;
+          margin: 0 0 2.5% 0;
+
+          .about-use-first-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-first-text {
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 3% 5%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--second-description {
+          width: 90%;
+          height: auto;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-second-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-second-text {
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 3% 3%;
+            width: 95%;
+            background-color: #dedfe4;
+          }
+        }
+
+        &--third-description {
+          height: auto;
+          width: 90%;
+          border: 1px solid white;
+          border-radius: 0.2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 2.5% 0 2.5% 0;
+
+          .about-use-third-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+
+          .about-use-third-text {
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 5% 3%;
+            background-color: #dedfe4;
+          }
+        }
+      }
+
+      &--second-description-div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 3%;
+
+        &--headline {
+          color: white;
+          padding: 2% 15%;
+          font-size: 0.7rem;
+        }
+
+        &--img-div {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          .airplane-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 0 0 2.5% 0;
+          }
+
+          .ship-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .truck-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 2.5% 0;
+          }
+
+          .train-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            border: 1px solid white;
+            margin: 2.5% 0 7% 0;
+          }
+        }
+      }
+    }
+  }
+}

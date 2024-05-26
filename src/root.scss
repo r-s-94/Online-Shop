@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+$font-art: "Comfortaa", sans-serif;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f5f6;
+}
+
+.online-shop-root-rooter-frame {
+  background-color: #001f3f;
+  width: 100%;
+  height: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .online-shop-root-rooter-frame {
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .online-shop-root-rooter-frame {
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .online-shop-root-rooter-frame {
+    height: 2rem;
+  }
+}

@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+$font-art: "Comfortaa", sans-serif;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f5f6;
+}
+
+.online-shop-head-section {
+  background-color: #001f3f;
+  display: flex;
+  justify-content: space-evenly;
+  height: 10rem;
+
+  &__img {
+    width: 10rem;
+    height: 10rem;
+    margin: auto 0;
+  }
+
+  &__headline {
+    font-size: 3rem;
+    font-family: $font-art;
+    color: white;
+    line-height: 3.5rem;
+
+    .focus-word {
+      color: #ffff00;
+    }
+  }
+
+  &__link-component {
+    margin: auto 0;
+
+    &--shopping-cart {
+      .shopping-cart-qunatity {
+        color: white;
+        font-size: 2.3rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .shopping-cart-logo {
+        height: 3.5rem;
+        width: 3.5rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .online-shop-head-section {
+    height: 7rem;
+
+    &__img {
+      width: 4.5rem;
+      height: 4.5rem;
+      object-fit: cover;
+      margin: auto 0 auto 5%;
+    }
+
+    &__headline {
+      font-size: 2.2rem;
+      line-height: 2.7rem;
+      margin: auto 0 auto 0;
+      padding: 0 5%;
+    }
+
+    &__link-component {
+      margin: auto 5% auto 0;
+
+      &--shopping-cart {
+        .shopping-cart-qunatity {
+          font-size: 2rem;
+        }
+
+        .shopping-cart-logo {
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .online-shop-head-section {
+    height: 7rem;
+
+    &__img {
+      width: 4rem;
+      height: 4rem;
+      object-fit: cover;
+      margin: auto 0 auto 5%;
+    }
+
+    &__headline {
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+      margin: auto 0 auto 0;
+      padding: 0 5%;
+    }
+
+    &__link-component {
+      margin: auto 5% auto 0;
+
+      &--shopping-cart {
+        .shopping-cart-qunatity {
+          font-size: 1.7rem;
+        }
+
+        .shopping-cart-logo {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .online-shop-head-section {
+    height: 7rem;
+
+    &__img {
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+      margin: auto 0 auto 5%;
+    }
+
+    &__headline {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: auto 0 auto 0;
+      padding: 0 5%;
+    }
+
+    &__link-component {
+      margin: auto 5% auto 0;
+
+      &--shopping-cart {
+        .shopping-cart-qunatity {
+          font-size: 1.5rem;
+        }
+
+        .shopping-cart-logo {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .online-shop-head-section {
+    height: 5rem;
+
+    &__img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+      margin: auto 0 auto 5%;
+    }
+
+    &__headline {
+      font-size: 0.8rem;
+      line-height: 1.1rem;
+      margin: auto 0 auto 0;
+      padding: 0 5%;
+    }
+
+    &__link-component {
+      margin: auto 5% auto 0;
+
+      &--shopping-cart {
+        .shopping-cart-qunatity {
+          font-size: 1.1rem;
+        }
+
+        .shopping-cart-logo {
+          height: 1.3rem;
+          width: 1.3rem;
+        }
+      }
+    }
+  }
+}
