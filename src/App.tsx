@@ -31,7 +31,8 @@ function App() {
   ],
     {
       basename: "/online-shop/",
-    });
+    }
+  );
 
   useEffect(() => {
     loadArticles();
