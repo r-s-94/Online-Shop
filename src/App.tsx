@@ -28,7 +28,10 @@ function App() {
       path: "checkOut",
       element: <CheckoutComponent />,
     },
-  ]);
+  ],
+    {
+      basename: "/Online-Shop/",
+    });
 
   useEffect(() => {
     loadArticles();
