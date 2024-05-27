@@ -30,7 +30,7 @@ function App() {
     },
   ],
     {
-      basename: "/Online-Shop/",
+      basename: "/online-shop/",
     });
 
   useEffect(() => {
