@@ -11,24 +11,29 @@ export const LOCALE_STORAGE_KEY = "shoppingCart";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartDatatype[]>([]);
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Root />,
+      },
+      {
+        path: "shoppingStorage",
+        element: <ShoppingCart />,
+      },
+      {
+        path: "products/:name",
+        element: <Article />,
+      },
+      {
+        path: "checkOut",
+        element: <CheckoutComponent />,
+      },
+    ],
     {
-      path: "/",
-      element: <Root />,
-    },
-    {
-      path: "shoppingStorage",
-      element: <ShoppingCart />,
-    },
-    {
-      path: "products/:name",
-      element: <Article />,
-    },
-    {
-      path: "checkOut",
-      element: <CheckoutComponent />,
-    },
-  ]);
+      basename: "/Online-Shop/",
+    }
+  );
 
   useEffect(() => {
     loadArticles();
