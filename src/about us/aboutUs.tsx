@@ -1,8 +1,8 @@
 import customerSupportTeam from "../assets/custemers support team.jpg";
 import customerSupport from "../assets/custermor support.jpg";
 import wareHouse from "../assets/ware house in.jpg";
-import "./about-us-Component.scss";
-import "./about-us-Responsive.scss";
+import "./aboutUs.scss";
+import "./aboutUsResponsive.scss";
 import aboutUseTransportAirplain from "../assets/online shop about use transport airplain img.jpg";
 import aboutUseTransportTrain from "../assets/online shop about use transport train img.jpg";
 import aboutUseTransportTruck from "../assets/online shop about use transport truck img.jpg";
@@ -17,8 +17,8 @@ export default function aboutUsComponent() {
           <span className="online-shop-about-use__description-div--focus-word">
             Amagon
           </span>
-          ist ein Weltweites, Globales Online-Business-Unternehmen und bietet
-          dir das was du brauchst.
+          ist ein Weltweites, Globales Online-Business-Unternehmen was dir genau
+          das Bietet was du brauchst.
         </h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iste
@@ -52,15 +52,15 @@ export default function aboutUsComponent() {
               className="about-use-second-img"
             />
             <p className="about-use-second-text">
-              Wir sind für dich da wenn du Hilfe brauchst.
+              Unser Supportteam ist rund um die Uhr für dich erreichbar.
             </p>
           </div>
 
           <div className="online-shop-about-use__main-description-div--first-description-div--third-description">
             <img src={wareHouse} alt="" className="about-use-third-img" />
             <p className="about-use-third-text">
-              Unser Lager ist stets aktuell und alle geben 100% damit du deine
-              Bestellung schnellstmöglichst bekommst.
+              Unser Lager ist stets aktuell, gefühlt und alle geben 100% damit
+              du deine Bestellung schnellstmöglichst bekommst.
             </p>
           </div>
         </div>
@@ -84,4 +84,8 @@ export default function aboutUsComponent() {
       </div>
     </div>
   );
+
+  /*
+  
+  */
 }

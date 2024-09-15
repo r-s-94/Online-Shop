@@ -1,0 +1,407 @@
+@media screen and (min-width: 1600px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.5rem;
+      padding: 5rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem auto 5rem auto;
+      width: 60rem;
+      font-size: 1.2rem;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        row-gap: 1.3rem;
+
+        &--first-description {
+          width: 28rem;
+        }
+
+        &--second-description {
+          width: 28.5rem;
+        }
+
+        &--third-description {
+          width: 27rem;
+        }
+      }
+
+      &--second-description-div {
+        margin: 7rem 0 0 0;
+        width: 100%;
+
+        &--headline {
+          font-size: 1.2rem;
+          margin: 0 7%;
+          padding: 0;
+        }
+
+        &--img-div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          column-gap: 1.5rem;
+          margin-top: 5rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.7rem;
+      padding: 5rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem auto 5rem auto;
+      width: 50rem;
+      font-size: 1.2rem;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        row-gap: 1.3rem;
+
+        &--first-description {
+          width: 26rem;
+        }
+
+        &--second-description {
+          width: 26rem;
+        }
+
+        &--third-description {
+          width: 24rem;
+        }
+      }
+
+      &--second-description-div {
+        margin: 7rem 0 0 0;
+        width: 100%;
+
+        &--headline {
+          font-size: 1.2rem;
+          margin: 0 7%;
+          padding: 0;
+        }
+
+        &--img-div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+          column-gap: 1.5rem;
+          margin-top: 5rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.7rem;
+      padding: 5rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem auto 3rem auto;
+      width: 40rem;
+      font-size: 1.2rem;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        row-gap: 1.3rem;
+
+        &--first-description {
+          width: 19rem;
+        }
+
+        &--second-description {
+          width: 19rem;
+        }
+
+        &--third-description {
+          width: 17.5rem;
+        }
+      }
+
+      &--second-description-div {
+        margin: 7rem 0 0 0;
+        width: 100%;
+
+        &--headline {
+          font-size: 1.1rem;
+          margin: 0 7%;
+          padding: 0;
+        }
+
+        &--img-div {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          width: 90%;
+          gap: 1.5rem;
+          margin-top: 3rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.5rem;
+      padding: 4rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem 0 3rem 0;
+      padding: 0 7%;
+      width: auto;
+      font-size: 1rem;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.3rem;
+
+        &--first-description,
+        &--second-description {
+          width: 90%;
+
+          .about-use-first-text,
+          .about-use-second-text {
+            font-size: 1rem;
+            width: 100%;
+          }
+        }
+
+        &--third-description {
+          width: 90%;
+
+          .about-use-third-text {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &--second-description-div {
+        margin: 5rem 0 0 0;
+        width: 100%;
+
+        &--headline {
+          font-size: 1rem;
+          margin: 0 7%;
+          padding: 0;
+        }
+
+        &--img-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 90%;
+          row-gap: 1.3rem;
+          margin-top: 3rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.3rem;
+      padding: 3rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem 7% 2rem 7%;
+      font-size: 0.9rem;
+
+      &--focus-word {
+        margin-right: 1%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+
+        &--first-description,
+        &--second-description,
+        &--third-description {
+          width: 90%;
+
+          .about-use-first-text,
+          .about-use-second-text,
+          .about-use-third-text {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &--second-description-div {
+        margin: 3rem 0 0 0;
+        width: 100%;
+
+        &--headline {
+          font-size: 1rem;
+          margin: 0 7%;
+          padding: 0;
+        }
+
+        &--img-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          width: 90%;
+          row-gap: 1rem;
+          margin-top: 2rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .online-shop-about-use {
+    &__headline {
+      font-size: 1.2rem;
+      padding: 2rem 0 1rem 0;
+    }
+
+    &__description-div {
+      margin: 1rem 5%;
+      font-size: 0.9rem;
+
+      &--focus-word {
+        margin-right: 3%;
+      }
+    }
+
+    &__main-description-div {
+      &--first-description-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+
+        &--first-description,
+        &--second-description,
+        &--third-description {
+          width: 90%;
+
+          .about-use-first-text,
+          .about-use-second-text,
+          .about-use-third-text {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      &--second-description-div {
+        margin: 3rem 0 2rem 0;
+        width: 100%;
+
+        &--img-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 90%;
+          row-gap: 0.7rem;
+          margin-top: 2rem;
+
+          .airplane-img,
+          .ship-img,
+          .truck-img,
+          .train-img {
+            height: 25%;
+          }
+        }
+      }
+    }
+  }
+}

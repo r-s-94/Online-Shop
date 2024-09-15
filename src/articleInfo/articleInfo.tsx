@@ -1,16 +1,16 @@
 import { useContext, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { articles } from "../articleData";
-import "./articleComponent.scss";
+import "./articleInfo.scss";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 import { LOCALE_STORAGE_KEY } from "../App";
-import "./articleResponsiveComponent.scss";
+import "./articleInfoResponsive.scss";
 
 export default function Article() {
   const { name } = useParams();
 
   const selectedArticle = articles.find((article) => {
-    return name === article.id;
+    return name === article.name;
   });
 
   const [count, setCount] = useState<number>(1);
@@ -42,7 +42,7 @@ export default function Article() {
     if (count === 1) {
       setCount(1);
       showPopUp();
-      setUserMessage("Weniger als 1 Menge geht nicht.");
+      setUserMessage("Sie können leider nicht weniger als 1 Menge bestellen.");
     } else {
       setCount(count - 1);
       setItemStock(itemStock + 1);
@@ -56,7 +56,7 @@ export default function Article() {
   function checkArticle() {
     console.log(selectedArticle);
     const findArticle = shoppingCart.find((article) => {
-      return article.name === selectedArticle?.name;
+      return article.id === selectedArticle?.id;
     });
 
     if (findArticle) {
@@ -76,6 +76,7 @@ export default function Article() {
         img: selectedArticle.img,
         price: selectedArticle.price,
         quantity: count,
+        id: selectedArticle.id,
       };
       /*  ein weiteres Objekt war nötig
       
@@ -106,6 +107,7 @@ export default function Article() {
         img: selectedArticle.img,
         price: selectedArticle.price,
         quantity: count,
+        id: selectedArticle.id,
       };
       const updatedShoppingCard = [...shoppingCart];
       updatedShoppingCard.splice(findArticleIndex, 1, correctArticleOrder);

@@ -33,13 +33,13 @@ export default function ShoppingCart() {
     */
   }
 
-  function deleteArticle(name: string) {
+  function deleteArticle(id: number) {
     const selectedArticle = shoppingCart.find((article) => {
-      return article.name === name;
+      return article.id === id;
     });
 
     const filteredArticle = shoppingCart.filter((article) => {
-      return article.name !== selectedArticle?.name;
+      return article.id !== selectedArticle?.id;
     });
 
     const updatetArray = [...filteredArticle];
@@ -48,15 +48,31 @@ export default function ShoppingCart() {
   }
 
   return (
-    <div className="online-shop-shopping-cart">
+    <section className="online-shop-shopping-cart">
       <div className="online-shop-shopping-cart__header"></div>
 
       <div className="online-shop-shopping-cart__head-div">
         <Link
           to="/"
-          className="online-shop-shopping-cart__head-div--link-component link-component"
+          className="online-shop-shopping-cart__head-div--link-component link-component button"
         >
           <button className="online-shop-shopping-cart__head-div--link-component--back-button button">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="online-shop-shopping-cart__head-div--link-component--back-button--icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </span>{" "}
             zum Hauptmenu
           </button>
         </Link>
@@ -68,32 +84,32 @@ export default function ShoppingCart() {
 
       {shoppingCart.map((article) => {
         return (
-          <div className="online-shop-shopping-cart-article">
-            <div className="online-shop-shopping-cart-article__left-section">
+          <div className="online-shop-shopping-cart__article">
+            <div className="online-shop-shopping-cart__article--img-section">
               <img
                 src={article.img}
                 alt=""
-                className="online-shop-shopping-cart-article__left-section--article-img"
+                className="online-shop-shopping-cart__article--img-section--article-img"
               />
             </div>
-            <div className="online-shop-shopping-cart-article__right-section">
-              <h2 className="online-shop-shopping-cart-article__right-section--article-headline">
+            <div className="online-shop-shopping-cart__article--description-section">
+              <h2 className="online-shop-shopping-car__article--description-section--article-headline">
                 {article.name}
               </h2>
-              <p className="online-shop-shopping-cart-article__right-section--article-price">
+              <p className="online-shop-shopping-cart__article--description-section--article-price">
                 Preis: {article.price * article.quantity}€
               </p>
-              <p className="online-shop-shopping-cart-article__right-section--article-quantity">
+              <p className="online-shop-shopping-cart__article--description-section--article-quantity">
                 Menge: {article.quantity}x
               </p>
               <button
                 onClick={() => {
-                  deleteArticle(article.name);
+                  deleteArticle(article.id);
                 }}
-                className="online-shop-shopping-cart-article__right-section--article-delete-button button"
+                className="online-shop-shopping-cart__article--description-section--article-delete-button button"
               >
-                Artikel {article.name} entfernen
-                <span className="online-shop-shopping-cart-article__right-section--article-delete-button--delete-icon">
+                Artikel entfernen
+                <span className="online-shop-shopping-cart__article--description-section--article-delete-button--delete-icon">
                   &#128465;
                 </span>
               </button>
@@ -102,25 +118,25 @@ export default function ShoppingCart() {
         );
       })}
 
-      <div className="online-shop-shopping-cart-end-shopping-div">
-        <h2 className="online-shop-shopping-cart-end-shopping-div__headline">
+      <div className="online-shop-shopping-cart__total-sum-div">
+        <h2 className="online-shop-shopping-cart__total-sum-div--headline">
           Gesamt Summe:
-          <span className="online-shop-shopping-cart-end-shopping-div__headline--total-sum">
-            {calculationTotalSum()}€
+          <span className="online-shop-shopping-cart__total-sum-div--headline--total-sum">
+            {calculationTotalSum()} €
           </span>
         </h2>
         <Link
           to="/checkOut"
-          className="online-shop-shopping-cart-end-shopping-div__link-component link-component"
+          className="online-shop-shopping-cart__total-sum-div--link-component link-component"
         >
-          <button className="online-shop-shopping-cart-end-shopping-div__link-component--check-out-button button">
+          <button className="online-shop-shopping-cart__total-sum-div--link-component--check-out-button button">
             zur Kasse
           </button>
         </Link>
       </div>
 
       <div className="online-shop-shopping-cart__rooter"></div>
-    </div>
+    </section>
     /*  !!!!!!!!  ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!
 
         so wie es in Zeile 81 der Fall ist ist es AUCH möglich Funktionen DIREKT in die {} geschweiften Klammern = in einen Ausdruck von React zu 

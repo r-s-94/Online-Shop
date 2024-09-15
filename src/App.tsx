@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ShoppingCart from "./shoppingCart/shoppingCart";
-import Article from "./articleComponent/articleComponent";
+import Article from "./articleInfo/articleInfo";
 import "./App.scss";
 import Root from "./root";
 import { ShoppingCartContext } from "./CustomContext";
 import { ShoppingCartDatatype } from "./CustomContext";
 import { useState, useEffect } from "react";
-import CheckoutComponent from "./checkoutComponent/checkOutComponent";
+import CheckoutComponent from "./checkOut/checkOut";
 export const LOCALE_STORAGE_KEY = "shoppingCart";
 
 function App() {

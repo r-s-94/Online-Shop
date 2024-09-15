@@ -1,21 +1,16 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../CustomContext";
-import onlineShopLogo from "../assets/online shop logo.png";
+import AmagonLogo from "../assets/Amagon-Logo.png";
 import onlineShopShoppingCartLogo from "../assets/shopping-cart-logo.png";
-
-import "./headComponent.scss";
+import "./head.scss";
 
 export default function HeadComponent() {
   const { shoppingCart } = useContext(ShoppingCartContext);
 
   return (
     <div className="online-shop-head-section">
-      <img
-        src={onlineShopLogo}
-        alt=""
-        className="online-shop-head-section__img"
-      />
+      <img src={AmagonLogo} alt="" className="online-shop-head-section__img" />
 
       <h1 className="online-shop-head-section__headline">
         Willkommen bei <span className="focus-word">Amagon</span> <br /> Dem

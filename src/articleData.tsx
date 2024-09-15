@@ -8,7 +8,7 @@ import fitness from "./assets/fitness.jpg";
 export interface Article {
   name: string;
   img: string;
-  id: string;
+  id: number;
   price: number;
   description: string;
   itemStockTotal: number;
@@ -18,7 +18,7 @@ export const articles: Article[] = [
   {
     name: "Apfel",
     img: apple,
-    id: "apple",
+    id: 1,
     price: 2,
     description: "lecker knackig ",
     itemStockTotal: 5,
@@ -26,7 +26,7 @@ export const articles: Article[] = [
   {
     name: "Birne",
     img: pear,
-    id: "pear",
+    id: 2,
     price: 2,
     description: "fruchtig frisch",
     itemStockTotal: 5,
@@ -34,7 +34,7 @@ export const articles: Article[] = [
   {
     name: "Weintrauben",
     img: grape,
-    id: "grape",
+    id: 3,
     price: 2,
     description: "Ausgereifte und saftig",
     itemStockTotal: 5,
@@ -42,7 +42,7 @@ export const articles: Article[] = [
   {
     name: "Computer",
     img: pc,
-    id: "pc",
+    id: 4,
     price: 750,
     description: "Hochleistungsfähig und schnell",
     itemStockTotal: 10,
@@ -50,7 +50,7 @@ export const articles: Article[] = [
   {
     name: "Auto",
     img: car,
-    id: "car",
+    id: 5,
     price: 50000,
     description:
       "Ein Auto das spaß macht und Fun bringt. Worauf wartest du noch.?!",
@@ -59,7 +59,7 @@ export const articles: Article[] = [
   {
     name: "Fitnessgeräte",
     img: fitness,
-    id: "fitness",
+    id: 6,
     price: 1000,
     description: "Ein fitter Körper ist ein straker und gesunder Körper.",
     itemStockTotal: 10,
