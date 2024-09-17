@@ -3,6 +3,7 @@ $frame-color: #001f3f;
 @media screen and (min-width: 1600px) {
   .online-shop-shopping-cart {
     &__header {
+      height: 3rem;
     }
 
     &__head-div {
@@ -98,6 +99,7 @@ $frame-color: #001f3f;
     }
 
     &__rooter {
+      height: 3rem;
     }
   }
 }
@@ -105,6 +107,7 @@ $frame-color: #001f3f;
 @media screen and (max-width: 1600px) {
   .online-shop-shopping-cart {
     &__header {
+      height: 3rem;
     }
 
     &__head-div {
@@ -200,6 +203,7 @@ $frame-color: #001f3f;
     }
 
     &__rooter {
+      height: 3rem;
     }
   }
 }
@@ -208,7 +212,7 @@ $frame-color: #001f3f;
   .online-shop-shopping-cart {
     &__header {
       background-color: $frame-color;
-      height: 5rem;
+      height: 3rem;
     }
 
     &__head-div {
@@ -305,7 +309,7 @@ $frame-color: #001f3f;
 
     &__rooter {
       background-color: $frame-color;
-      height: 5rem;
+      height: 3rem;
     }
   }
 }
@@ -314,7 +318,7 @@ $frame-color: #001f3f;
   .online-shop-shopping-cart {
     &__header {
       background-color: $frame-color;
-      height: 4rem;
+      height: 3rem;
     }
 
     &__head-div {
@@ -410,7 +414,7 @@ $frame-color: #001f3f;
 
     &__rooter {
       background-color: $frame-color;
-      height: 4rem;
+      height: 3rem;
     }
   }
 }
@@ -419,7 +423,7 @@ $frame-color: #001f3f;
   .online-shop-shopping-cart {
     &__header {
       background-color: $frame-color;
-      height: 3rem;
+      height: 2rem;
     }
 
     &__head-div {
@@ -520,7 +524,7 @@ $frame-color: #001f3f;
 
     &__rooter {
       background-color: $frame-color;
-      height: 3rem;
+      height: 2rem;
     }
   }
 }
@@ -529,7 +533,7 @@ $frame-color: #001f3f;
   .online-shop-shopping-cart {
     &__header {
       background-color: $frame-color;
-      height: 2rem;
+      height: 1rem;
     }
 
     &__head-div {
@@ -654,7 +658,7 @@ $frame-color: #001f3f;
 
     &__rooter {
       background-color: $frame-color;
-      height: 2rem;
+      height: 1rem;
     }
   }
 }
