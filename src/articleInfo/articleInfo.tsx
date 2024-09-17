@@ -128,9 +128,29 @@ export default function Article() {
     navigate(-1);
   }
 
+  /*function editeArticleTotalSum(articlePrice: number, articleCount: number) {
+    const x = articleCount * articlePrice;
+
+    if (x < 1000) {
+      return x.toString();
+    }
+
+    if (x < 10000) {
+      return x.toString()[1] + ".0";
+    }
+
+    if (x > 10000) {
+      return x.toString()[0].replace("0", "0.");
+    }
+
+    if (x > 100000) {
+      return x.toString().slice(0).replace("00", "00.");
+    }
+  }*/
+
   return (
     <div className="online-shop-single-article">
-      <div className="online-shop-single-article-header-frame"></div>
+      <div className="online-shop-single-article__header-frame"></div>
 
       {popUpWindow && (
         <div className="pop-up-window">
@@ -150,50 +170,66 @@ export default function Article() {
         </div>
       )}
 
-      <div className="online-shop-single-article-link-div">
+      <div className="online-shop-single-article__link-div">
         <button
           onClick={historyBack}
-          className="online-shop-single-article-link-div__back-menu-button button"
+          className="online-shop-single-article__link-div--back-menu-button button"
         >
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="online-shop-single-article__link-div--back-menu-button--icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </span>{" "}
           zum Hauptmenu
         </button>
 
         <Link
           to="/shoppingStorage"
-          className="online-shop-single-article-link-div__link-component link-component"
+          className="online-shop-single-article__link-div--link-component link-component"
         >
           <div>
-            <p className="online-shop-single-article-link-div__link-component--shopping-cart-quantity">
+            <p className="online-shop-single-article__link-div--link-component--shopping-cart-quantity">
               {shoppingCart.length}
             </p>
-            <p className="online-shop-single-article-link-div__link-component--shopping-cart-icon">
+            <p className="online-shop-single-article__link-div--link-component--shopping-cart-icon">
               &#128722;
             </p>
           </div>
         </Link>
       </div>
 
-      <div className="online-shop-single-article-view">
-        <div className="online-shop-single-article-view__left-section">
-          <h2 className="online-shop-single-article-view__left-section--article-headline">
+      <div className="online-shop-single-article__preview">
+        <div className="online-shop-single-article__preview--left-section">
+          <h2 className="online-shop-single-article__preview--left-section--article-headline">
             {selectedArticle?.name}
-          </h2>
+          </h2>{" "}
           <img
             src={selectedArticle?.img}
             alt=""
-            className="online-shop-single-article-view__left-section--article-img"
-          />
-          <p className="online-shop-single-article-view__left-section--article-description">
+            className="online-shop-single-article__preview--left-section--article-img"
+          />{" "}
+          <p className="online-shop-single-article__preview--left-section--article-description">
             {selectedArticle?.description}
           </p>
         </div>
 
-        <div className="online-shop-single-article-view__right-section">
-          <div className="online-shop-single-article-view__right-section--article-quantity-div">
-            <h3 className="online-shop-single-article-view__right-section--article-quantity-div--quantity-headline">
+        <div className="online-shop-single-article__preview--right-section">
+          <div className="online-shop-single-article__preview--right-section--article-quantity-div">
+            <h3 className="online-shop-single-article__preview--right-section--article-quantity-div--quantity-headline">
               Menge:
             </h3>
-            <div className="online-shop-single-article-view__right-section--article-quantity-div--article-count-and-quantity">
+            <div className="online-shop-single-article__preview--right-section--article-quantity-div--article-count-and-quantity">
               <button onClick={countDown} className="count-down button">
                 -
               </button>
@@ -204,14 +240,14 @@ export default function Article() {
             </div>
           </div>
 
-          <div className="online-shop-single-article-view__right-section--price-and-itemStock-div">
-            <p className="online-shop-single-article-view__right-section--price-and-itemStock-div--article-price">
-              Preis: {count * selectedArticle.price}€
+          <div className="online-shop-single-article__preview--right-section--price-and-itemStock-div">
+            <p className="online-shop-single-article__preview--right-section--price-and-itemStock-div--article-price">
+              Preis: {selectedArticle.price * count} €
             </p>
             <div
               className={`${
                 itemStock > 0 ? "article-green" : "article-red"
-              } online-shop-single-article-view__right-section--price-and-itemStock-div--article-itemStock-total`}
+              } online-shop-single-article__preview--right-section--price-and-itemStock-div--article-itemStock-total`}
             >
               {itemStock > 0
                 ? `Noch ${itemStock}x auf Lager.`
@@ -220,14 +256,14 @@ export default function Article() {
           </div>
           <button
             onClick={checkArticle}
-            className="online-shop-single-article-view__right-section--add-shopping-cart-button"
+            className="online-shop-single-article__preview--right-section--add-shopping-cart-button"
           >
             &#128722; Artikel hinzufügen
           </button>
         </div>
       </div>
 
-      <div className="online-shop-single-article-rooter-frame"></div>
+      <div className="online-shop-single-article__rooter-frame"></div>
     </div>
   );
 }

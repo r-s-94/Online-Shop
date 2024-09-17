@@ -1,8 +1,6 @@
 .online-shop-single-article {
-  .online-shop-single-article-header-frame {
-    background-color: #001f3f;
-    height: 4rem;
-  }
+  $amagon-primary-color: #001f3f;
+  $amagon-secondery-color: #ffff00;
 
   .pop-up-window {
     position: absolute;
@@ -24,57 +22,71 @@
     }
   }
 
-  .online-shop-single-article-link-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 15% 0 10%;
+  &__header-frame {
+    background-color: $amagon-primary-color;
+    height: 5rem;
+  }
 
-    &__back-menu-button {
+  &__link-div {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &--back-menu-button {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
+      border: 1px solid black;
+      background-color: $amagon-primary-color;
+      color: $amagon-secondery-color;
+      border-radius: 0.2rem;
+      padding: 0.3rem 1rem;
+      margin-right: 40rem;
+
+      &--icon {
+        width: 2rem;
+        height: auto;
+      }
     }
 
-    &__link-component {
+    &--link-component {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      margin-right: 13rem;
+      background-color: $amagon-primary-color;
+      border-radius: 0.2rem;
+      padding: 0.3rem 0.5rem;
 
       &--shopping-cart-quantity {
         font-size: 2rem;
-        margin: 0;
-        padding: 0;
+        color: $amagon-secondery-color;
       }
 
       &--shopping-cart-icon {
         font-size: 2rem;
-        margin: 0;
-        padding: 0;
       }
     }
   }
 
-  .link-component {
-    text-decoration: none;
-  }
-
-  .online-shop-single-article-view {
-    margin: 3% 20% 5% 20%;
+  &__preview {
+    margin: 3rem 20%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid gray;
     background-color: white;
     border-radius: 0.2rem;
+    height: 100%;
 
-    &__left-section {
+    &--left-section {
       width: 50%;
       height: 100%;
 
       &--article-headline {
+        margin: 1.5rem;
         font-size: 2rem;
       }
 
@@ -86,11 +98,12 @@
       }
 
       &--article-description {
+        margin: 1.5rem 0;
         font-size: 1.5rem;
       }
     }
 
-    &__right-section {
+    &--right-section {
       height: 100%;
       width: 50%;
       padding-right: 5%;
@@ -98,12 +111,12 @@
       &--article-quantity-div {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         width: 100%;
+        row-gap: 2rem;
 
         &--quantity-headline {
-          font-size: 1.8rem;
+          font-size: 1.9rem;
           margin: 2% 0 1% 0;
           padding: 0;
         }
@@ -119,9 +132,10 @@
 
           .count-up {
             /*background-color: #66d3fa;*/
-            background-color: #56cefa;
-            font-size: 1.7rem;
-            padding: 1.5% 3%;
+
+            background-color: #f96b00;
+            font-size: 2rem;
+            padding: 0.3rem 1rem;
             border: 1px solid black;
             border-radius: 0.2rem;
           }
@@ -134,8 +148,11 @@
           }
 
           .count-down {
-            font-size: 1.7rem;
-            padding: 1.5% 3.3%;
+            font-size: 2rem;
+            padding: 0.4rem 1.3rem;
+            background-color: #56cefa;
+            border: 1px solid black;
+            border-radius: 0.2rem;
           }
         }
       }
@@ -162,14 +179,26 @@
       }
 
       &--add-shopping-cart-button {
-        font-size: 1.6rem;
-        margin: 3% 0 0 0;
-        padding: 1% 1.5%;
+        font-size: 1.5rem;
+        margin: 1rem 0 0 0;
+        padding: 0.3rem 0.5rem;
         background-color: #faed27;
         border: 1px solid black;
         border-radius: 0.2rem;
       }
     }
+  }
+
+  &__rooter-frame {
+    background-color: #001f3f;
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .link-component {
+    text-decoration: none;
   }
 
   .article-green {
@@ -178,11 +207,5 @@
 
   .article-red {
     color: red;
-  }
-
-  .online-shop-single-article-rooter-frame {
-    background-color: #001f3f;
-    height: 4rem;
-    margin: 0;
   }
 }
