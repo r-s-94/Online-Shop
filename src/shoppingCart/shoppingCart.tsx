@@ -82,41 +82,43 @@ export default function ShoppingCart() {
         </h2>
       </div>
 
-      {shoppingCart.map((article) => {
-        return (
-          <div className="online-shop-shopping-cart__article">
-            <div className="online-shop-shopping-cart__article--img-section">
-              <img
-                src={article.img}
-                alt=""
-                className="online-shop-shopping-cart__article--img-section--article-img"
-              />
+      <div className={shoppingCart.length === 0 ? "space-food" : ""}>
+        {shoppingCart.map((article) => {
+          return (
+            <div className="online-shop-shopping-cart__article">
+              <div className="online-shop-shopping-cart__article--img-section">
+                <img
+                  src={article.img}
+                  alt=""
+                  className="online-shop-shopping-cart__article--img-section--article-img"
+                />
+              </div>
+              <div className="online-shop-shopping-cart__article--description-section">
+                <h2 className="online-shop-shopping-car__article--description-section--article-headline">
+                  {article.name}
+                </h2>
+                <p className="online-shop-shopping-cart__article--description-section--article-price">
+                  Preis: {article.price * article.quantity}€
+                </p>
+                <p className="online-shop-shopping-cart__article--description-section--article-quantity">
+                  Menge: {article.quantity}x
+                </p>
+                <button
+                  onClick={() => {
+                    deleteArticle(article.id);
+                  }}
+                  className="online-shop-shopping-cart__article--description-section--article-delete-button button"
+                >
+                  Artikel entfernen
+                  <span className="online-shop-shopping-cart__article--description-section--article-delete-button--delete-icon">
+                    &#128465;
+                  </span>
+                </button>
+              </div>
             </div>
-            <div className="online-shop-shopping-cart__article--description-section">
-              <h2 className="online-shop-shopping-car__article--description-section--article-headline">
-                {article.name}
-              </h2>
-              <p className="online-shop-shopping-cart__article--description-section--article-price">
-                Preis: {article.price * article.quantity}€
-              </p>
-              <p className="online-shop-shopping-cart__article--description-section--article-quantity">
-                Menge: {article.quantity}x
-              </p>
-              <button
-                onClick={() => {
-                  deleteArticle(article.id);
-                }}
-                className="online-shop-shopping-cart__article--description-section--article-delete-button button"
-              >
-                Artikel entfernen
-                <span className="online-shop-shopping-cart__article--description-section--article-delete-button--delete-icon">
-                  &#128465;
-                </span>
-              </button>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <div className="online-shop-shopping-cart__total-sum-div">
         <h2 className="online-shop-shopping-cart__total-sum-div--headline">

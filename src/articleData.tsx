@@ -36,7 +36,7 @@ export const articles: Article[] = [
     img: grape,
     id: 3,
     price: 2,
-    description: "Ausgereifte und saftig",
+    description: "Ausgereift und saftig",
     itemStockTotal: 5,
   },
   {

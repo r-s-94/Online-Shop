@@ -6,7 +6,7 @@
 
   &__header {
     background-color: $amagon-primary-color;
-    height: 5rem;
+    height: 3rem;
   }
 
   &__head-div {
@@ -137,10 +137,14 @@
   &__rooter {
     background-color: $amagon-primary-color;
     height: 5rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
   }
+}
+
+.space-food {
+  min-height: 34.2vh;
 }
 
 button:hover {
