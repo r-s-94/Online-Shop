@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import shoppingPriceTag from "../assets/shopping-price-tag.png";
 import { Article } from "../articleData";
 import "./article.scss";
-import { useState } from "react";
 
 export default function ArticleComponent({
   article,
@@ -11,20 +10,6 @@ export default function ArticleComponent({
   article: Article;
   checkArticle(id: number): void;
 }) {
-  function editArticlePrice(articlePrice: number) {
-    if (articlePrice < 1000) {
-      return articlePrice.toString();
-    }
-
-    if (articlePrice < 10000) {
-      return articlePrice.toString().slice(0).replace("0", ".0");
-    }
-
-    if (articlePrice > 10000) {
-      return articlePrice.toString().slice(0).replace("0", "0.");
-    }
-  }
-
   return (
     <div className="article">
       <div className="article__img-section">
@@ -44,7 +29,7 @@ export default function ArticleComponent({
         </p>
         <div className="article__description-section--price-and-sale-icon-div">
           <p className="article__description-section--price-and-sale-icon-div--article-price">
-            {editArticlePrice(article.price)}€
+            {article.price.toLocaleString()} €
           </p>
           <img
             src={shoppingPriceTag}

@@ -128,25 +128,10 @@ export default function Article() {
     navigate(-1);
   }
 
-  /*function editeArticleTotalSum(articlePrice: number, articleCount: number) {
-    const x = articleCount * articlePrice;
-
-    if (x < 1000) {
-      return x.toString();
-    }
-
-    if (x < 10000) {
-      return x.toString()[1] + ".0";
-    }
-
-    if (x > 10000) {
-      return x.toString()[0].replace("0", "0.");
-    }
-
-    if (x > 100000) {
-      return x.toString().slice(0).replace("00", "00.");
-    }
-  }*/
+  function editeArticleTotalSum(articlePrice: number, articleCount: number) {
+    const articleTotalSum = articleCount * articlePrice;
+    return articleTotalSum.toLocaleString();
+  }
 
   return (
     <div className="online-shop-single-article">
@@ -242,7 +227,7 @@ export default function Article() {
 
           <div className="online-shop-single-article__preview--right-section--price-and-itemStock-div">
             <p className="online-shop-single-article__preview--right-section--price-and-itemStock-div--article-price">
-              Preis: {selectedArticle.price * count} €
+              Preis: {editeArticleTotalSum(selectedArticle.price, count)} €
             </p>
             <div
               className={`${

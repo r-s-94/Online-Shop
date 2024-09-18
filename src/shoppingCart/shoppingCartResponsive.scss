@@ -562,6 +562,7 @@ $frame-color: #001f3f;
     }
 
     &__article {
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
