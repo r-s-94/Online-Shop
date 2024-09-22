@@ -12,6 +12,7 @@ export interface Article {
   price: number;
   description: string;
   itemStockTotal: number;
+  quantity: number;
 }
 
 export const articles: Article[] = [
@@ -22,6 +23,7 @@ export const articles: Article[] = [
     price: 2,
     description: "lecker knackig ",
     itemStockTotal: 5,
+    quantity: 0,
   },
   {
     name: "Birne",
@@ -30,6 +32,7 @@ export const articles: Article[] = [
     price: 2,
     description: "fruchtig frisch",
     itemStockTotal: 5,
+    quantity: 0,
   },
   {
     name: "Weintrauben",
@@ -38,6 +41,7 @@ export const articles: Article[] = [
     price: 2,
     description: "Ausgereift und saftig",
     itemStockTotal: 5,
+    quantity: 0,
   },
   {
     name: "Computer",
@@ -46,6 +50,7 @@ export const articles: Article[] = [
     price: 750,
     description: "Hochleistungsfähig und schnell",
     itemStockTotal: 10,
+    quantity: 0,
   },
   {
     name: "Auto",
@@ -55,6 +60,7 @@ export const articles: Article[] = [
     description:
       "Ein Auto das spaß macht und Fun bringt. Worauf wartest du noch.?!",
     itemStockTotal: 5,
+    quantity: 0,
   },
   {
     name: "Fitnessgeräte",
@@ -63,5 +69,6 @@ export const articles: Article[] = [
     price: 1000,
     description: "Ein fitter Körper ist ein straker und gesunder Körper.",
     itemStockTotal: 10,
+    quantity: 0,
   },
 ];

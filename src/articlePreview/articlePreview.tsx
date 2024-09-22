@@ -4,6 +4,7 @@ import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 import { useContext } from "react";
 import "./articlePreview.scss";
 import ArticleComponent from "../article/article";
+import ShoppingCart from "../shoppingCart/shoppingCart";
 
 export default function ArticlePreviewComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
@@ -11,14 +12,20 @@ export default function ArticlePreviewComponent() {
   function checkArticle(id: number) {
     console.log(id);
 
-    const findArticle = articles.find((article) => {
+    const articleExists = articles.find((article) => {
       return article.id === id;
     });
 
-    console.log(findArticle);
+    const articleInShoppingCart = shoppingCart.find((article) => {
+      return id === article.id;
+    });
 
-    if (findArticle) {
-      addArticleToShoppingCart(findArticle);
+    if (articleExists) {
+      if (articleInShoppingCart === undefined) {
+        addArticleToShoppingCart(articleExists);
+      } else {
+        updateArticleQuantity(articleInShoppingCart, id);
+      }
     }
   }
 
@@ -45,8 +52,38 @@ export default function ArticlePreviewComponent() {
     }
   }
 
-  function saveArticle(shoppingAtricle: ShoppingCartDatatype[]) {
-    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingAtricle));
+  function saveArticle(shoppingArticle: ShoppingCartDatatype[]) {
+    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
+  }
+
+  function updateArticleQuantity(
+    findArticle: Article | ShoppingCartDatatype,
+    id: number
+  ) {
+    const filteredShoppingCart = shoppingCart.filter((article) => {
+      return article.id !== id;
+    });
+
+    const findArticleIndex = shoppingCart.findIndex((article) => {
+      return article.id === id;
+    });
+
+    const updateArticleOrder: ShoppingCartDatatype = {
+      name: findArticle.name,
+      img: findArticle.img,
+      price: findArticle.price,
+      quantity: findArticle.quantity + 1,
+      id: findArticle.id,
+    };
+
+    console.log(updateArticleOrder);
+
+    const updateShoppingCart = [...filteredShoppingCart];
+
+    updateShoppingCart.splice(findArticleIndex, 0, updateArticleOrder);
+
+    setShoppingCart(updateShoppingCart);
+    saveArticle(updateShoppingCart);
   }
 
   return (

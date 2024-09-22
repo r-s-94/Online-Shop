@@ -89,8 +89,8 @@ export default function Article() {
     }
   }
 
-  function saveArticle(shoppingAtricle: ShoppingCartDatatype[]) {
-    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingAtricle));
+  function saveArticle(shoppingArticle: ShoppingCartDatatype[]) {
+    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
   }
 
   function correctArticle() {
