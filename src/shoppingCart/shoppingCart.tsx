@@ -24,7 +24,7 @@ export default function ShoppingCart() {
       const article = element.price * element.quantity;
       sum = article + sum;
     }
-    return sum;
+    return sum.toLocaleString();
     /*  !!!!!!! ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!!!!!
 
         wenn eine Funktion direkt in einem Ausdruck von React = in den {} geschweiften Klammern steht muss aber am Ende der Funktion das Schlüsselwort
@@ -45,6 +45,11 @@ export default function ShoppingCart() {
     const updatetArray = [...filteredArticle];
     setShoppingCart(updatetArray);
     localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(filteredArticle));
+  }
+
+  function editeArticleTotalSum(articlePrice: number, articleQuantity: number) {
+    const calculateTotalSum: number = articlePrice * articleQuantity;
+    return calculateTotalSum.toLocaleString();
   }
 
   return (
@@ -98,7 +103,8 @@ export default function ShoppingCart() {
                   {article.name}
                 </h2>
                 <p className="online-shop-shopping-cart__article--description-section--article-price">
-                  Preis: {article.price * article.quantity}€
+                  Preis: {editeArticleTotalSum(article.price, article.quantity)}{" "}
+                  €
                 </p>
                 <p className="online-shop-shopping-cart__article--description-section--article-quantity">
                   Menge: {article.quantity}x
