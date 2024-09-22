@@ -4,7 +4,6 @@ import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 import { useContext } from "react";
 import "./articlePreview.scss";
 import ArticleComponent from "../article/article";
-import ShoppingCart from "../shoppingCart/shoppingCart";
 
 export default function ArticlePreviewComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
