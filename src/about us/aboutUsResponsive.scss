@@ -1,21 +1,58 @@
+$amagon-primary-color: #001f3f;
+$amagon-secondery-color: #ffff00;
+
 @media screen and (min-width: 1600px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      top: 4.5rem;
+      left: 10%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        padding: 0.3rem 0.5rem;
+
+        &--icon {
+          width: 2rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.8rem;
+      font-size: 2.3rem;
       padding: 5rem 0 1rem 0;
     }
 
     &__description-div {
-      margin: 1rem auto 5rem auto;
-      width: 60rem;
-      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 7rem;
+      margin: 5rem auto 0 auto;
+      padding: 1rem 0 5rem 0;
+      max-width: 97rem;
 
-      &--focus-word {
-        margin-right: 1%;
+      &--text {
+        font-size: 1.3rem;
+        padding: 2rem 0 0 0;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &--img {
+        width: 50%;
       }
     }
 
     &__main-description-div {
+      padding-bottom: 3rem;
       &--first-description-div {
         display: flex;
         flex-direction: row;
@@ -68,23 +105,58 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      top: 4.5rem;
+      left: 10%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        padding: 1% 3%;
+
+        &--icon {
+          width: 2rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.8rem;
+      font-size: 2rem;
       padding: 5rem 0 1rem 0;
     }
 
     &__description-div {
-      margin: 1rem auto 5rem auto;
-      width: 50rem;
-      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 7rem;
+      margin: 5rem auto 0 auto;
+      padding: 1rem 0 5rem 0;
+      max-width: 77rem;
 
-      &--focus-word {
-        margin-right: 1%;
+      &--text {
+        font-size: 1.3rem;
+        padding: 2rem 0 0 0;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &--img {
+        width: 40%;
       }
     }
 
     &__main-description-div {
+      padding-bottom: 2rem;
+
       &--first-description-div {
         display: flex;
         flex-direction: row;
@@ -137,23 +209,58 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      top: 4.5rem;
+      left: 7%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        padding: 1% 3%;
+
+        &--icon {
+          width: 2rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.8rem;
+      font-size: 2rem;
       padding: 5rem 0 1rem 0;
     }
 
     &__description-div {
-      margin: 1rem auto 3rem auto;
-      width: 40rem;
-      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 3rem;
+      margin: 0 auto;
+      padding: 1rem 0 5rem 0;
+      max-width: 35rem;
 
-      &--focus-word {
-        margin-right: 1%;
+      &--text {
+        font-size: 1.3rem;
+        padding: 2rem 0 0 0;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &--img {
+        width: 100%;
       }
     }
 
     &__main-description-div {
+      padding-bottom: 1rem;
+
       &--first-description-div {
         display: flex;
         flex-direction: row;
@@ -162,15 +269,15 @@
         row-gap: 1.3rem;
 
         &--first-description {
-          width: 19rem;
+          width: 17.5rem;
         }
 
         &--second-description {
-          width: 19rem;
+          width: 18.5rem;
         }
 
         &--third-description {
-          width: 17.5rem;
+          width: 16.5rem;
         }
       }
 
@@ -204,33 +311,66 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      top: 2rem;
+      left: 37%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+
+        &--icon {
+          width: 2rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.7rem;
-      padding: 4rem 0 1rem 0;
+      font-size: 2rem;
+      padding: 10rem 0 0 0;
     }
 
     &__description-div {
-      margin: 1rem 0 3rem 0;
-      padding: 0 7%;
-      width: auto;
-      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+      margin: 0 auto;
+      padding: 1rem 0 4rem 0;
+      max-width: 35rem;
 
-      &--focus-word {
-        margin-right: 1%;
+      &--text {
+        font-size: 1.3rem;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &--img {
+        width: 100%;
       }
     }
 
     &__main-description-div {
+      margin: 0 auto;
+      max-width: 35rem;
+
       &--first-description-div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        row-gap: 1.3rem;
+        row-gap: 2.5rem;
 
         &--first-description,
         &--second-description {
-          width: 90%;
+          width: 100%;
 
           .about-use-first-text,
           .about-use-second-text {
@@ -240,7 +380,7 @@
         }
 
         &--third-description {
-          width: 90%;
+          width: 100%;
 
           .about-use-third-text {
             font-size: 1rem;
@@ -250,10 +390,10 @@
 
       &--second-description-div {
         margin: 5rem 0 0 0;
-        width: 100%;
+        max-width: 35rem;
 
         &--headline {
-          font-size: 1rem;
+          font-size: 1.3rem;
           margin: 0 7%;
           padding: 0;
         }
@@ -263,15 +403,16 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          width: 90%;
-          row-gap: 1.3rem;
+          width: 100%;
+          row-gap: 2rem;
           margin-top: 3rem;
 
           .airplane-img,
           .ship-img,
           .truck-img,
           .train-img {
-            height: 50%;
+            margin: 0 auto;
+            width: 100%;
           }
         }
       }
@@ -280,18 +421,49 @@
 }
 
 @media screen and (max-width: 600px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      top: 2rem;
+      left: 30%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        padding: 1% 3%;
+
+        &--icon {
+          width: 2rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.3rem;
-      padding: 3rem 0 1rem 0;
+      font-size: 1.7rem;
+      padding: 7rem 1% 1rem 1%;
     }
 
     &__description-div {
-      margin: 1rem 7% 2rem 7%;
-      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.5rem;
+      padding: 0 5% 3rem 5%;
 
-      &--focus-word {
-        margin-right: 1%;
+      &--text {
+        font-size: 1.1rem;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.5rem;
+        }
+      }
+
+      &--img {
+        width: 100%;
       }
     }
 
@@ -300,7 +472,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        row-gap: 1rem;
+        row-gap: 1.5rem;
 
         &--first-description,
         &--second-description,
@@ -331,14 +503,16 @@
           align-items: center;
 
           width: 90%;
-          row-gap: 1rem;
+          row-gap: 1.5rem;
           margin-top: 2rem;
 
           .airplane-img,
           .ship-img,
           .truck-img,
           .train-img {
-            height: 50%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
           }
         }
       }
@@ -347,22 +521,57 @@
 }
 
 @media screen and (max-width: 300px) {
-  .online-shop-about-use {
+  .online-shop-about-use-section {
+    &__link {
+      position: absolute;
+      margin-top: 1rem;
+      left: 30%;
+
+      &--back-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        padding: 1% 3%;
+
+        &--icon {
+          width: 5rem;
+          height: auto;
+        }
+      }
+    }
+
     &__headline {
-      font-size: 1.2rem;
-      padding: 2rem 0 1rem 0;
+      font-size: 1.5rem;
+      padding: 7rem 0 1rem 0;
     }
 
     &__description-div {
-      margin: 1rem 5%;
-      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.5rem;
+      margin: -1rem 0 3rem 0;
+      padding: 0 5%;
+      box-sizing: border-box;
 
-      &--focus-word {
-        margin-right: 3%;
+      &--text {
+        font-size: 0.9rem;
+
+        &--focus-word {
+          color: $amagon-secondery-color;
+          margin-right: 0.3rem;
+        }
+      }
+
+      &--img {
+        width: 100%;
       }
     }
 
     &__main-description-div {
+      padding-bottom: 0;
+
       &--first-description-div {
         display: flex;
         flex-direction: column;
@@ -383,8 +592,12 @@
       }
 
       &--second-description-div {
-        margin: 3rem 0 2rem 0;
+        margin: 3rem 0 0 0;
         width: 100%;
+
+        &--headline {
+          font-size: 0.9rem;
+        }
 
         &--img-div {
           display: flex;

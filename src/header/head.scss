@@ -9,80 +9,303 @@ body {
 }
 
 .online-shop-head-section {
-  background-color: $amagon-primary-color;
   display: flex;
-  justify-content: space-evenly;
-  height: 10rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $amagon-primary-color;
+  width: 100%;
 
-  &__img {
-    width: 10rem;
-    height: 10rem;
-    margin: auto 0;
-    border-radius: 50%;
-  }
+  &__main-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &__headline {
-    font-size: 3rem;
-    font-family: $font-art;
-    color: white;
-    line-height: 3.5rem;
+    &--logo-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $amagon-primary-color;
+      width: 6rem;
+      height: 3rem;
+      border-radius: 45%;
+      margin-left: 7rem;
 
-    .focus-word {
-      color: $amagon-secondery-color;
+      &--img {
+        width: 6rem;
+        height: auto;
+        margin: auto 0;
+        position: absolute;
+      }
+
+      &--text {
+        color: #ffe302;
+        font-family: $font-art;
+        z-index: 1;
+        font-size: 2rem;
+        text-shadow: 2px 2px 3px white;
+      }
+    }
+
+    &--headline {
+      margin: 0.5rem 0;
+      font-size: 2.3rem;
+      font-family: $font-art;
+      color: white;
+      margin-left: 0;
+
+      &--focus-text {
+        color: $amagon-secondery-color;
+      }
+
+      &--slogan-text {
+        font-size: 1.3rem;
+      }
+    }
+
+    &--link-component {
+      margin-right: 10rem;
+
+      &--shopping-cart {
+        .shopping-cart-qunatity {
+          color: $amagon-secondery-color;
+          font-size: 2.3rem;
+          margin: 0;
+          padding: 0;
+        }
+
+        .shopping-cart-logo {
+          font-size: 2.3rem;
+          margin: 0;
+          padding: 0;
+        }
+      }
     }
   }
 
-  &__link-component {
-    margin: auto 0;
+  &__nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7rem;
+    padding: 1rem 6rem 1rem 0;
+    box-sizing: border-box;
 
-    &--shopping-cart {
-      .shopping-cart-qunatity {
-        color: $amagon-secondery-color;
-        font-size: 2.3rem;
-        margin: 0;
-        padding: 0;
+    &--link {
+      color: white;
+      font-size: 1.1rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .online-shop-head-section {
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 10%;
+
+        &--img {
+          width: 5rem;
+          height: auto;
+          margin: auto 0;
+        }
+
+        &--text {
+          font-size: 2rem;
+        }
       }
 
-      .shopping-cart-logo {
-        height: 3.5rem;
-        width: 3.5rem;
-        margin: 0;
-        padding: 0;
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 1rem 10% 0 10%;
+        font-size: 2.5rem;
+        line-height: 3rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
+        }
+
+        &--slogan-text {
+          font-size: 1.5rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 10%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 2.3rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 2.3rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 7rem;
+      padding: 1rem 0 2rem 0;
+
+      &--link {
+        color: white;
+        font-size: 1.3rem;
       }
     }
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1600px) {
   .online-shop-head-section {
-    height: 7rem;
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 13%;
 
-    &__img {
-      width: 6rem;
-      height: auto;
-      object-fit: cover;
-      margin: auto 0 auto 5%;
-    }
+        &--img {
+          width: 5rem;
+          height: auto;
+          margin: auto 0;
+        }
 
-    &__headline {
-      font-size: 2.2rem;
-      line-height: 2.7rem;
-      margin: auto 0 auto 0;
-      padding: 0 5%;
-    }
-
-    &__link-component {
-      margin: auto 5% auto 0;
-
-      &--shopping-cart {
-        .shopping-cart-qunatity {
+        &--text {
           font-size: 2rem;
         }
+      }
 
-        .shopping-cart-logo {
-          height: 3rem;
-          width: 3rem;
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 1rem 10% 0 10%;
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
         }
+
+        &--slogan-text {
+          font-size: 1.3rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 7%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 2.3rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 2.3rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 7rem;
+      padding: 1rem 0 2rem 5%;
+
+      &--link {
+        color: white;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .online-shop-head-section {
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 10%;
+
+        &--img {
+          width: 5rem;
+          height: auto;
+          margin: auto 0;
+        }
+
+        &--text {
+          font-size: 2rem;
+        }
+      }
+
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 1rem 10% 0 10%;
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
+        }
+
+        &--slogan-text {
+          font-size: 1.3rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 5%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 2.3rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 2.3rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      column-gap: 0;
+      padding: 1rem 0 2rem 5%;
+
+      &--link {
+        color: white;
+        font-size: 1.3rem;
       }
     }
   }
@@ -90,34 +313,66 @@ body {
 
 @media screen and (max-width: 1000px) {
   .online-shop-head-section {
-    height: 7rem;
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 10%;
 
-    &__img {
-      width: 6rem;
-      height: auto;
-      object-fit: cover;
-      margin: auto 0 auto 3%;
-    }
+        &--img {
+          width: 4rem;
+          height: auto;
+          margin: auto 0;
+        }
 
-    &__headline {
-      font-size: 1.7rem;
-      line-height: 2.5rem;
-      margin: auto 0 auto 0;
-      padding: 0 5%;
-    }
-
-    &__link-component {
-      margin: auto 5% auto 0;
-
-      &--shopping-cart {
-        .shopping-cart-qunatity {
+        &--text {
           font-size: 1.7rem;
         }
+      }
 
-        .shopping-cart-logo {
-          height: auto;
-          width: 2.7rem;
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 1rem 10% 0 10%;
+        font-size: 2rem;
+        line-height: 2.5rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
         }
+
+        &--slogan-text {
+          font-size: 1rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 5%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 1.7rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      column-gap: 0;
+      padding: 0.7rem 0 1.3rem 5%;
+
+      &--link {
+        color: white;
+        font-size: 1.1rem;
       }
     }
   }
@@ -125,34 +380,66 @@ body {
 
 @media screen and (max-width: 600px) {
   .online-shop-head-section {
-    height: 7rem;
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 1.5rem;
+        margin-left: 8.7%;
 
-    &__img {
-      width: 5rem;
-      height: auto;
-      object-fit: cover;
-      margin: auto 0 auto 5%;
-    }
-
-    &__headline {
-      font-size: 1.1rem;
-      line-height: 1.5rem;
-      margin: auto 0 auto 0;
-      padding: 0 5%;
-    }
-
-    &__link-component {
-      margin: auto 5% auto 0;
-
-      &--shopping-cart {
-        .shopping-cart-qunatity {
-          font-size: 1.5rem;
-        }
-
-        .shopping-cart-logo {
+        &--img {
+          width: 2.5rem;
           height: auto;
-          width: 2rem;
+          margin: auto 0;
         }
+
+        &--text {
+          font-size: 1rem;
+        }
+      }
+
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 0.5rem 10% 0 10%;
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
+        }
+
+        &--slogan-text {
+          font-size: 0.8rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 7%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 1.5rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      column-gap: 0;
+      padding: 0.5rem 0 1rem 5%;
+
+      &--link {
+        color: white;
+        font-size: 0.9rem;
       }
     }
   }
@@ -160,34 +447,67 @@ body {
 
 @media screen and (max-width: 300px) {
   .online-shop-head-section {
-    height: 5rem;
+    &__main-div {
+      &--logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    &__img {
-      width: 2.9rem;
-      height: auto;
-      object-fit: cover;
-      margin: auto 0 auto 5%;
-    }
+        width: 1.5rem;
+        height: 1rem;
+        margin-left: 10%;
 
-    &__headline {
-      font-size: 0.8rem;
-      line-height: 1.1rem;
-      margin: auto 0 auto 0;
-      padding: 0 5%;
-    }
-
-    &__link-component {
-      margin: auto 5% auto 0;
-
-      &--shopping-cart {
-        .shopping-cart-qunatity {
-          font-size: 1.1rem;
-        }
-
-        .shopping-cart-logo {
-          height: auto;
+        &--img {
           width: 1.5rem;
+          height: auto;
+          margin: auto 0;
         }
+
+        &--text {
+          font-size: 0.7rem;
+        }
+      }
+
+      &--headline {
+        margin: 0.5rem 0;
+        padding: 0.5rem 10% 0 10%;
+        font-size: 0.8rem;
+        line-height: 1rem;
+
+        &--focus-text {
+          color: $amagon-secondery-color;
+        }
+
+        &--slogan-text {
+          font-size: 0.6rem;
+        }
+      }
+
+      &--link-component {
+        margin-right: 5%;
+
+        &--shopping-cart {
+          .shopping-cart-qunatity {
+            font-size: 1.2rem;
+          }
+
+          .shopping-cart-logo {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    &__nav-bar {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      column-gap: 0;
+      padding: 0.3rem 0 0.5rem 0;
+
+      &--link {
+        color: white;
+        font-size: 0.6rem;
       }
     }
   }

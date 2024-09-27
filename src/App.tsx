@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ShoppingCart from "./shoppingCart/shoppingCart";
-import Article from "./articleInfo/articleInfo";
+import ArticleInfo from "./articleInfo/articleInfo";
 import "./App.scss";
 import Root from "./root";
 import { ShoppingCartContext } from "./CustomContext";
@@ -8,6 +8,7 @@ import { ShoppingCartDatatype } from "./CustomContext";
 import { useState, useEffect } from "react";
 import CheckoutComponent from "./checkOut/checkOut";
 export const LOCALE_STORAGE_KEY = "shoppingCart";
+import AboutUsComponent from "./about us/aboutUs";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartDatatype[]>([]);
@@ -23,11 +24,15 @@ function App() {
       },
       {
         path: "products/:name",
-        element: <Article />,
+        element: <ArticleInfo />,
       },
       {
         path: "checkOut",
         element: <CheckoutComponent />,
+      },
+      {
+        path: "aboutUs",
+        element: <AboutUsComponent />,
       },
     ],
     {

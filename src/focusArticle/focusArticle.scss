@@ -1,23 +1,33 @@
 .focus-article-section {
-  margin: 2.5% 0 5% 0;
-  padding: 0;
+  margin: 0;
+  padding: 3rem 0 0 0;
+
+  &__headline {
+    font-size: 2.3rem;
+    padding: 2rem 0 5rem 0;
+  }
 
   &__focus-article-preview {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 0 10% 0 6%;
+    padding: 0 10% 5rem 6%;
     column-gap: 4rem;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .focus-article-section {
-    margin: 2.5% 0 5% 0;
+    padding: 5rem 0 3rem 0;
+
+    &__headline {
+      font-size: 2rem;
+      padding: 0.5rem 0 4rem 0;
+    }
 
     &__focus-article-preview {
       display: grid;
       grid-template-columns: 50% 50%;
-      padding: 0 7% 0 4%;
+      padding: 0 10% 0 7%;
       column-gap: 3rem;
     }
   }
@@ -25,7 +35,12 @@
 
 @media screen and (max-width: 1600px) {
   .focus-article-section {
-    margin: 2.5% 0 5% 0;
+    padding: 4rem 0 1rem 0;
+
+    &__headline {
+      font-size: 2rem;
+      padding: 1rem 0 3.5rem 0;
+    }
 
     &__focus-article-preview {
       display: grid;
@@ -38,7 +53,12 @@
 
 @media screen and (max-width: 1300px) {
   .focus-article-section {
-    margin: 2.5% 0 5% 0;
+    padding: 3rem 0 2rem 0;
+
+    &__headline {
+      font-size: 2rem;
+      padding: 1.5rem 0 3rem 0;
+    }
 
     &__focus-article-preview {
       display: grid;
@@ -51,7 +71,12 @@
 
 @media screen and (max-width: 1000px) {
   .focus-article-section {
-    margin: 2rem 0;
+    padding: 2rem 0 3rem 0;
+
+    &__headline {
+      font-size: 1.7rem;
+      padding: 2rem 0 2.5rem 0;
+    }
 
     &__focus-article-preview {
       display: flex;
@@ -65,7 +90,12 @@
 
 @media screen and (max-width: 600px) {
   .focus-article-section {
-    margin: 2rem 0;
+    padding: 2rem 0 0 0;
+
+    &__headline {
+      font-size: 1.5rem;
+      padding: 0.5rem 0 2rem 0;
+    }
 
     &__focus-article-preview {
       display: flex;
@@ -79,7 +109,12 @@
 
 @media screen and (max-width: 300px) {
   .focus-article-section {
-    margin: 1rem 0;
+    padding: 1.5rem 0 0 0;
+
+    &__headline {
+      font-size: 1.3rem;
+      padding: 0.5rem 0 1.5rem 0;
+    }
 
     &__focus-article-preview {
       display: flex;

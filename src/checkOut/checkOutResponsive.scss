@@ -4,7 +4,7 @@ $amagon-secondery-color: #ffff00;
 @media screen and (min-width: 1600px) {
   .online-shop-checkOut {
     &__header-frame {
-      height: 5rem;
+      height: 3.5rem;
       background-color: $amagon-primary-color;
     }
 
@@ -63,7 +63,7 @@ $amagon-secondery-color: #ffff00;
     &__rooter-frame {
       position: absolute;
       bottom: 0px;
-      height: 5rem;
+      height: 3.5rem;
       width: 100%;
       background-color: $amagon-primary-color;
     }
@@ -73,7 +73,7 @@ $amagon-secondery-color: #ffff00;
 @media screen and (max-width: 1600px) {
   .online-shop-checkOut {
     &__header-frame {
-      height: 5rem;
+      height: 3.5rem;
       background-color: $amagon-primary-color;
     }
 
@@ -132,7 +132,7 @@ $amagon-secondery-color: #ffff00;
     &__rooter-frame {
       position: absolute;
       bottom: 0px;
-      height: 5rem;
+      height: 3.5rem;
       width: 100%;
       background-color: $amagon-primary-color;
     }
@@ -142,7 +142,7 @@ $amagon-secondery-color: #ffff00;
 @media screen and (max-width: 1300px) {
   .online-shop-checkOut {
     &__header-frame {
-      height: 4rem;
+      height: 3rem;
       background-color: $amagon-primary-color;
     }
 
@@ -201,7 +201,7 @@ $amagon-secondery-color: #ffff00;
     &__rooter-frame {
       position: absolute;
       bottom: 0px;
-      height: 4rem;
+      height: 3rem;
       width: 100%;
       background-color: $amagon-primary-color;
     }

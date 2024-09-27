@@ -57,8 +57,7 @@ export const articles: Article[] = [
     img: car,
     id: 5,
     price: 50000,
-    description:
-      "Ein Auto das spaß macht und Fun bringt. Worauf wartest du noch.?!",
+    description: "Ein Auto das spaß macht und Fun bringt. Ford Mustan",
     itemStockTotal: 5,
     quantity: 0,
   },

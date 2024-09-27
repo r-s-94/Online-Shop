@@ -103,7 +103,9 @@ export default function ShoppingCart() {
                   {article.name}
                 </h2>
                 <p className="online-shop-shopping-cart__article--description-section--article-price">
-                  Preis: {editeArticleTotalSum(article.price, article.quantity)}{" "}
+                  Preis:{" "}
+                  {editeArticleTotalSum(article.price, article.quantity) +
+                    ",00"}{" "}
                   €
                 </p>
                 <p className="online-shop-shopping-cart__article--description-section--article-quantity">
@@ -130,7 +132,7 @@ export default function ShoppingCart() {
         <h2 className="online-shop-shopping-cart__total-sum-div--headline">
           Gesamt Summe:
           <span className="online-shop-shopping-cart__total-sum-div--headline--total-sum">
-            {calculationTotalSum()} €
+            {calculationTotalSum() + ",00"} €
           </span>
         </h2>
         <Link

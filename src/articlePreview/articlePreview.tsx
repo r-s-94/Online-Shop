@@ -16,8 +16,10 @@ export default function ArticlePreviewComponent() {
     });
 
     const articleInShoppingCart = shoppingCart.find((article) => {
-      return id === article.id;
+      return article.id === articleExists?.id;
     });
+
+    console.log(articleInShoppingCart);
 
     if (articleExists) {
       if (articleInShoppingCart === undefined) {
@@ -86,7 +88,7 @@ export default function ArticlePreviewComponent() {
   }
 
   return (
-    <section className="article-preview-section">
+    <section id="allArticle" className="article-preview-section">
       <h2 className="article-preview-section__headline">Unsere Angebote</h2>
       <div className="article-preview-section__article-preview">
         {articles.map((article) => {

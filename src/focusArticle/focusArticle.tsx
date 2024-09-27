@@ -17,7 +17,7 @@ export default function article() {
     });
 
     const articleInShoppingCart = shoppingCart.find((article) => {
-      return id === article.id;
+      return articleExists?.id === article.id;
     });
 
     console.log();
@@ -89,7 +89,8 @@ export default function article() {
   }
 
   return (
-    <section className="focus-article-section">
+    <section id="supaSales" className="focus-article-section">
+      <h2 className="focus-article-section__headline">Unsere Super Sales</h2>
       <div className="focus-article-section__focus-article-preview">
         <ArticleComponent article={articles[0]} checkArticle={checkArticle} />
         <ArticleComponent article={articles[3]} checkArticle={checkArticle} />

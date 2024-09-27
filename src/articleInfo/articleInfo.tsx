@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { articles } from "../articleData";
+import { Article, articles } from "../articleData";
 import "./articleInfo.scss";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 import { LOCALE_STORAGE_KEY } from "../App";
 import "./articleInfoResponsive.scss";
 
-export default function Article() {
+export default function ArticleInfo() {
   const { name } = useParams();
 
   const selectedArticle = articles.find((article) => {
@@ -55,12 +55,12 @@ export default function Article() {
 
   function checkArticle() {
     console.log(selectedArticle);
-    const findArticle = shoppingCart.find((article) => {
+    const correctSelectedArticle = shoppingCart.find((article) => {
       return article.id === selectedArticle?.id;
     });
 
-    if (findArticle) {
-      correctArticle();
+    if (correctSelectedArticle) {
+      correctArticle(correctSelectedArticle);
     } else {
       addArticleToShoppingCart();
     }
@@ -81,9 +81,9 @@ export default function Article() {
       /*  ein weiteres Objekt war nötig
       
       */
-      console.log(articleOrder);
+
       const updatedShoppingCard = [...shoppingCart, articleOrder];
-      console.log(updatedShoppingCard);
+
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
     }
@@ -93,24 +93,31 @@ export default function Article() {
     localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
   }
 
-  function correctArticle() {
-    console.log(selectedArticle);
-    if (selectedArticle) {
+  function correctArticle(
+    correctSelectedArticle: Article | ShoppingCartDatatype
+  ) {
+    console.log(correctSelectedArticle);
+    if (correctSelectedArticle) {
       const findArticleIndex = shoppingCart.findIndex((article) => {
-        return selectedArticle.name === article.name;
+        return correctSelectedArticle.id === article.id;
       });
-      console.log(findArticleIndex);
-      console.log(shoppingCart);
+
+      /*console.log(findArticleIndex);
+      console.log(shoppingCart);*/
+      console.log(correctSelectedArticle);
 
       const correctArticleOrder: ShoppingCartDatatype = {
-        name: selectedArticle.name,
-        img: selectedArticle.img,
-        price: selectedArticle.price,
-        quantity: count,
-        id: selectedArticle.id,
+        name: correctSelectedArticle.name,
+        img: correctSelectedArticle.img,
+        price: correctSelectedArticle.price,
+        quantity: count + correctSelectedArticle?.quantity,
+        id: correctSelectedArticle.id,
       };
+
       const updatedShoppingCard = [...shoppingCart];
+
       updatedShoppingCard.splice(findArticleIndex, 1, correctArticleOrder);
+
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
     }
@@ -227,7 +234,8 @@ export default function Article() {
 
           <div className="online-shop-single-article__preview--right-section--price-and-itemStock-div">
             <p className="online-shop-single-article__preview--right-section--price-and-itemStock-div--article-price">
-              Preis: {editeArticleTotalSum(selectedArticle.price, count)} €
+              Preis:{" "}
+              {editeArticleTotalSum(selectedArticle.price, count) + ",00"} €
             </p>
             <div
               className={`${
@@ -255,6 +263,15 @@ export default function Article() {
 
 /*
 
+
+
+
+
+     
+
+     
+
+    
 
 
 

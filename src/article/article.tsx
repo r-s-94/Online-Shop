@@ -29,7 +29,7 @@ export default function ArticleComponent({
         </p>
         <div className="article__description-section--price-and-sale-icon-div">
           <p className="article__description-section--price-and-sale-icon-div--article-price">
-            {article.price.toLocaleString()} €
+            {article.price.toLocaleString() + ",00"} €
           </p>
           <img
             src={shoppingPriceTag}

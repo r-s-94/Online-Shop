@@ -3,7 +3,8 @@
   border-radius: 0.2rem;
   width: 100%;
   height: 350px;
-  background-color: white;
+  /*background-color: #f3f5f6;*/
+  background-color: #fafafa;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -97,8 +98,78 @@
   }
 }
 
-/*@media screen and (min-width: 1600px) {
-}*/
+@media screen and (min-width: 1600px) {
+  .article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20rem;
+
+    &__img-section {
+      width: 50%;
+      height: 100%;
+
+      &--article-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__description-section {
+      width: 50%;
+      height: 100%;
+      padding: 1.3rem 0;
+      row-gap: 1.5rem;
+
+      &--article-headline {
+        font-size: 1.9rem;
+      }
+
+      &--article-description {
+        font-size: 1.6rem;
+        padding: 0 3%;
+      }
+
+      &--price-and-sale-icon-div {
+        &--article-price {
+          font-size: 1.8rem;
+          margin: 0;
+        }
+
+        &--sale-icon {
+          width: 2.5rem;
+          height: auto;
+          margin: 0;
+          object-fit: cover;
+        }
+      }
+
+      &--button-div {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &--add-shoppingcart-button {
+          font-size: 1.5rem;
+          padding: 0.1rem 0.3rem;
+
+          &--icon {
+            font-size: 1.3rem;
+          }
+        }
+
+        &--link-component {
+          &--more-info-button {
+            font-size: 1.5rem;
+            padding: 0.1rem 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 1600px) {
   .article {
@@ -124,22 +195,22 @@
       row-gap: 1.5rem;
 
       &--article-headline {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
 
       &--article-description {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         padding: 0 3%;
       }
 
       &--price-and-sale-icon-div {
         &--article-price {
-          font-size: 2rem;
+          font-size: 1.8rem;
           margin: 0;
         }
 
         &--sale-icon {
-          width: 2.3rem;
+          width: 2.4rem;
           height: auto;
           margin: 0;
           object-fit: cover;
@@ -154,17 +225,17 @@
         align-items: center;
 
         &--add-shoppingcart-button {
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           padding: 0.1rem 0.3rem;
 
           &--icon {
-            font-size: 1rem;
+            font-size: 1.1rem;
           }
         }
 
         &--link-component {
           &--more-info-button {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             padding: 0.1rem 0.3rem;
           }
         }
@@ -197,11 +268,11 @@
       row-gap: 1.5rem;
 
       &--article-headline {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       &--article-description {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         padding: 0;
       }
 
@@ -212,7 +283,7 @@
         }
 
         &--sale-icon {
-          width: 1.7rem;
+          width: 2rem;
           height: auto;
           margin: 0;
           object-fit: cover;
@@ -276,7 +347,7 @@
       }
 
       &--article-description {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         padding: 0;
       }
 
@@ -302,17 +373,17 @@
         column-gap: 3rem;
 
         &--add-shoppingcart-button {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           padding: 0.1rem 0.3rem;
 
           &--icon {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
           }
         }
 
         &--link-component {
           &--more-info-button {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             padding: 0.1rem 0.3rem;
           }
         }

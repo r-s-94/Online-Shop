@@ -7,20 +7,50 @@ import aboutUseTransportAirplain from "../assets/online shop about use transport
 import aboutUseTransportTrain from "../assets/online shop about use transport train img.jpg";
 import aboutUseTransportTruck from "../assets/online shop about use transport truck img.jpg";
 import aboutUseTransportShip from "../assets/online shop about use transport ship img.jpg";
+import Amagon from "../assets/Amagonunternehmen.jpg";
+import { Link } from "react-router-dom";
 
-export default function aboutUsComponent() {
+export default function AboutUsComponent() {
   return (
-    <div className="online-shop-about-use">
-      <h2 className="online-shop-about-use__headline">ÜBER UNS</h2>
-      <div className="online-shop-about-use__description-div">
-        <h4>
-          <span className="online-shop-about-use__description-div--focus-word">
+    <section className="online-shop-about-use-section">
+      <Link to="/" className="online-shop-about-use-section__link">
+        <button className="online-shop-about-use-section__link--back-menu-button">
+          {" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="online-shop-about-us-section__link--back-menu-button--icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+          zum Hauptmenu
+        </button>
+      </Link>
+
+      <h2 className="online-shop-about-use-section__headline">
+        Das Unternehmen{" "}
+        <span className="online-shop-about-use-section__headline--focus-text">
+          Amagon
+        </span>{" "}
+      </h2>
+
+      <div className="online-shop-about-use-section__description-div">
+        <p className="online-shop-about-use-section__description-div--text">
+          {" "}
+          <span className="online-shop-about-use-section__description-div--text--focus-word">
             Amagon
           </span>
           ist ein Weltweites, Globales Online-Business-Unternehmen was dir genau
           das Bietet was du brauchst.
-        </h4>
-        <p>
+          <br />
+          <br />
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iste
           consequatur voluptatem nemo ipsam excepturi similique distinctio qui
           possimus autem eligendi, blanditiis laudantium dolorem commodi beatae
@@ -29,11 +59,16 @@ export default function aboutUsComponent() {
           quod cum voluptatibus nobis, veniam provident vero dignissimos
           reprehenderit perferendis. Voluptates, odit unde! Possimus, magnam.
         </p>
+        <img
+          src={Amagon}
+          alt=""
+          className="online-shop-about-use-section__description-div--img"
+        />
       </div>
 
-      <div className="online-shop-about-use__main-description-div">
-        <div className="online-shop-about-use__main-description-div--first-description-div">
-          <div className="online-shop-about-use__main-description-div--first-description-div--first-description">
+      <div className="online-shop-about-use-section__main-description-div">
+        <div className="online-shop-about-use-section__main-description-div--first-description-div">
+          <div className="online-shop-about-use-section__main-description-div--first-description-div--first-description">
             <img
               src={customerSupportTeam}
               alt=""
@@ -45,7 +80,7 @@ export default function aboutUsComponent() {
             </p>
           </div>
 
-          <div className="online-shop-about-use__main-description-div--first-description-div--second-description">
+          <div className="online-shop-about-use-section__main-description-div--first-description-div--second-description">
             <img
               src={customerSupport}
               alt=""
@@ -56,7 +91,7 @@ export default function aboutUsComponent() {
             </p>
           </div>
 
-          <div className="online-shop-about-use__main-description-div--first-description-div--third-description">
+          <div className="online-shop-about-use-section__main-description-div--first-description-div--third-description">
             <img src={wareHouse} alt="" className="about-use-third-img" />
             <p className="about-use-third-text">
               Unser Lager ist stets aktuell, gefühlt und alle geben 100% damit
@@ -65,12 +100,12 @@ export default function aboutUsComponent() {
           </div>
         </div>
 
-        <div className="online-shop-about-use__main-description-div--second-description-div">
-          <h4 className="online-shop-about-use__main-description-div--second-description-div--headline">
+        <div className="online-shop-about-use-section__main-description-div--second-description-div">
+          <h4 className="online-shop-about-use-section__main-description-div--second-description-div--headline">
             Egal ob zu Wasser, in der Luft, auf Schienen oder auf der Straße,
             kein Weg zu dir ist uns zuweit oder zu umständlich.
           </h4>
-          <div className="online-shop-about-use__main-description-div--second-description-div--img-div">
+          <div className="online-shop-about-use-section__main-description-div--second-description-div--img-div">
             <img
               src={aboutUseTransportAirplain}
               alt=""
@@ -82,7 +117,7 @@ export default function aboutUsComponent() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 
   /*
