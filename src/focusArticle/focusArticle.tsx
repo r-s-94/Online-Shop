@@ -10,7 +10,7 @@ import PopUp from "../PopUp/popUp";
 
 export default function FocusArticleComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
-  const [, setTimeoutControl] = useState<number>(0);
+  const [timeControl, setTimeoutControl] = useState<number>(0);
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
   const [popUpMessage, setPopUpMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");
