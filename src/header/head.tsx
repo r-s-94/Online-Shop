@@ -7,7 +7,6 @@ import { HashLink } from "react-router-hash-link";
 
 export default function HeadComponent() {
   const { shoppingCart } = useContext(ShoppingCartContext);
-  const [x, setX] = useState(0);
 
   return (
     <section id="top" className="online-shop-head-section">
