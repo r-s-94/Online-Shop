@@ -71,14 +71,11 @@ $frame-color: #001f3f;
 
             &--more-infos-button {
               font-size: 1.3rem;
-              padding: 0.1rem 2.1rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              padding: 0.2rem 2.1rem;
 
               &--icon {
                 margin-left: 0.5rem;
-                font-size: 1.7rem;
+                width: 2rem;
               }
             }
           }
@@ -86,9 +83,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.2rem 1.1rem;
             font-size: 1.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -203,14 +197,11 @@ $frame-color: #001f3f;
 
             &--more-infos-button {
               font-size: 1.3rem;
-              padding: 0.1rem 2.1rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              padding: 0.2rem 2.1rem;
 
               &--icon {
                 margin-left: 0.5rem;
-                font-size: 1.7rem;
+                width: 2rem;
               }
             }
           }
@@ -218,9 +209,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.2rem 1.1rem;
             font-size: 1.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -334,14 +322,11 @@ $frame-color: #001f3f;
 
             &--more-infos-button {
               font-size: 1.3rem;
-              padding: 0.1rem 2.1rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              padding: 0.2rem 2.1rem;
 
               &--icon {
                 margin-left: 0.5rem;
-                font-size: 1.7rem;
+                width: 2rem;
               }
             }
           }
@@ -349,9 +334,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.2rem 1.1rem;
             font-size: 1.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -467,14 +449,11 @@ $frame-color: #001f3f;
 
             &--more-infos-button {
               font-size: 1.3rem;
-              padding: 0.1rem 2.1rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              padding: 0.3rem 1.8rem;
 
               &--icon {
-                margin-left: 0.5rem;
-                font-size: 1.7rem;
+                margin-left: 0.6rem;
+                width: 2rem;
               }
             }
           }
@@ -482,9 +461,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.3rem 1.1rem;
             font-size: 1.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -600,14 +576,11 @@ $frame-color: #001f3f;
 
             &--more-infos-button {
               font-size: 1.2rem;
-              padding: 0.1rem 1.9rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              padding: 0.2rem 1.7rem;
 
               &--icon {
                 margin-left: 0.5rem;
-                font-size: 1.5rem;
+                width: 1.9rem;
               }
             }
           }
@@ -615,9 +588,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.3rem 1.1rem;
             font-size: 1.1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -733,15 +703,12 @@ $frame-color: #001f3f;
             text-decoration: none;
 
             &--more-infos-button {
-              font-size: 0.9rem;
-              padding: 0.1rem 1.9rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              font-size: 1rem;
+              padding: 0.1rem 1.4rem;
 
               &--icon {
                 margin-left: 0.5rem;
-                font-size: 1.3rem;
+                width: 1.7rem;
               }
             }
           }
@@ -749,9 +716,6 @@ $frame-color: #001f3f;
           &--delete-button {
             padding: 0.3rem 1rem;
             font-size: 0.9rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &--icon {
               margin-left: 0.3rem;
@@ -783,7 +747,6 @@ $frame-color: #001f3f;
       font-size: 1rem;
       padding: 0.2rem 0.7rem;
       margin: 2rem 0 4rem 0;
-
       border: 1px solid black;
     }
   }

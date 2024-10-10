@@ -100,6 +100,9 @@
 
           &--icon {
             color: #00559a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1.5rem;
             //#66d3fa
             //#24a0ed
@@ -157,7 +160,7 @@
       }
 
       &--button-div {
-        margin: 0 0 -1rem 0;
+        margin: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -172,18 +175,17 @@
             font-size: 1.3rem;
           }
         }
-
         &--link-component {
           &--more-info-button {
+            font-size: 1.2rem;
+            padding: 0.2rem 2.8rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.4rem;
-            padding: 0.2rem 2.8rem;
 
             &--icon {
-              margin-left: 0.7rem;
-              font-size: 1.7rem;
+              margin-left: 1.1rem;
+              width: 2.1rem;
             }
           }
         }
@@ -241,10 +243,10 @@
       &--button-div {
         margin: 0;
         width: 100%;
+        row-gap: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        row-gap: 0.7rem;
 
         &--add-shoppingcart-button {
           font-size: 1.4rem;
@@ -257,12 +259,15 @@
 
         &--link-component {
           &--more-info-button {
-            font-size: 1.4rem;
-            padding: 0.1rem 2rem;
+            font-size: 1.2rem;
+            padding: 0.2rem 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &--icon {
-              margin-left: 0.7rem;
-              font-size: 1.5rem;
+              margin-left: 1.1rem;
+              width: 1.9rem;
             }
           }
         }
@@ -340,14 +345,11 @@
         &--link-component {
           &--more-info-button {
             font-size: 1.2rem;
-            padding: 0.1rem 2.2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0.2rem 2rem;
 
             &--icon {
               margin-left: 1.1rem;
-              font-size: 1.7rem;
+              width: 2rem;
             }
           }
         }
@@ -404,11 +406,12 @@
 
       &--button-div {
         margin: 0;
-        padding: 0;
+        padding: 0 auto;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        align-items: center;
 
         &--add-shoppingcart-button {
           font-size: 1.2rem;
@@ -422,16 +425,13 @@
 
         &--link-component {
           &--more-info-button {
-            margin: 0 -3rem 0 0;
-            padding: 0.1rem 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
+            padding: 0.3rem 1rem;
             font-size: 1.3rem;
 
             &--icon {
               margin-left: 1rem;
-              font-size: 1.6rem;
+              width: 1.7rem;
             }
           }
         }
@@ -510,15 +510,12 @@
         &--link-component {
           &--more-info-button {
             margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0.2rem 1.8rem;
             font-size: 1.2rem;
 
             &--icon {
               margin-left: 1rem;
-              font-size: 1.6rem;
+              width: 1.7rem;
             }
           }
         }
@@ -597,15 +594,13 @@
         &--link-component {
           &--more-info-button {
             margin: 0 auto;
-            padding: 0.2rem 1.9rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0.2rem 1.7rem;
             font-size: 1.1rem;
 
             &--icon {
               margin-left: 0.5rem;
-              font-size: 1.3rem;
+              width: 1.5rem;
+              height: auto;
             }
           }
         }

@@ -104,7 +104,10 @@
             &--icon {
               margin-left: 0.5rem;
               color: #00559a;
-              font-size: 1.5rem;
+              width: 1.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
           }
         }
