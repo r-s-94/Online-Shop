@@ -205,7 +205,7 @@ export default function ArticleInfo() {
         </div>
       )}
 
-      {showShortPopUp && <PopUp message={popUpMessage} bild={picture} />}
+      {showShortPopUp && <PopUp message={popUpMessage} picture={picture} />}
 
       <button
         onClick={historyBack}

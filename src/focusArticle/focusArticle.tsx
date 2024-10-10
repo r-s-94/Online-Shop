@@ -2,18 +2,15 @@ import { articles } from "../articleData";
 import "./focusArticle.scss";
 import ArticleComponent from "../article/article";
 import { ShoppingCartContext } from "../CustomContext";
-//import { ArticleIdContext } from "../articleIdContext";
 import { useContext, useState } from "react";
 import { Article } from "../articleData";
 import { ShoppingCartDatatype } from "../CustomContext";
 import { LOCALE_STORAGE_KEY } from "../App";
-//import { LOCALE_STORAGE_ARTICLE_ID_KEY } from "../App";
 import PopUp from "../PopUp/popUp";
 
 export default function FocusArticleComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
-  //const { articleIdArray, setArticleIdArray } = useContext(ArticleIdContext);
-  const [timeoutControl, setTimeoutControl] = useState<number>(0);
+  const [, setTimeoutControl] = useState<number>(0);
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
   const [popUpMessage, setPopUpMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");
@@ -128,7 +125,7 @@ export default function FocusArticleComponent() {
     <section id="supaSales" className="focus-article-section">
       <h2 className="focus-article-section__headline">Unsere Super Sales</h2>
 
-      {showPopUp && <PopUp message={popUpMessage} bild={picture} />}
+      {showPopUp && <PopUp message={popUpMessage} picture={picture} />}
 
       <div className="focus-article-section__focus-article-preview">
         <ArticleComponent article={articles[0]} checkArticle={checkArticle} />

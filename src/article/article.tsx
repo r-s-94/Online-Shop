@@ -3,8 +3,6 @@ import shoppingPriceTag from "../assets/shopping-price-tag.png";
 import { Article } from "../articleData";
 import "./article.scss";
 import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function ArticleComponent({
   article,
@@ -64,7 +62,6 @@ export default function ArticleComponent({
               </span>
             </button>
           </Link>{" "}
-          <ToastContainer />
         </div>
       </div>
     </div>

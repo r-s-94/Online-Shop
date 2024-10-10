@@ -5,16 +5,13 @@ import "./App.scss";
 import Root from "./root";
 import { ShoppingCartContext } from "./CustomContext";
 import { ShoppingCartDatatype } from "./CustomContext";
-//import { ArticleIdContext } from "./articleIdContext";
 import { useState, useEffect } from "react";
 import CheckoutComponent from "./checkOut/checkOut";
 export const LOCALE_STORAGE_KEY = "shoppingCart";
-//export const LOCALE_STORAGE_ARTICLE_ID_KEY = "articleId";
 import AboutUsComponent from "./about us/aboutUs";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartDatatype[]>([]);
-  //const [articleIdArray, setArticleIdArray] = useState<number[]>([]);
   const router = createBrowserRouter(
     [
       {
@@ -45,7 +42,6 @@ function App() {
 
   useEffect(() => {
     loadArticles();
-    //loadArticleId();
   }, []);
 
   function loadArticles() {
@@ -54,15 +50,6 @@ function App() {
       setShoppingCart([...JSON.parse(getArticlesFromStorage)]);
     }
   }
-
-  /*function loadArticleId() {
-    const getArticleIdFromStorage = localStorage.getItem(
-      LOCALE_STORAGE_ARTICLE_ID_KEY
-    );
-    if (getArticleIdFromStorage !== null) {
-      setShoppingCart([...JSON.parse(getArticleIdFromStorage)]);
-    }
-  }*/
 
   return (
     <ShoppingCartContext.Provider value={{ shoppingCart, setShoppingCart }}>
@@ -73,8 +60,7 @@ function App() {
   );
 
   /*
-   <ArticleIdContext.Provider value={{ articleIdArray, setArticleIdArray }}>
-  </ArticleIdContext.Provider>
+  
   */
 }
 

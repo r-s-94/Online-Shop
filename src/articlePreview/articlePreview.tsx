@@ -50,7 +50,6 @@ export default function ArticlePreviewComponent() {
         quantity: 1,
         id: findArticle.id,
         declination: findArticle.declination,
-        count: 0,
       };
       /*  ein weiteres Objekt war nötig
             
@@ -101,7 +100,6 @@ export default function ArticlePreviewComponent() {
       quantity: findArticle.quantity + 1,
       id: findArticle.id,
       declination: findArticle.declination,
-      count: 0,
     };
 
     console.log(updateArticleOrder);
@@ -129,7 +127,7 @@ export default function ArticlePreviewComponent() {
     <section id="allArticle" className="article-preview-section">
       <h2 className="article-preview-section__headline">Unsere Angebote</h2>
 
-      {showPopUp && <PopUp message={popUpMessage} bild={picture} />}
+      {showPopUp && <PopUp message={popUpMessage} picture={picture} />}
 
       <div className="article-preview-section__article-preview">
         {articles.map((article) => {
