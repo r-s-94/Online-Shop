@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import shoppingPriceTag from "../assets/shopping-price-tag.png";
 import { Article } from "../articleData";
 import "./article.scss";
+import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ArticleComponent({
   article,
@@ -29,7 +32,7 @@ export default function ArticleComponent({
         </p>
         <div className="article__description-section--price-and-sale-icon-div">
           <p className="article__description-section--price-and-sale-icon-div--article-price">
-            {article.price.toLocaleString() + ",00"} €
+            {<EditArticlePriceComponent articlePrice={article.price} />}
           </p>
           <img
             src={shoppingPriceTag}
@@ -55,9 +58,13 @@ export default function ArticleComponent({
             className="article__description-section--button-div--link-component link-component"
           >
             <button className="article__description-section--button-div--link-component--more-info-button button">
-              mehr Infos
+              mehr Infos{" "}
+              <span className="article__description-section--button-div--link-component--more-info-button--icon">
+                &#128712;
+              </span>
             </button>
-          </Link>
+          </Link>{" "}
+          <ToastContainer />
         </div>
       </div>
     </div>

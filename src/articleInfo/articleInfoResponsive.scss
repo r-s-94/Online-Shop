@@ -8,44 +8,22 @@ $amagon-secondery-color: #ffff00;
       height: 3rem;
     }
 
-    &__link-div {
-      margin-top: 2rem;
+    &__back-menu-button {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 0.5rem 0.7rem;
+      margin: 5rem 0 5rem 10%;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6rem;
-        padding: 0.3rem 0.7rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 2.4rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 1.9rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1.8rem;
-        }
+      &--icon {
+        width: 2rem;
       }
     }
 
     &__preview {
       max-width: 70rem;
-      margin: 2rem auto;
+      margin: 3rem auto 5rem auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -140,18 +118,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1.6rem;
           margin: 2rem 0 3rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 3rem;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
@@ -163,38 +131,16 @@ $amagon-secondery-color: #ffff00;
       height: 3rem;
     }
 
-    &__link-div {
-      margin-top: 2rem;
+    &__back-menu-button {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 0.5rem 0.7rem;
+      margin: 5rem 0 5rem 10%;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.6rem;
-        padding: 0.3rem 0.7rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 2.4rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 1.9rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1.8rem;
-        }
+      &--icon {
+        width: 2rem;
       }
     }
 
@@ -295,18 +241,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1.6rem;
           margin: 2rem 0 3rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 3rem;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
@@ -318,38 +254,16 @@ $amagon-secondery-color: #ffff00;
       height: 3rem;
     }
 
-    &__link-div {
-      margin-top: 3rem;
+    &__back-menu-button {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.5rem;
+      margin: 5rem 0 5rem 7%;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        padding: 0.3rem 0.5rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 2rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.3rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 1.9rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1.8rem;
-        }
+      &--icon {
+        width: 2rem;
       }
     }
 
@@ -450,18 +364,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1.5rem;
           margin: 2rem 0 3rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 3rem;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
@@ -473,38 +377,16 @@ $amagon-secondery-color: #ffff00;
       height: 3rem;
     }
 
-    &__link-div {
-      margin-top: 2rem;
+    &__back-menu-button {
       display: flex;
       justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.5rem;
+      margin: 4rem auto;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.3rem;
-        padding: 0.3rem 0.5rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 1.7rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.3rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 1.7rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1.6rem;
-        }
+      &--icon {
+        width: 2rem;
       }
     }
 
@@ -603,19 +485,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1.4rem;
           margin: 1rem 0 3rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 3rem;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
@@ -627,38 +498,16 @@ $amagon-secondery-color: #ffff00;
       height: 2rem;
     }
 
-    &__link-div {
-      margin-top: 1.5rem;
+    &__back-menu-button {
       display: flex;
       justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      padding: 0.3rem 0.5rem;
+      margin: 3rem auto;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
-        padding: 0.3rem 0.5rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 1.5rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.3rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 1.3rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1.3rem;
-        }
+      &--icon {
+        width: 1.7rem;
       }
     }
 
@@ -757,19 +606,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1.2rem;
           margin: 0.5rem 0 2rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 2rem;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
   }
 }
@@ -781,38 +619,16 @@ $amagon-secondery-color: #ffff00;
       height: 1.5rem;
     }
 
-    &__link-div {
-      margin-top: 2rem;
+    &__back-menu-button {
       display: flex;
       justify-content: center;
+      align-items: center;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.5rem;
+      margin: 3rem auto 0 auto;
 
-      &--back-menu-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.7rem;
-        padding: 0.3rem 0.5rem;
-        margin-right: 15%;
-
-        &--icon {
-          width: 1.3rem;
-        }
-      }
-
-      &--link-component {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.3rem 0.5rem;
-        margin: 0;
-
-        &--shopping-cart-quantity {
-          font-size: 0.9rem;
-        }
-
-        &--shopping-cart-icon {
-          font-size: 1rem;
-        }
+      &--icon {
+        width: 1.3rem;
       }
     }
 
@@ -927,19 +743,8 @@ $amagon-secondery-color: #ffff00;
           font-size: 1rem;
           margin: 0.1rem 0 1.5rem 0;
           padding: 0.1rem 0.5rem;
-          background-color: #faed27;
-          border: 1px solid black;
-          border-radius: 0.2rem;
         }
       }
-    }
-
-    &__rooter-frame {
-      background-color: $amagon-primary-color;
-      height: 1.5rem;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
     }
   }
 }

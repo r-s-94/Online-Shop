@@ -13,6 +13,7 @@ export interface Article {
   description: string;
   itemStockTotal: number;
   quantity: number;
+  declination: string;
 }
 
 export const articles: Article[] = [
@@ -24,6 +25,7 @@ export const articles: Article[] = [
     description: "lecker knackig ",
     itemStockTotal: 5,
     quantity: 0,
+    declination: "Der",
   },
   {
     name: "Birne",
@@ -33,6 +35,7 @@ export const articles: Article[] = [
     description: "fruchtig frisch",
     itemStockTotal: 5,
     quantity: 0,
+    declination: "Die",
   },
   {
     name: "Weintrauben",
@@ -42,6 +45,7 @@ export const articles: Article[] = [
     description: "Ausgereift und saftig",
     itemStockTotal: 5,
     quantity: 0,
+    declination: "Die",
   },
   {
     name: "Computer",
@@ -51,6 +55,7 @@ export const articles: Article[] = [
     description: "Hochleistungsfähig und schnell",
     itemStockTotal: 10,
     quantity: 0,
+    declination: "Der",
   },
   {
     name: "Auto",
@@ -60,14 +65,16 @@ export const articles: Article[] = [
     description: "Ein Auto das spaß macht und Fun bringt. Ford Mustan",
     itemStockTotal: 5,
     quantity: 0,
+    declination: "Das",
   },
   {
-    name: "Fitnessgeräte",
+    name: "Fitnessgerät",
     img: fitness,
     id: 6,
     price: 1000,
     description: "Ein fitter Körper ist ein straker und gesunder Körper.",
     itemStockTotal: 10,
     quantity: 0,
+    declination: "Das",
   },
 ];

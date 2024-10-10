@@ -1,5 +1,8 @@
 .footer-section {
   padding: 5rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #000f3f;
   display: flex;
   justify-content: center;
@@ -30,6 +33,9 @@
     justify-content: center;
     align-items: center;
     column-gap: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 
     &__footer-info {
       font-size: 1.3rem;
@@ -44,6 +50,9 @@
     justify-content: center;
     align-items: center;
     column-gap: 2rem;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 
     &__footer-info {
       font-size: 1.3rem;
@@ -58,6 +67,9 @@
     justify-content: center;
     align-items: center;
     column-gap: 2%;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 
     &__footer-info {
       font-size: 1.3rem;
@@ -69,6 +81,9 @@
   .footer-section {
     padding: 3rem 0;
     display: block;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 
     &__footer-info {
       font-size: 1.3rem;
@@ -84,6 +99,9 @@
   .footer-section {
     padding: 2rem 0;
     display: block;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 
     &__footer-info {
       font-size: 1.3rem;
@@ -99,6 +117,9 @@
   .footer-section {
     padding: 1.3rem 0;
     display: block;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 
     &__footer-info {
       font-size: 1rem;

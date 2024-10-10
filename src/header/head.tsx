@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../CustomContext";
 import Planet_Earth from "../assets/pngegg.png";
 import "./head.scss";
+import { HashLink } from "react-router-hash-link";
 
 export default function HeadComponent() {
   const { shoppingCart } = useContext(ShoppingCartContext);
@@ -44,18 +45,23 @@ export default function HeadComponent() {
         </Link>
       </div>{" "}
       <nav className="online-shop-head-section__nav-bar">
-        <a
-          href="#supaSales"
+        <Link to="/" className="online-shop-head-section__nav-bar--link">
+          zur Hauptseite
+        </Link>
+        <HashLink
+          to="/#supaSales"
           className="online-shop-head-section__nav-bar--link"
         >
+          {" "}
           Super Sales
-        </a>
-        <a
-          href="#allArticle"
+        </HashLink>
+        <HashLink
+          to="/#allArticle"
           className="online-shop-head-section__nav-bar--link"
         >
           Unsere Angebote
-        </a>
+        </HashLink>
+
         <Link to="/aboutUs" className="online-shop-head-section__nav-bar--link">
           {" "}
           Über Uns

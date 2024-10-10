@@ -1,0 +1,126 @@
+.pop-up-div {
+  position: fixed;
+  width: 40rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 20rem;
+  right: 35rem;
+  background-color: white;
+  border: 1px solid #ededed;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+
+  &__img {
+    margin-left: 2rem;
+    width: 3rem;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .pop-up-div {
+    width: 27rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35rem;
+    right: 1%;
+    font-size: 1.1rem;
+
+    &__img {
+      margin-left: 0;
+      width: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .pop-up-div {
+    width: 23rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 37rem;
+    right: 3%;
+    font-size: 1rem;
+
+    &__img {
+      margin-left: 0;
+      width: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .pop-up-div {
+    width: 27rem;
+    padding: 0.7rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 38rem;
+    right: 1%;
+    font-size: 1rem;
+
+    &__img {
+      margin-left: 0;
+      width: 1.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .pop-up-div {
+    width: 10rem;
+    padding: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 45rem;
+    right: 5%;
+    font-size: 0.8rem;
+
+    &__img {
+      margin-left: 0;
+      width: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pop-up-div {
+    width: 9rem;
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 45rem;
+    right: 5%;
+    font-size: 0.8rem;
+
+    &__img {
+      width: 1.4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .pop-up-div {
+    width: 7rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 40rem;
+    right: 5%;
+    font-size: 0.6rem;
+
+    &__img {
+      width: 1.1rem;
+    }
+  }
+}

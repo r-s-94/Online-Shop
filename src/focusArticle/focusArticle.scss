@@ -1,6 +1,7 @@
 .focus-article-section {
   margin: 0;
   padding: 3rem 0 0 0;
+  background-color: #fafafa;
 
   &__headline {
     font-size: 2.3rem;
@@ -27,8 +28,8 @@
     &__focus-article-preview {
       display: grid;
       grid-template-columns: 50% 50%;
-      padding: 0 10% 0 7%;
-      column-gap: 3rem;
+      padding: 0 7% 0 4%;
+      column-gap: 2.5rem;
     }
   }
 }
@@ -45,8 +46,8 @@
     &__focus-article-preview {
       display: grid;
       grid-template-columns: 50% 50%;
-      padding: 0 6% 0 5%;
-      column-gap: 2rem;
+      padding: 0 3% 0 2%;
+      column-gap: 1.5rem;
     }
   }
 }
@@ -61,10 +62,11 @@
     }
 
     &__focus-article-preview {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      padding: 0 7% 0 5%;
-      column-gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+      padding: 0 3% 0 5%;
     }
   }
 }

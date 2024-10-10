@@ -1,18 +1,24 @@
 import { useContext, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Article, articles } from "../articleData";
 import "./articleInfo.scss";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
+//import { ArticleIdContext } from "../articleIdContext";
 import { LOCALE_STORAGE_KEY } from "../App";
+//import { LOCALE_STORAGE_ARTICLE_ID_KEY } from "../App";
 import "./articleInfoResponsive.scss";
+import HeadComponent from "../header/head";
+import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
+import PopUp from "../PopUp/popUp";
+import FooterComponent from "../footer/footer";
+import Count from "../count/count";
 
 export default function ArticleInfo() {
   const { name } = useParams();
-
   const selectedArticle = articles.find((article) => {
     return name === article.name;
   });
-
+  //const { articleIdArray, setArticleIdArray } = useContext(ArticleIdContext);
   const [count, setCount] = useState<number>(1);
   const [itemStock, setItemStock] = useState<number>(
     selectedArticle?.itemStockTotal || 0
@@ -28,24 +34,34 @@ export default function ArticleInfo() {
   const [userMessage, setUserMessage] = useState<string>("");
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
   const navigate = useNavigate();
+  const [timeoutControl, setTimeoutControl] = useState<number>(0);
+  const [showShortPopUp, setShowShortPopUp] = useState<boolean>(false);
+  const [popUpMessage, setPopUpMessage] = useState<string>("");
+  const [picture, setPicture] = useState<string>("");
 
-  function countUp() {
-    if (itemStock === 0) {
-      return;
-    } else {
-      setCount(count + 1);
-      setItemStock(itemStock - 1);
+  function countUp(id: number) {
+    if (id) {
+      if (itemStock === 0) {
+        return;
+      } else {
+        setCount(count + 1);
+        setItemStock(itemStock - 1);
+      }
     }
   }
 
-  function countDown() {
-    if (count === 1) {
-      setCount(1);
-      showPopUp();
-      setUserMessage("Sie können leider nicht weniger als 1 Menge bestellen.");
-    } else {
-      setCount(count - 1);
-      setItemStock(itemStock + 1);
+  function countDown(id: number) {
+    if (id) {
+      if (count === 1) {
+        setCount(1);
+        showPopUp();
+        setUserMessage(
+          "Sie können leider nicht weniger als 1 Menge bestellen."
+        );
+      } else {
+        setCount(count - 1);
+        setItemStock(itemStock + 1);
+      }
     }
   }
 
@@ -60,7 +76,7 @@ export default function ArticleInfo() {
     });
 
     if (correctSelectedArticle) {
-      correctArticle(correctSelectedArticle);
+      updateArticle(correctSelectedArticle);
     } else {
       addArticleToShoppingCart();
     }
@@ -77,15 +93,30 @@ export default function ArticleInfo() {
         price: selectedArticle.price,
         quantity: count,
         id: selectedArticle.id,
+        declination: selectedArticle.declination,
       };
       /*  ein weiteres Objekt war nötig
       
       */
 
       const updatedShoppingCard = [...shoppingCart, articleOrder];
+      /*const updatedShoppingCardArticleId = [
+        ...articleIdArray,
+        selectedArticle.id,
+      ];*/
 
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
+      //setArticleIdArray(updatedShoppingCardArticleId);
+      //saveArticleId(updatedShoppingCardArticleId);
+
+      setPopUpMessage(
+        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb.`
+      );
+      setPicture("shopping-cart");
+      setCount(1);
+      setShowShortPopUp(true);
+      setTimeoutControl(setTimeout(closeShortPopUp, 3000));
     }
   }
 
@@ -93,7 +124,11 @@ export default function ArticleInfo() {
     localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
   }
 
-  function correctArticle(
+  /*function saveArticleId(id: number[]) {
+    localStorage.setItem(LOCALE_STORAGE_ARTICLE_ID_KEY, JSON.stringify(id));
+  }*/
+
+  function updateArticle(
     correctSelectedArticle: Article | ShoppingCartDatatype
   ) {
     console.log(correctSelectedArticle);
@@ -106,20 +141,29 @@ export default function ArticleInfo() {
       console.log(shoppingCart);*/
       console.log(correctSelectedArticle);
 
-      const correctArticleOrder: ShoppingCartDatatype = {
+      const updateArticleOrder: ShoppingCartDatatype = {
         name: correctSelectedArticle.name,
         img: correctSelectedArticle.img,
         price: correctSelectedArticle.price,
         quantity: count + correctSelectedArticle?.quantity,
         id: correctSelectedArticle.id,
+        declination: correctSelectedArticle.declination,
       };
 
       const updatedShoppingCard = [...shoppingCart];
 
-      updatedShoppingCard.splice(findArticleIndex, 1, correctArticleOrder);
+      updatedShoppingCard.splice(findArticleIndex, 1, updateArticleOrder);
 
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
+
+      setPopUpMessage(
+        `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`
+      );
+      setPicture("quantity");
+      setCount(1);
+      setShowShortPopUp(true);
+      setTimeoutControl(setTimeout(closeShortPopUp, 3000));
     }
   }
 
@@ -135,14 +179,13 @@ export default function ArticleInfo() {
     navigate(-1);
   }
 
-  function editeArticleTotalSum(articlePrice: number, articleCount: number) {
-    const articleTotalSum = articleCount * articlePrice;
-    return articleTotalSum.toLocaleString();
+  function closeShortPopUp() {
+    setShowShortPopUp(false);
   }
 
   return (
     <div className="online-shop-single-article">
-      <div className="online-shop-single-article__header-frame"></div>
+      <HeadComponent />
 
       {popUpWindow && (
         <div className="pop-up-window">
@@ -162,44 +205,30 @@ export default function ArticleInfo() {
         </div>
       )}
 
-      <div className="online-shop-single-article__link-div">
-        <button
-          onClick={historyBack}
-          className="online-shop-single-article__link-div--back-menu-button button"
-        >
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="online-shop-single-article__link-div--back-menu-button--icon"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
-          </span>{" "}
-          zum Hauptmenu
-        </button>
+      {showShortPopUp && <PopUp message={popUpMessage} bild={picture} />}
 
-        <Link
-          to="/shoppingStorage"
-          className="online-shop-single-article__link-div--link-component link-component"
-        >
-          <div>
-            <p className="online-shop-single-article__link-div--link-component--shopping-cart-quantity">
-              {shoppingCart.length}
-            </p>
-            <p className="online-shop-single-article__link-div--link-component--shopping-cart-icon">
-              &#128722;
-            </p>
-          </div>
-        </Link>
-      </div>
+      <button
+        onClick={historyBack}
+        className="online-shop-single-article__back-menu-button button"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="online-shop-single-article__back-menu-button--icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </span>{" "}
+        vorherige Seite
+      </button>
 
       <div className="online-shop-single-article__preview">
         <div className="online-shop-single-article__preview--left-section">
@@ -221,21 +250,21 @@ export default function ArticleInfo() {
             <h3 className="online-shop-single-article__preview--right-section--article-quantity-div--quantity-headline">
               Menge:
             </h3>
-            <div className="online-shop-single-article__preview--right-section--article-quantity-div--article-count-and-quantity">
-              <button onClick={countDown} className="count-down button">
-                -
-              </button>
-              <p className="quantity">{count}x</p>
-              <button onClick={countUp} className="count-up button">
-                +
-              </button>
-            </div>
+            <Count
+              count={count}
+              countUp={() => countUp(selectedArticle.id)}
+              countDown={() => countDown(selectedArticle.id)}
+            />
           </div>
 
           <div className="online-shop-single-article__preview--right-section--price-and-itemStock-div">
             <p className="online-shop-single-article__preview--right-section--price-and-itemStock-div--article-price">
-              Preis:{" "}
-              {editeArticleTotalSum(selectedArticle.price, count) + ",00"} €
+              Preis:
+              {
+                <EditArticlePriceComponent
+                  articlePrice={selectedArticle.price * count}
+                />
+              }
             </p>
             <div
               className={`${
@@ -256,7 +285,7 @@ export default function ArticleInfo() {
         </div>
       </div>
 
-      <div className="online-shop-single-article__rooter-frame"></div>
+      <FooterComponent />
     </div>
   );
 }

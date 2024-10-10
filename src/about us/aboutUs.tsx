@@ -8,31 +8,13 @@ import aboutUseTransportTrain from "../assets/online shop about use transport tr
 import aboutUseTransportTruck from "../assets/online shop about use transport truck img.jpg";
 import aboutUseTransportShip from "../assets/online shop about use transport ship img.jpg";
 import Amagon from "../assets/Amagonunternehmen.jpg";
-import { Link } from "react-router-dom";
+import HeadComponent from "../header/head";
+import FooterComponent from "../footer/footer";
 
 export default function AboutUsComponent() {
   return (
     <section className="online-shop-about-use-section">
-      <Link to="/" className="online-shop-about-use-section__link">
-        <button className="online-shop-about-use-section__link--back-menu-button">
-          {" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            className="online-shop-about-us-section__link--back-menu-button--icon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            />
-          </svg>
-          zum Hauptmenu
-        </button>
-      </Link>
+      <HeadComponent />
 
       <h2 className="online-shop-about-use-section__headline">
         Das Unternehmen{" "}
@@ -54,10 +36,13 @@ export default function AboutUsComponent() {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iste
           consequatur voluptatem nemo ipsam excepturi similique distinctio qui
           possimus autem eligendi, blanditiis laudantium dolorem commodi beatae
-          ex non pariatur unde. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Eveniet commodi itaque, facilis eos quam tempore
-          quod cum voluptatibus nobis, veniam provident vero dignissimos
-          reprehenderit perferendis. Voluptates, odit unde! Possimus, magnam.
+          ex non pariatur unde.
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+          commodi itaque, facilis eos quam tempore quod cum voluptatibus nobis,
+          veniam provident vero dignissimos reprehenderit perferendis.
+          Voluptates, odit unde! Possimus, magnam.
         </p>
         <img
           src={Amagon}
@@ -117,6 +102,8 @@ export default function AboutUsComponent() {
           </div>
         </div>
       </div>
+
+      <FooterComponent />
     </section>
   );
 

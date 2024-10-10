@@ -5,13 +5,16 @@ import "./App.scss";
 import Root from "./root";
 import { ShoppingCartContext } from "./CustomContext";
 import { ShoppingCartDatatype } from "./CustomContext";
+//import { ArticleIdContext } from "./articleIdContext";
 import { useState, useEffect } from "react";
 import CheckoutComponent from "./checkOut/checkOut";
 export const LOCALE_STORAGE_KEY = "shoppingCart";
+//export const LOCALE_STORAGE_ARTICLE_ID_KEY = "articleId";
 import AboutUsComponent from "./about us/aboutUs";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartDatatype[]>([]);
+  //const [articleIdArray, setArticleIdArray] = useState<number[]>([]);
   const router = createBrowserRouter(
     [
       {
@@ -19,20 +22,20 @@ function App() {
         element: <Root />,
       },
       {
-        path: "shoppingStorage",
-        element: <ShoppingCart />,
-      },
-      {
         path: "products/:name",
         element: <ArticleInfo />,
       },
       {
-        path: "checkOut",
-        element: <CheckoutComponent />,
-      },
-      {
         path: "aboutUs",
         element: <AboutUsComponent />,
+      },
+      {
+        path: "shoppingStorage",
+        element: <ShoppingCart />,
+      },
+      {
+        path: "checkOut",
+        element: <CheckoutComponent />,
       },
     ],
     {
@@ -42,6 +45,7 @@ function App() {
 
   useEffect(() => {
     loadArticles();
+    //loadArticleId();
   }, []);
 
   function loadArticles() {
@@ -51,6 +55,15 @@ function App() {
     }
   }
 
+  /*function loadArticleId() {
+    const getArticleIdFromStorage = localStorage.getItem(
+      LOCALE_STORAGE_ARTICLE_ID_KEY
+    );
+    if (getArticleIdFromStorage !== null) {
+      setShoppingCart([...JSON.parse(getArticleIdFromStorage)]);
+    }
+  }*/
+
   return (
     <ShoppingCartContext.Provider value={{ shoppingCart, setShoppingCart }}>
       <div className="app">
@@ -58,6 +71,11 @@ function App() {
       </div>
     </ShoppingCartContext.Provider>
   );
+
+  /*
+   <ArticleIdContext.Provider value={{ articleIdArray, setArticleIdArray }}>
+  </ArticleIdContext.Provider>
+  */
 }
 
 export default App;

@@ -1,9 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCartContext } from "../CustomContext";
 import { LOCALE_STORAGE_KEY } from "../App";
 import "./shoppingCart.scss";
 import "./shoppingCartResponsive.scss";
+import HeadComponent from "../header/head";
+import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
+import FooterComponent from "../footer/footer";
+import PopUp from "../PopUp/popUp";
+import Count from "../count/count";
+import { ShoppingCartDatatype } from "../CustomContext";
 
 export default function ShoppingCart() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
@@ -16,6 +22,62 @@ export default function ShoppingCart() {
       Funktion zur aktualisierung der Variable
   
   */
+  const [timeoutControl, setTimeoutControl] = useState<number>(0);
+  const [showShortPopUp, setShowShortPopUp] = useState<boolean>(false);
+  const [popUpMessage, setPopUpMessage] = useState<string>("");
+  const [picture, setPicture] = useState<string>("");
+
+  function countUp(id: number) {
+    console.log(id);
+
+    const selectedArticle = shoppingCart.find((article) => {
+      return article.id === id;
+    });
+
+    const findArticleIndex = shoppingCart.findIndex((article) => {
+      return article.id === id;
+    });
+
+    console.log(selectedArticle);
+
+    if (selectedArticle) {
+      const updateArticleOrder: ShoppingCartDatatype = {
+        ...selectedArticle,
+        quantity: selectedArticle.quantity + 1,
+      };
+
+      const updatedShoppingCard = [...shoppingCart];
+
+      updatedShoppingCard.splice(findArticleIndex, 1, updateArticleOrder);
+      setShoppingCart(updatedShoppingCard);
+      saveArticle(updatedShoppingCard);
+    }
+  }
+
+  function countDown(id: number) {
+    const selectedArticle = shoppingCart.find((article) => {
+      return article.id === id;
+    });
+
+    const findArticleIndex = shoppingCart.findIndex((article) => {
+      return article.id === id;
+    });
+
+    console.log(selectedArticle);
+
+    if (selectedArticle && selectedArticle.quantity > 1) {
+      const updateArticleOrder: ShoppingCartDatatype = {
+        ...selectedArticle,
+        quantity: selectedArticle.quantity - 1,
+      };
+
+      const updatedShoppingCard = [...shoppingCart];
+
+      updatedShoppingCard.splice(findArticleIndex, 1, updateArticleOrder);
+      setShoppingCart(updatedShoppingCard);
+      saveArticle(updatedShoppingCard);
+    }
+  }
 
   function calculationTotalSum() {
     let sum = 0;
@@ -24,13 +86,17 @@ export default function ShoppingCart() {
       const article = element.price * element.quantity;
       sum = article + sum;
     }
-    return sum.toLocaleString();
+    return sum.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
     /*  !!!!!!! ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!!!!!
 
         wenn eine Funktion direkt in einem Ausdruck von React = in den {} geschweiften Klammern steht muss aber am Ende der Funktion das Schlüsselwort
         return stehen damit der Inhalt der Funktion auch ausgegeben wird
         
     */
+  }
+
+  function saveArticle(shoppingArticle: ShoppingCartDatatype[]) {
+    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
   }
 
   function deleteArticle(id: number) {
@@ -45,107 +111,127 @@ export default function ShoppingCart() {
     const updatetArray = [...filteredArticle];
     setShoppingCart(updatetArray);
     localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(filteredArticle));
+
+    setPopUpMessage(
+      `${selectedArticle?.declination} ${selectedArticle?.name} wurde aus dem Warenkorb entfernt.`
+    );
+    setPicture("delete");
+    setShowShortPopUp(true);
+    setTimeoutControl(setTimeout(closeShortPopUp, 3000));
   }
 
-  function editeArticleTotalSum(articlePrice: number, articleQuantity: number) {
-    const calculateTotalSum: number = articlePrice * articleQuantity;
-    return calculateTotalSum.toLocaleString();
+  function closeShortPopUp() {
+    setShowShortPopUp(false);
   }
 
   return (
     <section className="online-shop-shopping-cart">
-      <div className="online-shop-shopping-cart__header"></div>
+      <HeadComponent />
 
-      <div className="online-shop-shopping-cart__head-div">
-        <Link
-          to="/"
-          className="online-shop-shopping-cart__head-div--link-component link-component button"
-        >
-          <button className="online-shop-shopping-cart__head-div--link-component--back-button button">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="online-shop-shopping-cart__head-div--link-component--back-button--icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
-            </span>{" "}
-            zum Hauptmenu
-          </button>
-        </Link>
+      <h2 className="online-shop-shopping-cart__headline">Warenkorb</h2>
 
-        <h2 className="online-shop-shopping-cart__head-div--headline button">
-          Warenkorb
-        </h2>
-      </div>
+      {showShortPopUp && <PopUp message={popUpMessage} picture={picture} />}
 
       <div className={shoppingCart.length === 0 ? "space-food" : ""}>
-        {shoppingCart.map((article) => {
-          return (
-            <div className="online-shop-shopping-cart__article">
-              <div className="online-shop-shopping-cart__article--img-section">
-                <img
-                  src={article.img}
-                  alt=""
-                  className="online-shop-shopping-cart__article--img-section--article-img"
-                />
-              </div>
-              <div className="online-shop-shopping-cart__article--description-section">
-                <h2 className="online-shop-shopping-car__article--description-section--article-headline">
+        {shoppingCart.map((article) => (
+          <div className="online-shop-shopping-cart__article">
+            <div className="online-shop-shopping-cart__article--main-div">
+              <div className="online-shop-shopping-cart__article--main-div--left-section">
+                <h2 className="online-shop-shopping-cart__article--main-div--left-section--name">
                   {article.name}
                 </h2>
-                <p className="online-shop-shopping-cart__article--description-section--article-price">
-                  Preis:{" "}
-                  {editeArticleTotalSum(article.price, article.quantity) +
-                    ",00"}{" "}
-                  €
+
+                <img
+                  src={article.img}
+                  className="online-shop-shopping-cart__article--main-div--left-section--img"
+                  alt=""
+                />
+              </div>
+
+              <div className="online-shop-shopping-cart__article--main-div--right-section">
+                {" "}
+                <Count
+                  count={article.quantity}
+                  countUp={() => countUp(article.id)}
+                  countDown={() => countDown(article.id)}
+                />
+                <p className="online-shop-shopping-cart__article--main-div--right-section--price">
+                  Einzelpreis:{" "}
+                  {<EditArticlePriceComponent articlePrice={article.price} />}
                 </p>
-                <p className="online-shop-shopping-cart__article--description-section--article-quantity">
-                  Menge: {article.quantity}x
-                </p>
-                <button
-                  onClick={() => {
-                    deleteArticle(article.id);
-                  }}
-                  className="online-shop-shopping-cart__article--description-section--article-delete-button button"
-                >
-                  Artikel entfernen
-                  <span className="online-shop-shopping-cart__article--description-section--article-delete-button--delete-icon">
-                    &#128465;
-                  </span>
-                </button>
+                <div className="online-shop-shopping-cart__article--main-div--right-section--article-total-sum">
+                  {" "}
+                  Gesamtpreis:
+                  {
+                    <EditArticlePriceComponent
+                      articlePrice={article.price * article.quantity}
+                    />
+                  }
+                </div>
               </div>
             </div>
-          );
-        })}
-      </div>
 
-      <div className="online-shop-shopping-cart__total-sum-div">
-        <h2 className="online-shop-shopping-cart__total-sum-div--headline">
-          Gesamt Summe:
-          <span className="online-shop-shopping-cart__total-sum-div--headline--total-sum">
-            {calculationTotalSum() + ",00"} €
-          </span>
-        </h2>
-        <Link
-          to="/checkOut"
-          className="online-shop-shopping-cart__total-sum-div--link-component link-component"
+            <div className="online-shop-shopping-cart__article--main-div--button-div">
+              <Link
+                to={`/products/${article.name}`}
+                className="online-shop-shopping-cart__article--main-div--button-div--link"
+              >
+                {" "}
+                <button className="online-shop-shopping-cart__article--main-div--button-div--link--more-infos-button">
+                  mehr Infos
+                  <span className="online-shop-shopping-cart__article--main-div--button-div--link--more-infos-button--icon">
+                    &#128712;
+                  </span>
+                </button>{" "}
+              </Link>
+
+              <button
+                onClick={() => {
+                  deleteArticle(article.id);
+                }}
+                className="online-shop-shopping-cart__article--main-div--button-div--delete-button button"
+              >
+                {" "}
+                Artikel entfernen
+                <span className="online-shop-shopping-cart__article--main-div--button-div--delete-button--icon button">
+                  &#128465;
+                </span>
+              </button>
+            </div>
+          </div>
+        ))}
+
+        <div
+          className={`shopping-cart-message
+            ${
+              shoppingCart.length === 0
+                ? "shopping-cart-status-true"
+                : "shopping-cart-status-false"
+            }`}
         >
-          <button className="online-shop-shopping-cart__total-sum-div--link-component--check-out-button button">
-            zur Kasse
-          </button>
-        </Link>
+          Der Warenkorb &#128722; ist leer.
+        </div>
+
+        <div className={`online-shop-shopping-cart__total-sum-div `}>
+          <p className="online-shop-shopping-cart__total-sum-div--text">
+            Gesamtbetrag:
+          </p>
+          <p className="online-shop-shopping-cart__total-sum-div--total-sum">
+            {calculationTotalSum()}
+          </p>
+        </div>
       </div>
 
-      <div className="online-shop-shopping-cart__rooter"></div>
+      <Link
+        to="/checkOut"
+        className="online-shop-shopping-cart__link-component link-component"
+      >
+        <button className="online-shop-shopping-cart__link-component--check-out-button button">
+          zur Kasse
+        </button>
+      </Link>
+
+      <FooterComponent />
     </section>
     /*  !!!!!!!!  ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!
 
@@ -153,7 +239,18 @@ export default function ShoppingCart() {
         schreiben
 
         so wie es Zeile 69 zeigt ist es auch möglich in einem Ausdruck von React = in den {} geschweifetn Klammern Dinge zu Multiplizieren etc.
+   
+   
+                 
+                  ${
+            shoppingCart.length === 0
+              ? "shopping-cart-status-false"
+              : "shopping-cart-status-true"
+          }
+      
+                    
+                   
     
-    */
+                  */
   );
 }

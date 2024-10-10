@@ -6,6 +6,7 @@ export interface ShoppingCartDatatype {
   price: number;
   quantity: number;
   id: number;
+  declination: string;
 }
 
 export const ShoppingCartContext = createContext<{
