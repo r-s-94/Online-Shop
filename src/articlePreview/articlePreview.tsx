@@ -1,17 +1,14 @@
 import { Article, articles } from "../articleData";
 import { LOCALE_STORAGE_KEY } from "../App";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
-//import { ArticleIdContext } from "../articleIdContext";
 import { useContext, useState } from "react";
 import "./articlePreview.scss";
 import ArticleComponent from "../article/article";
 import PopUp from "../PopUp/popUp";
-//import { LOCALE_STORAGE_ARTICLE_ID_KEY } from "../App";
 
 export default function ArticlePreviewComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
-  //const { articleIdArray, setArticleIdArray } = useContext(ArticleIdContext);
-  const [timeoutControl, setTimeoutControl] = useState<number>(0);
+  const [, setTimeoutControl] = useState<number>(0);
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
   const [popUpMessage, setPopUpMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");

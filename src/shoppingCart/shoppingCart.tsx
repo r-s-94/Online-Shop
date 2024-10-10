@@ -22,7 +22,7 @@ export default function ShoppingCart() {
       Funktion zur aktualisierung der Variable
   
   */
-  const [timeoutControl, setTimeoutControl] = useState<number>(0);
+  const [, setTimeoutControl] = useState<number>(0);
   const [showShortPopUp, setShowShortPopUp] = useState<boolean>(false);
   const [popUpMessage, setPopUpMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");
