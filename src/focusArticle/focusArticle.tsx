@@ -55,12 +55,10 @@ export default function FocusArticleComponent() {
 
       console.log(articleOrder);
       const updatedShoppingCard = [...shoppingCart, articleOrder];
-      //const updatedShoppingCardArticleId = [...articleIdArray, articleOrder.id];
+
       console.log(updatedShoppingCard);
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
-      //setArticleIdArray(updatedShoppingCardArticleId);
-      //saveArticleId(updatedShoppingCardArticleId);
 
       setPopUpMessage(
         `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb hinzugefügt.`
@@ -74,10 +72,6 @@ export default function FocusArticleComponent() {
   function saveArticle(shoppingArticle: ShoppingCartDatatype[]) {
     localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify(shoppingArticle));
   }
-
-  /*function saveArticleId(id: number[]) {
-    localStorage.setItem(LOCALE_STORAGE_ARTICLE_ID_KEY, JSON.stringify(id));
-  }*/
 
   function updateArticleQuantity(
     findArticle: Article | ShoppingCartDatatype,
