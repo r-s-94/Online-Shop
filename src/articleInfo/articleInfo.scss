@@ -1,3 +1,9 @@
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .online-shop-single-article {
   $amagon-primary-color: #001f3f;
   $amagon-secondery-color: #ffff00;
@@ -7,18 +13,14 @@
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-content();
 
     &__message-div {
       width: 30rem;
       height: 30rem;
       background-color: white;
-      display: flex;
+      @include center-content();
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
   }
 
@@ -29,15 +31,12 @@
 
   &__back-menu-button {
     margin: 3rem 0 3rem 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-content();
     font-size: 1.5rem;
     border: 1px solid black;
     background-color: $amagon-primary-color;
     color: $amagon-secondery-color;
     border-radius: 0.2rem;
-    padding: 0.3rem 1rem;
     margin-right: 40rem;
 
     &--icon {
@@ -84,9 +83,7 @@
       padding-right: 5%;
 
       &--article-quantity-div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include center-content();
         width: 100%;
         row-gap: 2rem;
 
@@ -110,9 +107,7 @@
         &--article-itemStock-total {
           font-size: 1.8rem;
           height: 3rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include center-content();
           margin: 0 0 1% 0;
           padding: 0;
         }
@@ -120,11 +115,13 @@
 
       &--add-shopping-cart-button {
         font-size: 1.5rem;
-        margin: 1rem 0 0 0;
-        padding: 0.3rem 0.5rem;
+        margin: 1rem auto 0 auto;
+        width: 11rem;
+        height: 2rem;
         background-color: #ffff33;
         border: 1px solid black;
         border-radius: 0.2rem;
+        @include center-content();
       }
 
       &--add-shopping-cart-button:hover {

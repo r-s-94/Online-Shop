@@ -1,3 +1,9 @@
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .article-count-and-quantity {
   display: flex;
   justify-content: center;
@@ -13,6 +19,7 @@
     padding: 0.3rem 1rem;
     border: 1px solid black;
     border-radius: 0.2rem;
+    @include center-content();
   }
 
   .count-up:hover {
@@ -32,6 +39,7 @@
     background-color: #56cefa;
     border: 1px solid black;
     border-radius: 0.2rem;
+    @include center-content();
   }
 
   .count-down:hover {
@@ -50,7 +58,8 @@
 
     .count-up {
       font-size: 2rem;
-      padding: 0.1rem 0.7rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     .quantity {
@@ -60,7 +69,9 @@
 
     .count-down {
       font-size: 2rem;
-      padding: 0.1rem 0.9rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
     }
   }
 }
@@ -76,7 +87,8 @@
 
     .count-up {
       font-size: 2rem;
-      padding: 0.1rem 0.7rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     .quantity {
@@ -86,7 +98,9 @@
 
     .count-down {
       font-size: 2rem;
-      padding: 0.1rem 0.9rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
     }
   }
 }
@@ -102,7 +116,8 @@
 
     .count-up {
       font-size: 2rem;
-      padding: 0.1rem 0.7rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     .quantity {
@@ -112,7 +127,9 @@
 
     .count-down {
       font-size: 2rem;
-      padding: 0.1rem 0.9rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
     }
   }
 }
@@ -128,7 +145,8 @@
 
     .count-up {
       font-size: 1.7rem;
-      padding: 0.1rem 0.6rem;
+      width: 2.3rem;
+      height: 2.3rem;
     }
 
     .quantity {
@@ -138,7 +156,9 @@
 
     .count-down {
       font-size: 1.7rem;
-      padding: 0.1rem 0.8rem;
+      width: 2.3rem;
+      height: 2.3rem;
+      padding: 0;
     }
   }
 }
@@ -154,7 +174,9 @@
 
     .count-up {
       font-size: 1.5rem;
-      padding: 0.1rem 0.6rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      padding: 0;
     }
 
     .quantity {
@@ -164,7 +186,9 @@
 
     .count-down {
       font-size: 1.5rem;
-      padding: 0.1rem 0.7rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      padding: 0;
     }
   }
 }
@@ -183,7 +207,9 @@
 
       background-color: #f96b00;
       font-size: 1.2rem;
-      padding: 0.1rem 0.4rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      padding: 0;
       border: 1px solid black;
       border-radius: 0.2rem;
     }
@@ -197,7 +223,9 @@
 
     .count-down {
       font-size: 1.2rem;
-      padding: 0.1rem 0.6rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      padding: 0;
       background-color: #56cefa;
       border: 1px solid black;
       border-radius: 0.2rem;

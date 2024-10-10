@@ -1,6 +1,12 @@
 $amagon-primary-color: #001f3f;
 $amagon-secondery-color: #ffff00;
 
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 1600px) {
   .online-shop-single-article {
     &__header-frame {
@@ -9,24 +15,21 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      padding: 0.5rem 0.7rem;
+      @include center-content();
+      font-size: 1.3rem;
+      width: 13rem;
+      height: 3rem;
       margin: 5rem 0 5rem 10%;
 
       &--icon {
-        width: 2rem;
+        width: 1.7rem;
       }
     }
 
     &__preview {
       max-width: 70rem;
       margin: 3rem auto 5rem auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center-content();
       padding-left: 3rem;
       box-sizing: border-box;
 
@@ -73,27 +76,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              font-size: 2rem;
-              padding: 0.1rem 0.7rem;
-            }
-
-            .quantity {
-              padding: 0.3rem 0.4rem;
-              font-size: 1.7rem;
-            }
-
-            .count-down {
-              font-size: 2rem;
-              padding: 0.1rem 0.9rem;
-            }
           }
         }
 
@@ -108,16 +94,15 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.7rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
           }
         }
 
         &--add-shopping-cart-button {
           font-size: 1.6rem;
-          margin: 2rem 0 3rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 2rem auto 3rem auto;
+          width: 18rem;
+          height: 2.7rem;
         }
       }
     }
@@ -132,24 +117,21 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      padding: 0.5rem 0.7rem;
+      @include center-content();
+      font-size: 1.3rem;
+      width: 13rem;
+      height: 3rem;
       margin: 5rem 0 5rem 10%;
 
       &--icon {
-        width: 2rem;
+        width: 1.7rem;
       }
     }
 
     &__preview {
       max-width: 70rem;
       margin: 2rem auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center-content();
       padding-left: 3rem;
       box-sizing: border-box;
 
@@ -196,27 +178,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              font-size: 2rem;
-              padding: 0.1rem 0.7rem;
-            }
-
-            .quantity {
-              padding: 0.3rem 0.4rem;
-              font-size: 1.7rem;
-            }
-
-            .count-down {
-              font-size: 2rem;
-              padding: 0.1rem 0.9rem;
-            }
           }
         }
 
@@ -231,16 +196,15 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.7rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
           }
         }
 
         &--add-shopping-cart-button {
           font-size: 1.6rem;
-          margin: 2rem 0 3rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 2rem auto 3rem auto;
+          width: 18rem;
+          height: 3rem;
         }
       }
     }
@@ -255,24 +219,21 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      padding: 0.3rem 0.5rem;
+      @include center-content();
+      font-size: 1.3rem;
+      width: 13rem;
+      height: 3rem;
       margin: 5rem 0 5rem 7%;
 
       &--icon {
-        width: 2rem;
+        width: 1.7rem;
       }
     }
 
     &__preview {
       max-width: 60rem;
       margin: 2rem auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center-content();
       padding-left: 3rem;
       box-sizing: border-box;
 
@@ -319,27 +280,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              font-size: 2rem;
-              padding: 0.1rem 0.7rem;
-            }
-
-            .quantity {
-              padding: 0.3rem 0.5rem;
-              font-size: 1.7rem;
-            }
-
-            .count-down {
-              font-size: 2rem;
-              padding: 0.1rem 0.9rem;
-            }
           }
         }
 
@@ -354,16 +298,15 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.7rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
           }
         }
 
         &--add-shopping-cart-button {
           font-size: 1.5rem;
-          margin: 2rem 0 3rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 2rem auto 3rem auto;
+          width: 17rem;
+          height: 2.7rem;
         }
       }
     }
@@ -378,15 +321,14 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      padding: 0.3rem 0.5rem;
+      @include center-content();
+      font-size: 1.3rem;
+      width: 13rem;
+      height: 3rem;
       margin: 4rem auto;
 
       &--icon {
-        width: 2rem;
+        width: 1.7rem;
       }
     }
 
@@ -440,27 +382,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              font-size: 1.7rem;
-              padding: 0.1rem 0.6rem;
-            }
-
-            .quantity {
-              padding: 0.3rem 0.4rem;
-              font-size: 1.5rem;
-            }
-
-            .count-down {
-              font-size: 1.7rem;
-              padding: 0.1rem 0.8rem;
-            }
           }
         }
 
@@ -475,16 +400,15 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.6rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
           }
         }
 
         &--add-shopping-cart-button {
           font-size: 1.4rem;
-          margin: 1rem 0 3rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 1rem auto 3rem auto;
+          width: 16rem;
+          height: 2.5rem;
         }
       }
     }
@@ -499,15 +423,14 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center-content();
       font-size: 1.3rem;
-      padding: 0.3rem 0.5rem;
+      width: 13rem;
+      height: 3rem;
       margin: 3rem auto;
 
       &--icon {
-        width: 1.7rem;
+        width: 2rem;
       }
     }
 
@@ -561,27 +484,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              font-size: 1.5rem;
-              padding: 0.1rem 0.6rem;
-            }
-
-            .quantity {
-              padding: 0.3rem 0.5rem;
-              font-size: 1.3rem;
-            }
-
-            .count-down {
-              font-size: 1.5rem;
-              padding: 0.1rem 0.7rem;
-            }
           }
         }
 
@@ -596,16 +502,15 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.3rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
           }
         }
 
         &--add-shopping-cart-button {
           font-size: 1.2rem;
-          margin: 0.5rem 0 2rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 0.5rem auto 2rem auto;
+          width: 14rem;
+          height: 2.3rem;
         }
       }
     }
@@ -620,15 +525,14 @@ $amagon-secondery-color: #ffff00;
     }
 
     &__back-menu-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.7rem;
-      padding: 0.3rem 0.5rem;
+      @include center-content();
+      font-size: 0.8rem;
+      width: 8rem;
+      height: 2.5rem;
       margin: 3rem auto 0 auto;
 
       &--icon {
-        width: 1.3rem;
+        width: 1.4rem;
       }
     }
 
@@ -671,9 +575,7 @@ $amagon-secondery-color: #ffff00;
         padding: 0 1%;
 
         &--article-quantity-div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          @include center-content();
           width: 100%;
           row-gap: 2rem;
 
@@ -684,37 +586,10 @@ $amagon-secondery-color: #ffff00;
           }
 
           &--article-count-and-quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             gap: 1rem;
             width: 100%;
             padding: 0.5rem 0 0 0;
-
-            .count-up {
-              /*background-color: #66d3fa;*/
-
-              background-color: #f96b00;
-              font-size: 1.2rem;
-              padding: 0.1rem 0.4rem;
-              border: 1px solid black;
-              border-radius: 0.2rem;
-            }
-
-            .quantity {
-              border: 0.1rem solid black;
-              border-radius: 0.2rem;
-              padding: 0.3rem 0.4rem;
-              font-size: 1rem;
-            }
-
-            .count-down {
-              font-size: 1.2rem;
-              padding: 0.1rem 0.6rem;
-              background-color: #56cefa;
-              border: 1px solid black;
-              border-radius: 0.2rem;
-            }
           }
         }
 
@@ -731,9 +606,7 @@ $amagon-secondery-color: #ffff00;
           &--article-itemStock-total {
             font-size: 1.1rem;
             height: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include center-content();
             margin: 0 0 1% 0;
             padding: 0;
           }
@@ -741,8 +614,9 @@ $amagon-secondery-color: #ffff00;
 
         &--add-shopping-cart-button {
           font-size: 1rem;
-          margin: 0.1rem 0 1.5rem 0;
-          padding: 0.1rem 0.5rem;
+          margin: 0.1rem auto 1.5rem auto;
+          width: 11rem;
+          height: 2rem;
         }
       }
     }
