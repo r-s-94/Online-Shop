@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ShoppingCartContext } from "../CustomContext";
 import Planet_Earth from "../assets/pngegg.png";
 import "./head.scss";
