@@ -244,28 +244,31 @@ $amagon-secondery-color: #ffff00;
         row-gap: 1.3rem;
 
         &--first-description {
-          width: 18.5rem;
+          width: 18rem;
 
           .about-use-first-text {
-            padding: 0.9rem 1rem 2.5rem 1rem;
+            padding: 1rem 1rem 2.5rem 1rem;
+            font-size: 1.1rem;
           }
         }
 
         &--second-description {
-          width: 18.5rem;
+          width: 18rem;
 
           .about-use-second-text {
-            padding: 0.9rem 1rem 4rem 1rem;
+            padding: 1rem 1rem 4rem 1rem;
+            font-size: 1.1rem;
             line-height: 1.5rem;
             display: flex;
           }
         }
 
         &--third-description {
-          width: 18.5rem;
+          width: 18rem;
 
           .about-use-third-text {
             padding: 1rem;
+            font-size: 1.1rem;
           }
         }
       }
