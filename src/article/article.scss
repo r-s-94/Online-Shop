@@ -44,6 +44,7 @@
       font-size: 1.4rem;
       padding: 0 10%;
       margin: 0;
+      text-align: left;
     }
 
     &--price-and-sale-icon-div {
@@ -142,7 +143,7 @@
 
       &--article-description {
         font-size: 1.6rem;
-        padding: 0 5%;
+        padding: 0 3rem;
       }
 
       &--price-and-sale-icon-div {
@@ -204,7 +205,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 19rem;
+    height: 20rem;
 
     &__img-section {
       width: 50%;
@@ -228,7 +229,7 @@
 
       &--article-description {
         font-size: 1.5rem;
-        padding: 0 3%;
+        padding: 0 2rem;
       }
 
       &--price-and-sale-icon-div {
@@ -316,7 +317,7 @@
 
       &--article-description {
         font-size: 1.5rem;
-        padding: 0 3%;
+        padding: 0 3rem;
       }
 
       &--price-and-sale-icon-div {
@@ -395,7 +396,7 @@
       width: 100%;
       height: 50%;
       padding: 3rem 0;
-      row-gap: 1.5rem;
+      row-gap: 3rem;
 
       &--article-headline {
         font-size: 1.7rem;
@@ -403,7 +404,8 @@
 
       &--article-description {
         font-size: 1.5rem;
-        padding: 0 3%;
+        padding: 0;
+        width: 27rem;
       }
 
       &--price-and-sale-icon-div {
@@ -421,17 +423,18 @@
 
       &--button-div {
         margin: 0;
-        padding: 0 auto;
+        padding: 0;
         width: 100%;
+        height: 2.5rem;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
+        column-gap: 3rem;
 
         &--add-shoppingcart-button {
-          font-size: 1.2rem;
-          margin: 0;
-          padding: 0.3rem 1.2rem;
+          width: 40%;
+          font-size: 1.3rem;
+          margin: 0 0 0 3rem;
+          padding: 0.3rem 0;
 
           &--icon {
             font-size: 1.4rem;
@@ -439,9 +442,13 @@
         }
 
         &--link-component {
+          width: 40%;
+          margin: 0 3rem 0 0;
+
           &--more-info-button {
-            margin: 0;
-            padding: 0.3rem 1rem;
+            width: 100%;
+
+            padding: 0.3rem 0;
             font-size: 1.3rem;
 
             &--icon {
@@ -476,7 +483,7 @@
     &__description-section {
       width: 100%;
       height: 100%;
-      padding: 1.5rem 0;
+      padding: 2rem 0;
       row-gap: 1.5rem;
 
       &--article-headline {
@@ -485,7 +492,8 @@
 
       &--article-description {
         font-size: 1.3rem;
-        padding: 0 5%;
+        padding: 0;
+        width: 12rem;
       }
 
       &--price-and-sale-icon-div {
@@ -503,7 +511,7 @@
       }
 
       &--button-div {
-        margin: 0;
+        margin: 1rem 0;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -515,7 +523,7 @@
 
         &--add-shoppingcart-button {
           font-size: 1.2rem;
-          margin: 0 auto;
+          margin: 0;
           padding: 0.3rem 0;
           width: 100%;
 
@@ -526,9 +534,9 @@
 
         &--link-component {
           width: 100%;
+          margin: 0;
 
           &--more-info-button {
-            margin: 0 auto;
             padding: 0.2rem 0;
             font-size: 1.2rem;
             width: 100%;
@@ -565,8 +573,8 @@
     &__description-section {
       width: 100%;
       height: 50%;
-      padding: 1rem 0;
-      row-gap: 1rem;
+      padding: 1.3rem 0;
+      row-gap: 1.3rem;
 
       &--article-headline {
         font-size: 1.4rem;
@@ -574,7 +582,8 @@
 
       &--article-description {
         font-size: 1.2rem;
-        padding: 0 3%;
+        padding: 0;
+        width: 11rem;
       }
 
       &--price-and-sale-icon-div {
@@ -597,7 +606,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
+        margin: 1rem 0;
         padding: 0;
         row-gap: 0.5rem;
 
