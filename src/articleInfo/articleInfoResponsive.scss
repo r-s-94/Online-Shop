@@ -356,9 +356,10 @@ $amagon-secondery-color: #ffff00;
         }
 
         &--article-description {
-          margin: 1.5rem 0;
+          margin: 1.5rem auto;
           font-size: 1.5rem;
-          padding: 0 0.5%;
+          padding: 0;
+          width: 25rem;
         }
       }
 
@@ -458,16 +459,17 @@ $amagon-secondery-color: #ffff00;
         }
 
         &--article-description {
-          margin: 1.5rem 0;
+          margin: 1.5rem auto;
           font-size: 1.3rem;
-          padding: 0 0.5%;
+          padding: 0;
+          width: 12rem;
         }
       }
 
       &--right-section {
         height: 100%;
         width: 100%;
-        margin-top: -5rem;
+        margin-top: -2rem;
         padding: 0 1%;
 
         &--article-quantity-div {
@@ -562,16 +564,17 @@ $amagon-secondery-color: #ffff00;
         }
 
         &--article-description {
-          margin: 1.5rem 0;
-          font-size: 0.9rem;
-          padding: 0 0.5%;
+          margin: 1.5rem auto;
+          font-size: 1rem;
+          padding: 0;
+          width: 10rem;
         }
       }
 
       &--right-section {
         height: 50%;
         width: 100%;
-        margin-top: -5rem;
+        margin-top: -3rem;
         padding: 0 1%;
 
         &--article-quantity-div {
