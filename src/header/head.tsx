@@ -28,10 +28,10 @@ export default function HeadComponent() {
             Amagon
           </span>
           <br />
-          Dem Online Shop #1.
+          Dem Online-Shop #1.
           <br />
           <span className="online-shop-head-section__main-div--headline--slogan-text">
-            Wo Online Shoppen freude macht.
+            Wo Online Shoppen Freude macht.
           </span>
         </h1>
         <Link

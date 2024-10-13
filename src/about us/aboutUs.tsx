@@ -60,7 +60,7 @@ export default function AboutUsComponent() {
               className="about-use-first-img"
             />
             <p className="about-use-first-text">
-              Unsere Qualifizierten, motivierten und Angaschierten Mitarbeiter
+              Unsere Qualifizierten, motivierten und engagierten Mitarbeiter
               sind stets für die da.
             </p>
           </div>
@@ -79,8 +79,8 @@ export default function AboutUsComponent() {
           <div className="online-shop-about-use-section__main-description-div--first-description-div--third-description">
             <img src={wareHouse} alt="" className="about-use-third-img" />
             <p className="about-use-third-text">
-              Unser Lager ist stets aktuell, gefühlt und alle geben 100% damit
-              du deine Bestellung schnellstmöglichst bekommst.
+              Unser Lager ist stets aktuell, gefühlt und alle geben 100 % damit
+              du deine Bestellung schnellst möglichst bekommst.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function AboutUsComponent() {
         <div className="online-shop-about-use-section__main-description-div--second-description-div">
           <h4 className="online-shop-about-use-section__main-description-div--second-description-div--headline">
             Egal ob zu Wasser, in der Luft, auf Schienen oder auf der Straße,
-            kein Weg zu dir ist uns zuweit oder zu umständlich.
+            kein Weg zu dir ist uns zu weit oder zu umständlich.
           </h4>
           <div className="online-shop-about-use-section__main-description-div--second-description-div--img-div">
             <img
