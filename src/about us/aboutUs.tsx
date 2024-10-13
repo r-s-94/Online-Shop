@@ -60,8 +60,8 @@ export default function AboutUsComponent() {
               className="about-use-first-img"
             />
             <p className="about-use-first-text">
-              Unsere Qualifizierten, motivierten und engagierten Mitarbeiter
-              sind stets für die da.
+              Unsere qualifizierten, motivierten und engagierten Mitarbeiter
+              sind stets für dich da.
             </p>
           </div>
 
