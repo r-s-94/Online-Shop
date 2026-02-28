@@ -13,6 +13,7 @@ import Payment from "./payment/payment";
 import { currentCategoryContent } from "./currentCategoryContext";
 
 function App() {
+  //
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartDatatype[]>([]);
   const [currentCategory, setCurrentCategory] = useState<string>("");
   const router = createBrowserRouter(
