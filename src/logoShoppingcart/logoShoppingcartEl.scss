@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+$font-art: "Comfortaa", sans-serif;
+//$amagon-primary-color: #0b1f3a;
+$amagon-primary-color: #18273a;
+$amagon-lemon-yellow: #fff44f;
+
+.logo-shoppingcart-div {
+  height: 6rem;
+  background-color: $amagon-primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45%;
+    margin-left: 7rem;
+  }
+
+  &__img {
+    width: 5rem;
+    height: auto;
+    margin: auto 0;
+    position: absolute;
+  }
+
+  &__text {
+    color: #efbf04;
+    font-family: $font-art;
+    z-index: 1;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 3px white;
+  }
+
+  &__link {
+    margin-right: 10rem;
+  }
+
+  &__shopping-cart-div {
+  }
+
+  &__quantity {
+    text-align: center;
+    color: $amagon-lemon-yellow;
+    font-size: 2rem;
+  }
+
+  &__shopping-cart-icon {
+    width: 2.2rem;
+    color: white;
+  }
+}

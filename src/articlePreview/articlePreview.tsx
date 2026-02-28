@@ -1,17 +1,29 @@
 import { Article, articles } from "../articleData";
 import { LOCALE_STORAGE_KEY } from "../App";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import "../index.scss";
 import "./articlePreview.scss";
 import ArticleComponent from "../article/article";
 import PopUp from "../PopUp/popUp";
+import { currentCategoryContent } from "../currentCategoryContext";
 
 export default function ArticlePreviewComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
-  const [, setTimeoutControl] = useState<number>(0);
-  const [showPopUp, setShowPopUp] = useState<boolean>(false);
-  const [popUpMessage, setPopUpMessage] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
+  const [toasty, setToasty] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");
+  const timeControl = useRef(0);
+  const { currentCategory } = useContext(currentCategoryContent);
+
+  useEffect(() => {
+    if (currentCategory !== "") {
+      setCategory(currentCategory);
+    } else {
+      setCategory("electronic");
+    }
+  }, []);
 
   function checkArticle(id: number) {
     console.log(id);
@@ -42,8 +54,9 @@ export default function ArticlePreviewComponent() {
             */
       const articleOrder: ShoppingCartDatatype = {
         name: findArticle.name,
-        img: findArticle.img,
-        price: findArticle.price,
+        img: findArticle.imgArray[0],
+        description: findArticle.description.short,
+        price: findArticle.newPrice,
         quantity: 1,
         id: findArticle.id,
         declination: findArticle.declination,
@@ -61,12 +74,12 @@ export default function ArticlePreviewComponent() {
       //setArticleIdArray(updatedShoppingCardArticleId);
       //saveArticleId(updatedShoppingCardArticleId);
 
-      setPopUpMessage(
-        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb hinzugefügt.`
+      setMessage(
+        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb hinzugefügt.`,
       );
       setPicture("shopping-cart");
-      setShowPopUp(true);
-      setTimeoutControl(setTimeout(closePopUp, 3000));
+      setToasty(true);
+      timeControl.current = window.setTimeout(closePopUp, 3000);
     }
   }
 
@@ -79,8 +92,8 @@ export default function ArticlePreviewComponent() {
   }*/
 
   function updateArticleQuantity(
-    findArticle: Article | ShoppingCartDatatype,
-    id: number
+    findArticle: ShoppingCartDatatype,
+    id: number,
   ) {
     const filteredShoppingCart = shoppingCart.filter((article) => {
       return article.id !== id;
@@ -93,6 +106,7 @@ export default function ArticlePreviewComponent() {
     const updateArticleOrder: ShoppingCartDatatype = {
       name: findArticle.name,
       img: findArticle.img,
+      description: findArticle.description,
       price: findArticle.price,
       quantity: findArticle.quantity + 1,
       id: findArticle.id,
@@ -108,30 +122,69 @@ export default function ArticlePreviewComponent() {
     setShoppingCart(updateShoppingCart);
     saveArticle(updateShoppingCart);
 
-    setPopUpMessage(
-      `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`
+    setMessage(
+      `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`,
     );
     setPicture("quantity");
-    setShowPopUp(true);
-    setTimeoutControl(setTimeout(closePopUp, 3000));
+    setToasty(true);
+    timeControl.current = window.setTimeout(closePopUp, 3000);
   }
 
   function closePopUp() {
-    setShowPopUp(false);
+    setToasty(false);
   }
 
   return (
     <section id="allArticle" className="article-preview-section">
-      <h2 className="article-preview-section__headline">Unsere Angebote</h2>
+      <h2 className="article-preview-section__headline center-text">
+        Unsere Angebote
+      </h2>
 
-      {showPopUp && <PopUp message={popUpMessage} picture={picture} />}
+      {toasty && <PopUp message={message} picture={picture} />}
+
+      <nav className="article-preview-section__all-category-nav-bar center-content">
+        <p
+          onClick={() => {
+            setCategory("electronic");
+          }}
+          className={`article-preview-section__link-category link ${category === "electronic" ? "active-category" : ""}`}
+        >
+          Elektronik
+        </p>
+        <p
+          onClick={() => {
+            setCategory("car");
+          }}
+          className={`article-preview-section__link-category link ${category === "car" ? "active-category" : ""}`}
+        >
+          Autos
+        </p>
+        <p
+          onClick={() => {
+            setCategory("fruit");
+          }}
+          className={`article-preview-section__link-category link ${category === "fruit" ? "active-category" : ""}`}
+        >
+          Früchte
+        </p>
+        <p
+          onClick={() => {
+            setCategory("fitness");
+          }}
+          className={`article-preview-section__link-category link ${category === "fitness" ? "active-category" : ""}`}
+        >
+          Fitness
+        </p>
+      </nav>
 
       <div className="article-preview-section__article-preview">
-        {articles.map((article) => {
-          return (
-            <ArticleComponent article={article} checkArticle={checkArticle} />
-          );
-        })}
+        {articles
+          .filter((article) => article.category === category)
+          .map((article) => {
+            return (
+              <ArticleComponent article={article} checkArticle={checkArticle} />
+            );
+          })}
       </div>
     </section>
   );

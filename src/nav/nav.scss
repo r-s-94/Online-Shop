@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+$font-art: "Comfortaa", sans-serif;
+//$amagon-primary-color: #0b1f3a;
+$amagon-primary-color: #18273a;
+//hsl(52.45deg 74.65% 58.24%)
+//$amagon-secondery-color: #ffff00;
+
+.nav-div {
+  background-color: $amagon-primary-color;
+
+  &__nav-bar {
+    padding: 1rem 6rem 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7rem;
+    z-index: 0;
+  }
+
+  &__link {
+    color: white;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &__hamburger-menu {
+    top: 3%;
+    right: 3%;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+    z-index: 2;
+    display: none;
+  }
+
+  &__hamburger-menu:hover {
+    cursor: pointer;
+  }
+
+  &__line {
+    background-color: #f3f5f6;
+    width: 2rem;
+    height: 3px;
+    border-radius: 0.2rem;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.animation-line-top {
+  /*margin-bottom: -0.68rem;
+  transform: rotate(-45deg);*/
+  margin-bottom: -11px;
+  transform: rotate(45deg);
+}
+
+.animation-line-middle {
+  opacity: 0;
+}
+
+.animation-line-bottom {
+  /*margin-top: -0.68rem;
+  transform: rotate(45deg);*/
+  transform: rotate(-45deg);
+  margin-top: -11px;
+}
+
+/*   .bar1 {
+    margin-bottom: -9px;
+    transform: rotate(45deg);
+  }
+
+  .bar2 {
+    opacity: 0;
+  }
+
+  .bar3 {
+    transform: rotate(-45deg);
+    margin-top: -9px;
+  }
+
+*/
+
+/*@media screen and (max-width: 1000px) {
+  .nav-div {
+    &__nav-bar {
+      height: 13rem;
+      position: absolute;
+      top: -16rem;
+      flex-direction: column;
+      z-index: 2;
+      row-gap: 1rem;
+      background-color: #001f3f;
+      border: 1px solid #f3f5f6;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &__link {
+      width: 13rem;
+      text-align: center;
+      border-bottom: 1px solid #f3f5f6;
+    }
+
+    &__hamburger-menu {
+      display: block;
+    }
+  }
+
+  .nav-bar-down {
+    top: 0.1rem;
+  }
+}*/

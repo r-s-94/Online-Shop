@@ -2,6 +2,7 @@ import { createContext } from "react";
 
 export interface ShoppingCartDatatype {
   name: string;
+  description: string;
   img: string;
   price: number;
   quantity: number;

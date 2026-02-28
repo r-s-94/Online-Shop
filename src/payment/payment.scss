@@ -1,0 +1,56 @@
+.payment-section {
+  padding-bottom: 5rem;
+
+  &__to-shopping-cart-link {
+    width: 20rem;
+    margin: 3rem 0 0 5%;
+    font-size: 1.3rem;
+    color: black;
+  }
+
+  &__to-shopping-cart-icon {
+    width: 2rem;
+  }
+
+  &__payment-main-div {
+    width: 35%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  &__payment-div {
+    width: 17rem;
+    height: 8.5rem;
+    margin: auto;
+    background-color: white;
+    column-gap: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__payment-div:hover {
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .interaction-payment-div {
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__payment-div:hover,
+  &__input:hover {
+    cursor: pointer;
+  }
+
+  &__payment-img {
+    width: 7rem;
+  }
+
+  &__to-check-out-button {
+    width: 14rem;
+    margin: 1rem 0 0 53%;
+    font-size: 1.1rem;
+  }
+}

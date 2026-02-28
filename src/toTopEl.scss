@@ -1,0 +1,23 @@
+.to-top-button {
+  position: fixed;
+  right: 10rem;
+  bottom: 7rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #f1be15;
+  transition: all 0.5s ease-in-out;
+  border: 2px solid #18273a;
+  opacity: 0;
+}
+
+.to-top-button:hover {
+  background-color: #e5b80b;
+}
+
+.to-up-icon {
+  width: 1.7rem;
+}
+
+.show {
+  opacity: 1;
+}

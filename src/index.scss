@@ -1,12 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+$font-art: "Comfortaa", sans-serif;
+
 html {
   scroll-behavior: smooth;
 }
 
+$amagon-navy-color: #18273a;
+/*amagon-yellow-color: #01579b;*/
+//$amagon-coral-color: #e4d043;
+//$amagon-coral-color: #e6b800;
+//$amagon-coral-color: #ffd700;
+$amagon-gold-yellow: #f1be15;
+$amagon-gold-yellow2: #e5b80b;
+$amagon-dark-corall-color: #dc143c;
+
 body {
-  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content-column-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.button {
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: $amagon-gold-yellow;
+  color: $amagon-navy-color;
+  border: 1px solid $amagon-navy-color;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px 4px rgba(229, 184, 11, 0.5);
+}
+
+.primary-button:hover {
+  background-color: white;
+}
+
+.secondary-button {
+  background-color: white;
+  color: $amagon-navy-color;
+  border: 1px solid $amagon-navy-color;
+  transition: all 0.3s ease-in-out;
+}
+
+.secondary-button:hover {
+  background-color: #f3f5f6;
+  //  background-color: #e9eef2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.disabled-button {
+  background-color: #eee;
+  color: gray;
+}
+
+.no-hover:hover {
+  cursor: context-menu;
 }

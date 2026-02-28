@@ -6,14 +6,14 @@ $amagon-secondery-color: #ffff00;
     margin: 6% 0;
     font-size: 2.3rem;
     line-height: 5rem;
+  }
 
-    &--focus-word {
-      background-color: $amagon-primary-color;
-      color: $amagon-secondery-color;
-      border-radius: 0.2rem;
-      padding: 0.1% 0.5%;
-      margin: 0 0.5%;
-    }
+  &__focus-word {
+    background-color: $amagon-primary-color;
+    color: $amagon-secondery-color;
+    border-radius: 0.2rem;
+    padding: 0.1% 0.5%;
+    margin: 0 0.5%;
   }
 }
 

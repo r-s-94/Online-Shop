@@ -1,27 +1,29 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Article, articles } from "../articleData";
+import { articles } from "../articleData";
+import "../index.scss";
 import "./articleInfo.scss";
 import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 //import { ArticleIdContext } from "../articleIdContext";
 import { LOCALE_STORAGE_KEY } from "../App";
 //import { LOCALE_STORAGE_ARTICLE_ID_KEY } from "../App";
-import "./articleInfoResponsive.scss";
-import HeadComponent from "../header/head";
+//import "./articleInfoResponsive.scss";
 import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
 import PopUp from "../PopUp/popUp";
 import FooterComponent from "../footer/footer";
 import Count from "../count/count";
+import Nav from "../nav/nav-bar";
+import LogoShoppingcartEl from "../logoShoppingcart/logoShoppingcartEl";
 
 export default function ArticleInfo() {
-  const { name } = useParams();
+  const { id } = useParams();
   const selectedArticle = articles.find((article) => {
-    return name === article.name;
+    return Number(id) === article.id;
   });
   //const { articleIdArray, setArticleIdArray } = useContext(ArticleIdContext);
   const [count, setCount] = useState<number>(1);
   const [itemStock, setItemStock] = useState<number>(
-    selectedArticle?.itemStockTotal || 0
+    selectedArticle?.itemStockTotal || 0,
   );
 
   /*  !!!!! ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!!
@@ -30,14 +32,33 @@ export default function ArticleInfo() {
   
   */
 
-  const [popUpWindow, setPopUpWindow] = useState<boolean>(false);
+  const [imgIndex, setImgIndex] = useState<number>(0);
   const [userMessage, setUserMessage] = useState<string>("");
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
   const navigate = useNavigate();
-  const [, setTimeoutControl] = useState<number>(0);
-  const [showShortPopUp, setShowShortPopUp] = useState<boolean>(false);
-  const [popUpMessage, setPopUpMessage] = useState<string>("");
+  const [toasty, setToasty] = useState<boolean>(false);
   const [picture, setPicture] = useState<string>("");
+  const timeControl = useRef(0);
+
+  function moveSlider(direction: number) {
+    if (direction === -1) {
+      setImgIndex(() => imgIndex - 1);
+
+      if (imgIndex === 0) {
+        setImgIndex(selectedArticle!.imgArray.length - 1);
+      }
+    } else {
+      setImgIndex(() => imgIndex + 1);
+
+      if (imgIndex === selectedArticle!.imgArray.length - 1) {
+        setImgIndex(0);
+      }
+    }
+  }
+
+  function showPicture(index: number) {
+    setImgIndex(index);
+  }
 
   function countUp(id: number) {
     if (id) {
@@ -54,10 +75,6 @@ export default function ArticleInfo() {
     if (id) {
       if (count === 1) {
         setCount(1);
-        showPopUp();
-        setUserMessage(
-          "Sie können leider nicht weniger als 1 Menge bestellen."
-        );
       } else {
         setCount(count - 1);
         setItemStock(itemStock + 1);
@@ -89,8 +106,9 @@ export default function ArticleInfo() {
       */
       const articleOrder: ShoppingCartDatatype = {
         name: selectedArticle.name,
-        img: selectedArticle.img,
-        price: selectedArticle.price,
+        description: selectedArticle.description.short,
+        img: selectedArticle.imgArray[0],
+        price: selectedArticle.newPrice,
         quantity: count,
         id: selectedArticle.id,
         declination: selectedArticle.declination,
@@ -110,13 +128,13 @@ export default function ArticleInfo() {
       //setArticleIdArray(updatedShoppingCardArticleId);
       //saveArticleId(updatedShoppingCardArticleId);
 
-      setPopUpMessage(
-        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb.`
+      setUserMessage(
+        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb.`,
       );
       setPicture("shopping-cart");
       setCount(1);
-      setShowShortPopUp(true);
-      setTimeoutControl(setTimeout(closeShortPopUp, 3000));
+      setToasty(true);
+      timeControl.current = window.setTimeout(closeToasty, 3000);
     }
   }
 
@@ -128,9 +146,7 @@ export default function ArticleInfo() {
     localStorage.setItem(LOCALE_STORAGE_ARTICLE_ID_KEY, JSON.stringify(id));
   }*/
 
-  function updateArticle(
-    correctSelectedArticle: Article | ShoppingCartDatatype
-  ) {
+  function updateArticle(correctSelectedArticle: ShoppingCartDatatype) {
     console.log(correctSelectedArticle);
     if (correctSelectedArticle) {
       const findArticleIndex = shoppingCart.findIndex((article) => {
@@ -143,6 +159,7 @@ export default function ArticleInfo() {
 
       const updateArticleOrder: ShoppingCartDatatype = {
         name: correctSelectedArticle.name,
+        description: correctSelectedArticle.description,
         img: correctSelectedArticle.img,
         price: correctSelectedArticle.price,
         quantity: count + correctSelectedArticle?.quantity,
@@ -157,133 +174,238 @@ export default function ArticleInfo() {
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
 
-      setPopUpMessage(
-        `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`
+      setUserMessage(
+        `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`,
       );
       setPicture("quantity");
       setCount(1);
-      setShowShortPopUp(true);
-      setTimeoutControl(setTimeout(closeShortPopUp, 3000));
+      setToasty(true);
+      timeControl.current = window.setTimeout(closeToasty, 3000);
     }
   }
 
-  function showPopUp() {
-    setPopUpWindow(true);
+  function closeToasty() {
+    setToasty(false);
   }
 
-  function closePopUp() {
-    setPopUpWindow(false);
-  }
-
-  function historyBack() {
+  function toMainSite() {
     navigate(-1);
   }
 
-  function closeShortPopUp() {
-    setShowShortPopUp(false);
-  }
-
   return (
-    <div className="online-shop-single-article">
-      <HeadComponent />
+    <div className="selected-article">
+      <Nav />
+      <LogoShoppingcartEl />
 
-      {popUpWindow && (
-        <div className="pop-up-window">
-          <div className="pop-up-window__message-div">
-            <h3 className="pop-up-window__message-div--headline">
-              {userMessage}
-            </h3>
-            <button
-              onClick={() => {
-                closePopUp();
-              }}
-              className="pop-up-window__message-div--close-button"
-            >
-              PopUp schließen
-            </button>
-          </div>
-        </div>
-      )}
-
-      {showShortPopUp && <PopUp message={popUpMessage} picture={picture} />}
+      {toasty && <PopUp message={userMessage} picture={picture} />}
 
       <button
-        onClick={historyBack}
-        className="online-shop-single-article__back-menu-button button"
+        onClick={toMainSite}
+        className="selected-article__to-main-site-button button"
       >
-        <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="selected-article__to-main-site-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>{" "}
+        zurück
+      </button>
+
+      <div className="selected-article__presentation-div">
+        <div className="selected-article__img-slides-show-div">
+          <div className="selected-article__slides-show-main-div center-content">
+            <button
+              onClick={() => {
+                moveSlider(-1);
+              }}
+              className="selected-article__prev-button button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="selected-article__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </button>
+            <div className="selected-article__canvas">
+              <div
+                style={{
+                  width: `${selectedArticle.imgArray.length * 37}rem`,
+                  marginLeft: `${-imgIndex * 37}rem`,
+                }}
+                className="selected-article__slider"
+              >
+                {selectedArticle.imgArray.map((img) => (
+                  <img
+                    src={img}
+                    className="selected-article__slider-img"
+                    alt=""
+                  />
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                moveSlider(1);
+              }}
+              className="selected-article__next-button button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="selected-article__icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div className="selected-article__img-small-overview center-content">
+            {" "}
+            {selectedArticle.imgArray.map((img, index) => (
+              <img
+                onClick={() => {
+                  showPicture(index);
+                }}
+                src={img}
+                className={`selected-article__small-img ${
+                  imgIndex === index ? "selected-article__focus-img" : ""
+                }`}
+                alt=""
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="selected-article__article-info-div">
+          <h2 className="selected-article__article-headline">
+            {selectedArticle?.name}
+          </h2>{" "}
+          <p className="selected-article__article-description">
+            {selectedArticle.description.general}
+          </p>
+          <div className="selected-article__article-detail-overview-div">
+            {selectedArticle.description.detail.map((articleDetail) => (
+              <div className="selected-article__article-detail-div">
+                <p className="selected-article__article-detail key">
+                  {articleDetail.key}:{" "}
+                </p>
+                <p className="selected-article__article-detail">
+                  {articleDetail.value}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="selected-article__quantity-price-itemstock-div center-content-column">
+            <p className="selected-article__quantity-mini-headline">Menge</p>
+            <Count
+              count={count}
+              countUp={() => countUp(selectedArticle.id)}
+              countDown={() => countDown(selectedArticle.id)}
+            />
+
+            <div className="selected-article__article-price-div">
+              {
+                <EditArticlePriceComponent
+                  articlePrice={selectedArticle.oldPrice}
+                />
+              }
+              <p className="selected-article__article-price">
+                {" "}
+                Preis:
+                {
+                  <EditArticlePriceComponent
+                    articlePrice={selectedArticle.newPrice * count}
+                  />
+                }
+              </p>
+            </div>
+
+            <div
+              className={`selected-article__article-itemStock-total center-content ${
+                itemStock < 6 ? "article-red" : "article-note"
+              }`}
+            >
+              {itemStock < 10 && itemStock > 5 && <p>Wenig verfügbar</p>}
+
+              {itemStock < 6 && itemStock > 0 && (
+                <p>Nur noch {itemStock}x auf Lager. </p>
+              )}
+
+              {itemStock === 0 && <p>Ausverkauft.</p>}
+            </div>
+          </div>
+          <button
+            onClick={checkArticle}
+            disabled={itemStock !== 0 ? false : true}
+            className={`selected-article__add-shopping-cart-button button primary-button ${
+              itemStock !== 0 ? "" : "disabled-button no-hover"
+            }`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="article__shoppingcart-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
+            In den Warenkorb
+          </button>
+        </div>
+      </div>
+
+      <a href="#oben" id="to-top-link" className="to-top-link link">
+        <button
+          id="to-top-button"
+          className="to-top-link__to-top-button button"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            className="online-shop-single-article__back-menu-button--icon"
+            className="to-top-link__to-up-icon"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
+              d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18"
             />
           </svg>
-        </span>{" "}
-        vorherige Seite
-      </button>
-
-      <div className="online-shop-single-article__preview">
-        <div className="online-shop-single-article__preview--left-section">
-          <h2 className="online-shop-single-article__preview--left-section--article-headline">
-            {selectedArticle?.name}
-          </h2>{" "}
-          <img
-            src={selectedArticle?.img}
-            alt=""
-            className="online-shop-single-article__preview--left-section--article-img"
-          />{" "}
-          <p className="online-shop-single-article__preview--left-section--article-description">
-            {selectedArticle?.description}
-          </p>
-        </div>
-
-        <div className="online-shop-single-article__preview--right-section">
-          <div className="online-shop-single-article__preview--right-section--article-quantity-div">
-            <h3 className="online-shop-single-article__preview--right-section--article-quantity-div--quantity-headline">
-              Menge:
-            </h3>
-            <Count
-              count={count}
-              countUp={() => countUp(selectedArticle.id)}
-              countDown={() => countDown(selectedArticle.id)}
-            />
-          </div>
-
-          <div className="online-shop-single-article__preview--right-section--price-and-itemStock-div">
-            <p className="online-shop-single-article__preview--right-section--price-and-itemStock-div--article-price">
-              Preis:
-              {
-                <EditArticlePriceComponent
-                  articlePrice={selectedArticle.price * count}
-                />
-              }
-            </p>
-            <div
-              className={`${
-                itemStock > 0 ? "article-green" : "article-red"
-              } online-shop-single-article__preview--right-section--price-and-itemStock-div--article-itemStock-total`}
-            >
-              {itemStock > 0
-                ? `Noch ${itemStock}x auf Lager.`
-                : `Der Artikel ${selectedArticle.name} ist nicht mehr auf Lager.`}
-            </div>
-          </div>
-          <button
-            onClick={checkArticle}
-            className="online-shop-single-article__preview--right-section--add-shopping-cart-button"
-          >
-            &#128722; Artikel hinzufügen
-          </button>
-        </div>
-      </div>
+        </button>
+      </a>
 
       <FooterComponent />
     </div>
@@ -291,17 +413,28 @@ export default function ArticleInfo() {
 }
 
 /*
+ <button
+        onClick={toMainSite}
+        className="selected-article__back-menu-button button center-content"
+      >
+        {" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="selected-article__back-menu-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>{" "}
+        zurück
+      </button>
 
-
-
-
-
-     
-
-     
 
     
-
-
-
 */

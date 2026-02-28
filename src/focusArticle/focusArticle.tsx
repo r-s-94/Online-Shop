@@ -1,8 +1,9 @@
 import { articles } from "../articleData";
+import "../index.scss";
 import "./focusArticle.scss";
 import ArticleComponent from "../article/article";
 import { ShoppingCartContext } from "../CustomContext";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Article } from "../articleData";
 import { ShoppingCartDatatype } from "../CustomContext";
 import { LOCALE_STORAGE_KEY } from "../App";
@@ -10,10 +11,10 @@ import PopUp from "../PopUp/popUp";
 
 export default function FocusArticleComponent() {
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
-  const [, setTimeoutControl] = useState<number>(0);
-  const [showPopUp, setShowPopUp] = useState<boolean>(false);
-  const [popUpMessage, setPopUpMessage] = useState<string>("");
+  const [toasty, setToasty] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
   const [picture, setPicture] = useState<string>("");
+  const timeControl = useRef(0);
 
   function checkArticle(id: number) {
     console.log(id);
@@ -24,8 +25,6 @@ export default function FocusArticleComponent() {
     const articleInShoppingCart = shoppingCart.find((article) => {
       return articleExists?.id === article.id;
     });
-
-    console.log();
 
     if (articleExists) {
       if (articleInShoppingCart === undefined) {
@@ -43,8 +42,9 @@ export default function FocusArticleComponent() {
             */
       const articleOrder: ShoppingCartDatatype = {
         name: findArticle.name,
-        img: findArticle.img,
-        price: findArticle.price,
+        description: findArticle.description.short,
+        img: findArticle.imgArray[0],
+        price: findArticle.newPrice,
         quantity: 1,
         id: findArticle.id,
         declination: findArticle.declination,
@@ -60,12 +60,12 @@ export default function FocusArticleComponent() {
       setShoppingCart(updatedShoppingCard);
       saveArticle(updatedShoppingCard);
 
-      setPopUpMessage(
-        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb hinzugefügt.`
+      setMessage(
+        `${articleOrder.declination} ${articleOrder.name} wurde dem Warenkorb hinzugefügt.`,
       );
       setPicture("shopping-cart");
-      setShowPopUp(true);
-      setTimeoutControl(setTimeout(closePopUp, 3000));
+      setToasty(true);
+      timeControl.current = window.setTimeout(closePopUp, 3000);
     }
   }
 
@@ -74,8 +74,8 @@ export default function FocusArticleComponent() {
   }
 
   function updateArticleQuantity(
-    findArticle: Article | ShoppingCartDatatype,
-    id: number
+    findArticle: ShoppingCartDatatype,
+    id: number,
   ) {
     const filteredShoppingCart = shoppingCart.filter((article) => {
       return article.id !== id;
@@ -87,6 +87,7 @@ export default function FocusArticleComponent() {
 
     const updateArticleOrder: ShoppingCartDatatype = {
       name: findArticle.name,
+      description: findArticle.description,
       img: findArticle.img,
       price: findArticle.price,
       quantity: findArticle.quantity + 1,
@@ -103,32 +104,35 @@ export default function FocusArticleComponent() {
     setShoppingCart(updateShoppingCart);
     saveArticle(updateShoppingCart);
 
-    setPopUpMessage(
-      `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`
+    setMessage(
+      `${updateArticleOrder.declination} ${updateArticleOrder.name} wurde dem Warenkorb hinzugefügt.`,
     );
     setPicture("quantity");
-    setShowPopUp(true);
-    setTimeoutControl(setTimeout(closePopUp, 3000));
+    setToasty(true);
+    timeControl.current = window.setTimeout(closePopUp, 3000);
   }
 
   function closePopUp() {
-    setShowPopUp(false);
+    setToasty(false);
   }
 
   return (
     <section id="supaSales" className="focus-article-section">
-      <h2 className="focus-article-section__headline">Unsere Super Sales</h2>
+      <h2 className="focus-article-section__headline center-text">
+        Unsere Super-Sales
+      </h2>
 
-      {showPopUp && <PopUp message={popUpMessage} picture={picture} />}
+      {toasty && <PopUp message={message} picture={picture} />}
 
       <div className="focus-article-section__focus-article-preview">
         <ArticleComponent article={articles[0]} checkArticle={checkArticle} />
-        <ArticleComponent article={articles[3]} checkArticle={checkArticle} />
+        <ArticleComponent article={articles[1]} checkArticle={checkArticle} />
+        <ArticleComponent article={articles[12]} checkArticle={checkArticle} />
       </div>
     </section>
   );
 
-  /*
+  /*                                                                                  
   
   */
 }

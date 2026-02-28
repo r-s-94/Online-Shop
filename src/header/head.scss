@@ -1,116 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 $font-art: "Comfortaa", sans-serif;
-$amagon-primary-color: #001f3f;
-$amagon-secondery-color: #ffff00;
+//$amagon-primary-color: #0b1f3a;
+$amagon-primary-color: #18273a;
+$amagon-lemon-yellow: #fff44f;
+$amagon-coral-color: #ff7f40;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f3f5f6;
-}
-
-.online-shop-head-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.headline-div {
+  padding: 1rem 0;
+  text-align: center;
+  font-family: $font-art;
   background-color: $amagon-primary-color;
-  width: 100%;
+  color: #f3f5f6;
 
-  &__main-div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &--logo-div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: $amagon-primary-color;
-      width: 6rem;
-      height: 3rem;
-      border-radius: 45%;
-      margin-left: 7rem;
-
-      &--img {
-        width: 6rem;
-        height: auto;
-        margin: auto 0;
-        position: absolute;
-      }
-
-      &--text {
-        color: #ffe302;
-        font-family: $font-art;
-        z-index: 1;
-        font-size: 2rem;
-        text-shadow: 2px 2px 3px white;
-      }
-    }
-
-    &--headline {
-      margin: 0.5rem 0;
-      font-size: 2.3rem;
-      font-family: $font-art;
-      color: white;
-      margin-left: 0;
-
-      &--focus-text {
-        color: $amagon-secondery-color;
-      }
-
-      &--slogan-text {
-        font-size: 1.3rem;
-      }
-    }
-
-    &--link-component {
-      margin-right: 10rem;
-
-      &--shopping-cart {
-        .shopping-cart-qunatity {
-          color: $amagon-secondery-color;
-          font-size: 2.3rem;
-          margin: 0;
-          padding: 0;
-        }
-
-        .shopping-cart-logo {
-          font-size: 2.3rem;
-          margin: 0;
-          padding: 0;
-        }
-      }
-    }
+  &__headline {
+    font-size: 2.3rem;
   }
 
-  &__nav-bar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 7rem;
-    padding: 1rem 6rem 1rem 0;
-    box-sizing: border-box;
+  &__focus-text {
+    color: $amagon-lemon-yellow;
+  }
 
-    &--link {
-      color: white;
-      font-size: 1.1rem;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
+  &__slogan-text {
+    font-size: 1.3rem;
   }
 }
 
-@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1600px) {
   .online-shop-head-section {
     &__main-div {
       &--logo-div {
@@ -139,7 +54,7 @@ body {
         line-height: 3rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -206,7 +121,7 @@ body {
         line-height: 2.7rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -273,7 +188,7 @@ body {
         line-height: 2.7rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -340,7 +255,7 @@ body {
         line-height: 2.5rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -407,7 +322,7 @@ body {
         line-height: 1.7rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -475,7 +390,7 @@ body {
         line-height: 1rem;
 
         &--focus-text {
-          color: $amagon-secondery-color;
+          color: $amagon-coral-color;
         }
 
         &--slogan-text {
@@ -511,4 +426,4 @@ body {
       }
     }
   }
-}
+}*/

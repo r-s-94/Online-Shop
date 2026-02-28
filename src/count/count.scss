@@ -1,53 +1,68 @@
-@mixin center-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+$amagon-primary-color: #001f3f;
+$amagon-gold-yellow: #f1be15;
+$amagon-gold-yellow2: #e5b80b;
+$amagon-yellow-orange: #ff7800;
 
 .article-count-and-quantity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7%;
-  width: 100%;
-  margin: 0;
-  padding: 1% 0 1% 0;
-
-  .count-up {
-    background-color: #f96b00;
-    font-size: 2rem;
-    padding: 0.3rem 1rem;
-    border: 1px solid black;
-    border-radius: 0.2rem;
-    @include center-content();
-  }
-
-  .count-up:hover {
-    background-color: #e46500;
-  }
-
-  .quantity {
-    border: 0.1rem solid black;
-    border-radius: 0.2rem;
-    padding: 1.6% 2.2%;
-    font-size: 1.7rem;
-  }
-
-  .count-down {
-    font-size: 2rem;
-    padding: 0.4rem 1.3rem;
-    background-color: #56cefa;
-    border: 1px solid black;
-    border-radius: 0.2rem;
-    @include center-content();
-  }
-
-  .count-down:hover {
-    background-color: #29b6f6;
-  }
+  gap: 1rem;
 }
 
-@media screen and (min-width: 1600px) {
+.plus-icon {
+  width: 1.3rem;
+  color: $amagon-yellow-orange;
+}
+
+.count-down {
+  width: 3rem;
+  border: 1px solid $amagon-primary-color;
+}
+
+.count-down:hover {
+  background-color: #eaeff3;
+}
+
+.count-up,
+.count-down {
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.quantity {
+  width: 3rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+}
+
+.count-up {
+  width: 3rem;
+  border: 1px solid $amagon-yellow-orange;
+}
+
+.count-up:hover {
+  background-color: #fef2f2;
+}
+
+.minus-icon {
+  width: 1rem;
+  color: $amagon-primary-color;
+}
+
+.disabled-button {
+  background-color: #eee;
+  color: gray;
+}
+
+.disabled-button:hover {
+  background-color: #eee;
+}
+
+.no-hover:hover {
+  cursor: context-menu;
+}
+
+/*@media screen and (min-width: 1600px) {
   .article-count-and-quantity {
     display: flex;
     justify-content: center;
@@ -203,7 +218,7 @@
     padding: 0.5rem 0 0 0;
 
     .count-up {
-      /*background-color: #66d3fa;*/
+  
 
       background-color: #f96b00;
       font-size: 1.2rem;
@@ -231,4 +246,4 @@
       border-radius: 0.2rem;
     }
   }
-}
+}*/
