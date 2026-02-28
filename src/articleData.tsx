@@ -28,7 +28,7 @@ import Notebook4 from "./assets/Windows Notebook Picture4.jpg";
 import Notebook5 from "./assets/Windows Notebook Picture5.jpg";
 import MacBook from "./assets/MacBook Picture.jpg";
 import MacBook2 from "./assets/MacBook Picture2.jpg";
-import MacBook3 from "./assets/MacBook Picture3.jpg";
+import MacBook3 from "./assets/Macbook Picture3.jpg";
 import MacBook4 from "./assets/MacBook Picture4.jpg";
 import MacBook5 from "./assets/MacBook Picture5.jpg";
 import GalaxyWatch from "./assets/Galaxy Watch Picture.jpg";
