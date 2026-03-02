@@ -2,7 +2,7 @@ $amagon-primary-color: #001f3f;
 $amagon-secondery-color: #ffff00;
 
 /*@media screen and (min-width: 1650px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       margin: 7rem 0 15rem 0;
       font-size: 2.3rem;
@@ -19,7 +19,7 @@ $amagon-secondery-color: #ffff00;
 }*/
 
 @media screen and (max-width: 1650px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       margin: 5rem 0 26.3rem 0;
       line-height: 3.5rem;
@@ -34,10 +34,10 @@ $amagon-secondery-color: #ffff00;
 }
 
 @media screen and (max-width: 1400px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       line-height: 3rem;
-      margin: 5rem 0 17rem 0;
+      margin: 5rem 0 18rem 0;
       padding: 0 5%;
     }
 
@@ -49,7 +49,7 @@ $amagon-secondery-color: #ffff00;
 }
 
 @media screen and (max-width: 1000px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       margin: 5rem 0 10rem 0;
       font-size: 1.5rem;
@@ -65,7 +65,7 @@ $amagon-secondery-color: #ffff00;
 }
 
 @media screen and (max-width: 600px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       margin: 5rem 0 9rem 0;
       font-size: 1.3rem;
@@ -82,7 +82,7 @@ $amagon-secondery-color: #ffff00;
 }
 
 @media screen and (max-width: 300px) {
-  .online-shop-checkOut {
+  .online-shop-checkout {
     &__headline {
       margin: 7rem 0 17rem 0;
       font-size: 1rem;

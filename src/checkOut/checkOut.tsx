@@ -7,12 +7,12 @@ import HeadlineEl from "../header/headEl";
 
 export default function CheckoutComponent() {
   return (
-    <div className="online-shop-checkOut">
+    <div className="online-shop-checkout">
       <Nav />
       <HeadlineEl />
-      <h2 className="online-shop-checkOut__headline center-text">
+      <h2 className="online-shop-checkout__headline center-text">
         Danke für Ihren Einkauf bei
-        <span className="online-shop-checkOut__focus-word">Amagon</span>
+        <span className="online-shop-checkout__focus-word">Amagon</span>
         . <br /> Dem Online-Shop #1.
       </h2>
 
