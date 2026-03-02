@@ -117,7 +117,7 @@ $amagon-navy-color: #001f3f;
   }
 }
 
-/*@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1650px) {
   .article {
     display: flex;
     flex-direction: column;
@@ -201,446 +201,179 @@ $amagon-navy-color: #001f3f;
       }
     }
   }
-}
+}*/
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1650px) {
   .article {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 20rem;
-
-    &__img-section {
-      width: 50%;
-      height: 100%;
-
-      &--article-img {
-        width: 100%;
-        height: 100%;
-      }
+    &__headline {
+      font-size: 1.4rem;
     }
 
-    &__description-section {
-      width: 50%;
-      height: 100%;
-      padding: 1.3rem 0;
-      row-gap: 1rem;
+    &__price {
+      font-size: 1.1rem;
+    }
 
-      &--article-headline {
-        font-size: 1.8rem;
-      }
+    &__focus-price {
+      font-size: 1.3rem;
+    }
 
-      &--article-description {
-        font-size: 1.5rem;
-        padding: 0 2rem;
-      }
+    &__description {
+      font-size: 1.2rem;
+    }
 
-      &--price-and-sale-icon-div {
-        &--article-price {
-          font-size: 1.8rem;
-          margin: 0;
-        }
+    &__link-component,
+    &__add-shoppingcart-button {
+      font-size: 1rem;
+    }
 
-        &--sale-icon {
-          width: 2.4rem;
-          height: auto;
-          margin: 0;
-          object-fit: cover;
-        }
-      }
+    &__link-component {
+      width: 9rem;
+    }
 
-      &--button-div {
-        margin: 0;
-        width: 100%;
-        row-gap: 0.7rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 13.5rem;
+    &__add-shoppingcart-button {
+      width: 13rem;
+    }
 
-        &--add-shoppingcart-button {
-          font-size: 1.4rem;
-          padding: 0.3rem 0;
-          width: 100%;
-
-          &--icon {
-            font-size: 1.2rem;
-          }
-        }
-
-        &--link-component {
-          width: 100%;
-
-          &--more-info-button {
-            font-size: 1.2rem;
-            padding: 0.2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-
-            &--icon {
-              margin-left: 1.1rem;
-              width: 1.9rem;
-            }
-          }
-        }
-      }
+    &__info-icon,
+    &__shoppingcart-icon {
+      width: 1.3rem;
     }
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .article {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 20rem;
-    max-width: 57rem;
+    width: 27rem;
+    margin: 0 auto;
 
-    &__img-section {
-      width: 50%;
-      height: 100%;
-
-      &--article-img {
-        width: 100%;
-        height: 100%;
-      }
+    &__headline {
+      font-size: 1.4rem;
     }
 
-    &__description-section {
-      width: 50%;
-      height: 100%;
-      padding: 1.3rem 1%;
-      row-gap: 1.5rem;
+    &__price {
+      font-size: 1.1rem;
+    }
 
-      &--article-headline {
-        font-size: 1.7rem;
-      }
+    &__focus-price {
+      font-size: 1.3rem;
+    }
 
-      &--article-description {
-        font-size: 1.5rem;
-        padding: 0 3rem;
-      }
+    &__description {
+      font-size: 1.2rem;
+    }
 
-      &--price-and-sale-icon-div {
-        &--article-price {
-          font-size: 1.6rem;
-          margin: 0;
-        }
+    &__link-component,
+    &__add-shoppingcart-button {
+      font-size: 1rem;
+    }
 
-        &--sale-icon {
-          width: 2.3rem;
-          height: auto;
-          margin: 0;
-          object-fit: cover;
-        }
-      }
+    &__link-component {
+      width: 9rem;
+    }
 
-      &--button-div {
-        margin: 0 1%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-     
-        row-gap: 0.7rem;
-        width: 13rem;
+    &__add-shoppingcart-button {
+      width: 13rem;
+    }
 
-        &--add-shoppingcart-button {
-          font-size: 1.3rem;
-          padding: 0.3rem 1rem;
-          width: 100%;
-
-          &--icon {
-            font-size: 1.4rem;
-          }
-        }
-
-        &--link-component {
-          width: 100%;
-
-          &--more-info-button {
-            font-size: 1.2rem;
-            padding: 0.2rem 0;
-            width: 100%;
-
-            &--icon {
-              margin-left: 1.1rem;
-              width: 2rem;
-            }
-          }
-        }
-      }
+    &__info-icon,
+    &__shoppingcart-icon {
+      width: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 1000px) {
   .article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    max-width: 35rem;
+    width: 33rem;
+    margin: 0 auto;
 
-    &__img-section {
-      width: 100%;
-      height: 23rem;
-
-      &--article-img {
-        width: 100%;
-        height: 100%;
-      }
+    &__headline {
+      font-size: 1.4rem;
     }
 
-    &__description-section {
-      width: 100%;
-      height: 50%;
-      padding: 3rem 0;
-      row-gap: 3rem;
+    &__price {
+      font-size: 1.1rem;
+    }
 
-      &--article-headline {
-        font-size: 1.7rem;
-      }
+    &__focus-price {
+      font-size: 1.3rem;
+    }
 
-      &--article-description {
-        font-size: 1.5rem;
-        padding: 0;
-        width: 28rem;
-      }
+    &__description {
+      font-size: 1.2rem;
+    }
 
-      &--price-and-sale-icon-div {
-        &--article-price {
-          font-size: 1.7rem;
-          margin: 0;
-        }
+    &__link-component,
+    &__add-shoppingcart-button {
+      font-size: 1rem;
+    }
 
-        &--sale-icon {
-          width: 2.3rem;
-          height: auto;
-          object-fit: cover;
-        }
-      }
+    &__link-component {
+      width: 9rem;
+    }
 
-      &--button-div {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 2.5rem;
-        display: flex;
-        flex-direction: row;
-        column-gap: 3rem;
+    &__add-shoppingcart-button {
+      width: 13rem;
+    }
 
-        &--add-shoppingcart-button {
-          width: 40%;
-          font-size: 1.3rem;
-          margin: 0 0 0 3rem;
-          padding: 0.3rem 0;
-
-          &--icon {
-            font-size: 1.4rem;
-          }
-        }
-
-        &--link-component {
-          width: 40%;
-          margin: 0 3rem 0 0;
-
-          &--more-info-button {
-            width: 100%;
-
-            padding: 0.3rem 0;
-            font-size: 1.3rem;
-
-            &--icon {
-              margin-left: 1rem;
-              width: 1.7rem;
-            }
-          }
-        }
-      }
+    &__info-icon,
+    &__shoppingcart-icon {
+      width: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 600px) {
   .article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
 
-    &__img-section {
-      width: 100%;
-      height: 20rem;
-
-      &--article-img {
-        width: 100%;
-        height: 100%;
-        border-bottom-left-radius: 0;
-      }
+    &__headline {
+      font-size: 1.1rem;
     }
 
-    &__description-section {
-      width: 100%;
-      height: 100%;
-      padding: 2rem 0;
-      row-gap: 1.5rem;
+    &__price {
+      font-size: 0.9rem;
+    }
 
-      &--article-headline {
-        font-size: 1.6rem;
-      }
+    &__focus-price {
+      font-size: 1rem;
+    }
 
-      &--article-description {
-        font-size: 1.3rem;
-        padding: 0;
-        width: 85%;
-      }
+    &__description-div {
+      height: 15rem;
+    }
 
-      &--price-and-sale-icon-div {
-        &--article-price {
-          font-size: 1.5rem;
-          margin: 0;
-        }
+    &__description {
+      font-size: 1rem;
+    }
 
-        &--sale-icon {
-          width: 2rem;
-          height: auto;
-          margin: 0;
-          object-fit: cover;
-        }
-      }
+    &__button-div {
+      margin: 2rem 0 0 0;
+      flex-direction: column-reverse;
+      row-gap: 0.5rem;
+    }
 
-      &--button-div {
-        margin: 1rem 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 0.7rem;
-        padding: 0;
-        width: 12rem;
+    &__link-component,
+    &__add-shoppingcart-button {
+      width: 95%;
+      max-width: 13rem;
+      font-size: 1rem;
+    }
 
-        &--add-shoppingcart-button {
-          font-size: 1.2rem;
-          margin: 0;
-          padding: 0.3rem 0;
-          width: 100%;
+    &__link-component {
+    }
 
-          &--icon {
-            font-size: 1.2rem;
-          }
-        }
+    &__add-shoppingcart-button {
+    }
 
-        &--link-component {
-          width: 100%;
-          margin: 0;
-
-          &--more-info-button {
-            padding: 0.2rem 0;
-            font-size: 1.2rem;
-            width: 100%;
-
-            &--icon {
-              margin-left: 1rem;
-              width: 1.7rem;
-            }
-          }
-        }
-      }
+    &__info-icon,
+    &__shoppingcart-icon {
+      width: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 300px) {
-  .article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-
-    &__img-section {
-      width: 100%;
-      height: 10rem;
-
-      &--article-img {
-        width: 100%;
-        height: 100%;
-        border-bottom-left-radius: 0;
-      }
-    }
-
-    &__description-section {
-      width: 100%;
-      height: 50%;
-      padding: 1.3rem 0;
-      row-gap: 1.3rem;
-
-      &--article-headline {
-        font-size: 1.4rem;
-      }
-
-      &--article-description {
-        font-size: 1.2rem;
-        padding: 0;
-        width: 11rem;
-      }
-
-      &--price-and-sale-icon-div {
-        &--article-price {
-          font-size: 1.4rem;
-          margin: 0;
-        }
-
-        &--sale-icon {
-          width: 1.7rem;
-          height: auto;
-          margin: 0;
-          object-fit: cover;
-        }
-      }
-
-      &--button-div {
-        width: 11rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem 0;
-        padding: 0;
-        row-gap: 0.5rem;
-
-        &--add-shoppingcart-button {
-          font-size: 1.1rem;
-          margin: 0 auto;
-          padding: 0.2rem 0;
-          width: 100%;
-
-          &--icon {
-            font-size: 1.3rem;
-          }
-        }
-
-        &--link-component {
-          width: 100%;
-
-          &--more-info-button {
-            margin: 0 auto;
-            padding: 0.2rem 0;
-            font-size: 1.1rem;
-            width: 100%;
-
-            &--icon {
-              margin-left: 0.5rem;
-              width: 1.5rem;
-              height: auto;
-            }
-          }
-        }
-      }
-    }
-  }
-}*/
+}

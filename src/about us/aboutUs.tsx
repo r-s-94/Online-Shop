@@ -3,7 +3,7 @@ import customerSupport from "../assets/custermor support.jpg";
 import wareHouse from "../assets/ware house in.jpg";
 import "./aboutUs.scss";
 import "../index.scss";
-//import "./aboutUsResponsive.scss";
+import "./aboutUsResponsive.scss";
 import aboutUseTransportAirplain from "../assets/online shop about use transport airplain img.jpg";
 import aboutUseTransportTrain from "../assets/online shop about use transport train img.jpg";
 import aboutUseTransportTruck from "../assets/truck-image2.jpg";
@@ -93,22 +93,22 @@ export default function AboutUsComponent() {
             <img
               src={aboutUseTransportAirplain}
               alt=""
-              className="about-use-section__airplane-img"
+              className="about-use-section__airplane-img img"
             />
             <img
               src={aboutUseTransportShip}
               alt=""
-              className="about-use-section__ship-img"
+              className="about-use-section__ship-img img"
             />
             <img
               src={aboutUseTransportTruck}
               alt=""
-              className="about-use-section__truck-img"
+              className="about-use-section__truck-img img"
             />
             <img
               src={aboutUseTransportTrain}
               alt=""
-              className="about-use-section__train-img"
+              className="about-use-section__train-img img"
             />
           </div>
         </div>

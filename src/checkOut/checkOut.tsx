@@ -1,6 +1,6 @@
 import "../index.scss";
 import "./checkOut.scss";
-//import "./checkOutResponsive.scss";
+import "./checkOutResponsive.scss";
 import FooterComponent from "../footer/footer";
 import Nav from "../nav/nav-bar";
 import HeadlineEl from "../header/headEl";

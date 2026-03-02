@@ -1,7 +1,7 @@
 .focus-article-section {
   &__headline {
-    margin: 7rem 40.5%;
-    font-size: 2.3rem;
+    margin: 5rem 40.5%;
+    font-size: 2rem;
     color: #001f3f;
     border-bottom: 1px solid #001f3f;
   }
@@ -14,7 +14,7 @@
   }
 }
 
-/*@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1650px) {
   .focus-article-section {
     padding: 5rem 0 3rem 0;
 
@@ -32,98 +32,67 @@
       column-gap: 2.5rem;
     }
   }
-}
+}*/
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1650px) {
   .focus-article-section {
-    padding: 4rem 0 1rem 0;
-
     &__headline {
       font-size: 2rem;
-      padding: 1rem 0 3.5rem 0;
+      margin: 3rem 33%;
     }
 
     &__focus-article-preview {
       display: grid;
-      grid-template-columns: 50% 50%;
-      padding: 0 2.5% 0 1%;
-      column-gap: 1.3rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.3rem;
     }
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .focus-article-section {
-    padding: 3rem 0 2rem 0;
-
     &__headline {
       font-size: 2rem;
-      padding: 1.5rem 0 3rem 0;
+      margin: 3rem 33%;
     }
 
     &__focus-article-preview {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 2rem;
-      padding: 0 3% 0 5%;
+      margin: 0 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 1000px) {
   .focus-article-section {
-    padding: 2rem 0 3rem 0;
-
     &__headline {
       font-size: 1.7rem;
-      padding: 2rem 0 2.5rem 0;
+      margin: 3rem 27%;
     }
 
     &__focus-article-preview {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 0 5%;
-      row-gap: 1.5rem;
     }
   }
 }
 
 @media screen and (max-width: 600px) {
   .focus-article-section {
-    padding: 2rem 0 0 0;
+    padding: 0 0 0 0;
 
     &__headline {
-      font-size: 1.5rem;
-      padding: 0.5rem 0 2rem 0;
+      font-size: 1.4rem;
+      margin: 2rem 13%;
+      padding: 0;
     }
 
     &__focus-article-preview {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 5%;
-      row-gap: 1.3rem;
     }
   }
 }
 
 @media screen and (max-width: 300px) {
-  .focus-article-section {
-    padding: 1.5rem 0 0 0;
-
-    &__headline {
-      font-size: 1.3rem;
-      padding: 0.5rem 0 1.5rem 0;
-    }
-
-    &__focus-article-preview {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 4%;
-      row-gap: 1rem;
-    }
-  }
-}*/
+}

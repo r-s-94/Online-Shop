@@ -3,9 +3,6 @@
   height: 3rem;
   bottom: 0;
   background-color: #000f3f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   column-gap: 0.5rem;
 
   &__footer-info {
@@ -25,8 +22,8 @@
   }
 }
 
-/*@media screen and (min-width: 1600px) {
-  .footer-section {
+/*@media screen and (min-width: 1650px) {
+  .footer-div {
     padding: 5rem 0;
     display: flex;
     justify-content: center;
@@ -40,92 +37,31 @@
       font-size: 1.3rem;
     }
   }
-}
+}*/
 
-@media screen and (max-width: 1600px) {
-  .footer-section {
-    padding: 5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 2rem;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-
-    &__footer-info {
-      font-size: 1.3rem;
-    }
-  }
+@media screen and (max-width: 1400px) {
 }
 
 @media screen and (max-width: 1300px) {
-  .footer-section {
-    padding: 4rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 2%;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-
-    &__footer-info {
-      font-size: 1.3rem;
-    }
-  }
 }
 
 @media screen and (max-width: 1000px) {
-  .footer-section {
-    padding: 3rem 0;
-    display: block;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-
-    &__footer-info {
-      font-size: 1.3rem;
-    }
-
-    span {
-      color: #000f3f;
-    }
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .footer-section {
-    padding: 2rem 0;
-    display: block;
-    position: relative;
-    width: 100%;
-    bottom: 0;
+  .footer-div {
+    height: 10rem;
+    flex-direction: column;
+    row-gap: 0.5rem;
 
     &__footer-info {
-      font-size: 1.3rem;
     }
 
     span {
-      color: #000f3f;
+      display: none;
     }
   }
 }
 
 @media screen and (max-width: 300px) {
-  .footer-section {
-    padding: 1.3rem 0;
-    display: block;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-
-    &__footer-info {
-      font-size: 1rem;
-    }
-
-    span {
-      color: #000f3f;
-    }
-  }
-}*/
+}

@@ -62,7 +62,7 @@ export default function Nav() {
         onClick={() => {
           setExecuteAnimation(!executeAnimation);
         }}
-        className="nav-div__hamburger-menu"
+        className="nav-div__hamburger-menu center-content-column"
       >
         <div
           className={`nav-div__line ${

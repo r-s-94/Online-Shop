@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { articles } from "../articleData";
 import "../index.scss";
@@ -7,7 +7,7 @@ import { ShoppingCartContext, ShoppingCartDatatype } from "../CustomContext";
 //import { ArticleIdContext } from "../articleIdContext";
 import { LOCALE_STORAGE_KEY } from "../App";
 //import { LOCALE_STORAGE_ARTICLE_ID_KEY } from "../App";
-//import "./articleInfoResponsive.scss";
+import "./articleInfoResponsive.scss";
 import EditArticlePriceComponent from "../editArticlePrice/editArticlePrice";
 import PopUp from "../PopUp/popUp";
 import FooterComponent from "../footer/footer";
@@ -16,6 +16,7 @@ import Nav from "../nav/nav-bar";
 import LogoShoppingcartEl from "../logoShoppingcart/logoShoppingcartEl";
 
 export default function ArticleInfo() {
+  const dynamicSliderWidth = useRef<HTMLDivElement>(null);
   const { id } = useParams();
   const selectedArticle = articles.find((article) => {
     return Number(id) === article.id;
@@ -25,6 +26,7 @@ export default function ArticleInfo() {
   const [itemStock, setItemStock] = useState<number>(
     selectedArticle?.itemStockTotal || 0,
   );
+  const [currentSliderWidth, setCurrenSliderWidth] = useState<number>(0);
 
   /*  !!!!! ACHTUNG ACHTUNG ACHTUNG !!!!!!!!!!!
 
@@ -39,6 +41,13 @@ export default function ArticleInfo() {
   const [toasty, setToasty] = useState<boolean>(false);
   const [picture, setPicture] = useState<string>("");
   const timeControl = useRef(0);
+
+  useEffect(() => {
+    if (dynamicSliderWidth.current) {
+      console.log(dynamicSliderWidth.current.clientWidth);
+      setCurrenSliderWidth(dynamicSliderWidth.current.clientWidth);
+    }
+  }, []);
 
   function moveSlider(direction: number) {
     if (direction === -1) {
@@ -244,11 +253,11 @@ export default function ArticleInfo() {
                 />
               </svg>
             </button>
-            <div className="selected-article__canvas">
+            <div className="selected-article__canvas" ref={dynamicSliderWidth}>
               <div
                 style={{
-                  width: `${selectedArticle.imgArray.length * 37}rem`,
-                  marginLeft: `${-imgIndex * 37}rem`,
+                  width: `${(selectedArticle.imgArray.length * currentSliderWidth) / 16}rem`,
+                  marginLeft: `${(-imgIndex * currentSliderWidth) / 16}rem`,
                 }}
                 className="selected-article__slider"
               >

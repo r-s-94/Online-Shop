@@ -8,12 +8,12 @@ $amagon-yellow-orange: #ff7800;
 }
 
 .plus-icon {
-  width: 1.3rem;
+  width: 1.2rem;
   color: $amagon-yellow-orange;
 }
 
 .count-down {
-  width: 3rem;
+  width: 2.7rem;
   border: 1px solid $amagon-primary-color;
 }
 
@@ -28,7 +28,7 @@ $amagon-yellow-orange: #ff7800;
 }
 
 .quantity {
-  width: 3rem;
+  width: 2.7rem;
   height: 2.5rem;
   font-size: 1.3rem;
   border: 0.1rem solid black;
@@ -36,7 +36,7 @@ $amagon-yellow-orange: #ff7800;
 }
 
 .count-up {
-  width: 3rem;
+  width: 2.7rem;
   border: 1px solid $amagon-yellow-orange;
 }
 
@@ -62,7 +62,7 @@ $amagon-yellow-orange: #ff7800;
   cursor: context-menu;
 }
 
-/*@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1650px) {
   .article-count-and-quantity {
     display: flex;
     justify-content: center;
@@ -89,9 +89,9 @@ $amagon-yellow-orange: #ff7800;
       padding: 0;
     }
   }
-}
+}*/
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1650px) {
   .article-count-and-quantity {
     display: flex;
     justify-content: center;
@@ -100,27 +100,33 @@ $amagon-yellow-orange: #ff7800;
     width: 100%;
     padding: 0.5rem 0 0 0;
 
-    .count-up {
-      font-size: 2rem;
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-
-    .quantity {
-      padding: 0.3rem 0.4rem;
-      font-size: 1.7rem;
+    .plus-icon {
+      width: 1.1rem;
     }
 
     .count-down {
-      font-size: 2rem;
       width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
+      height: 2.3rem;
+    }
+
+    .quantity {
+      width: 2.5rem;
+      height: 2.3rem;
+      font-size: 1.2rem;
+    }
+
+    .count-up {
+      width: 2.5rem;
+      height: 2.3rem;
+    }
+
+    .minus-icon {
+      width: 0.9rem;
     }
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .article-count-and-quantity {
     display: flex;
     justify-content: center;
@@ -129,22 +135,28 @@ $amagon-yellow-orange: #ff7800;
     width: 100%;
     padding: 0.5rem 0 0 0;
 
-    .count-up {
-      font-size: 2rem;
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-
-    .quantity {
-      padding: 0.3rem 0.5rem;
-      font-size: 1.7rem;
+    .plus-icon {
+      width: 1rem;
     }
 
     .count-down {
-      font-size: 2rem;
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
+      width: 2.3rem;
+      height: 2rem;
+    }
+
+    .quantity {
+      width: 2.3rem;
+      height: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .count-up {
+      width: 2.3rem;
+      height: 2rem;
+    }
+
+    .minus-icon {
+      width: 0.8rem;
     }
   }
 }
@@ -158,22 +170,28 @@ $amagon-yellow-orange: #ff7800;
     width: 100%;
     padding: 0.5rem 0 0 0;
 
-    .count-up {
-      font-size: 1.7rem;
-      width: 2.3rem;
+    .plus-icon {
+      width: 1.1rem;
+    }
+
+    .count-down {
+      width: 2.5rem;
       height: 2.3rem;
     }
 
     .quantity {
-      padding: 0.3rem 0.4rem;
-      font-size: 1.5rem;
+      width: 2.5rem;
+      height: 2.3rem;
+      font-size: 1.2rem;
     }
 
-    .count-down {
-      font-size: 1.7rem;
-      width: 2.3rem;
+    .count-up {
+      width: 2.5rem;
       height: 2.3rem;
-      padding: 0;
+    }
+
+    .minus-icon {
+      width: 0.9rem;
     }
   }
 }
@@ -186,64 +204,31 @@ $amagon-yellow-orange: #ff7800;
     gap: 1rem;
     width: 100%;
     padding: 0.5rem 0 0 0;
-
-    .count-up {
-      font-size: 1.5rem;
-      width: 2.1rem;
-      height: 2.1rem;
-      padding: 0;
-    }
-
-    .quantity {
-      padding: 0.3rem 0.5rem;
-      font-size: 1.3rem;
+    .plus-icon {
+      width: 1rem;
     }
 
     .count-down {
-      font-size: 1.5rem;
-      width: 2.1rem;
-      height: 2.1rem;
-      padding: 0;
+      width: 2.3rem;
+      height: 2rem;
+    }
+
+    .quantity {
+      width: 2.3rem;
+      height: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .count-up {
+      width: 2.3rem;
+      height: 2rem;
+    }
+
+    .minus-icon {
+      width: 0.8rem;
     }
   }
 }
 
 @media screen and (max-width: 300px) {
-  .article-count-and-quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 0.5rem 0 0 0;
-
-    .count-up {
-  
-
-      background-color: #f96b00;
-      font-size: 1.2rem;
-      width: 1.7rem;
-      height: 1.7rem;
-      padding: 0;
-      border: 1px solid black;
-      border-radius: 0.2rem;
-    }
-
-    .quantity {
-      border: 0.1rem solid black;
-      border-radius: 0.2rem;
-      padding: 0.3rem 0.4rem;
-      font-size: 1rem;
-    }
-
-    .count-down {
-      font-size: 1.2rem;
-      width: 1.7rem;
-      height: 1.7rem;
-      padding: 0;
-      background-color: #56cefa;
-      border: 1px solid black;
-      border-radius: 0.2rem;
-    }
-  }
-}*/
+}

@@ -10,6 +10,7 @@ import Visa from "../assets/visa.png";
 import Klarna from "../assets/Klarna.png";
 import LogoShoppingcartEl from "../logoShoppingcart/logoShoppingcartEl";
 import { useState } from "react";
+import FooterComponent from "../footer/footer";
 
 export default function Payment() {
   interface PaymentOptionObject {
@@ -346,6 +347,7 @@ export default function Payment() {
       >
         Bestellung abschließen
       </button>{" "}
+      <FooterComponent />
     </section>
   );
 }

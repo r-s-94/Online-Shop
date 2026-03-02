@@ -1,6 +1,4 @@
 .payment-section {
-  padding-bottom: 5rem;
-
   &__to-shopping-cart-link {
     width: 20rem;
     margin: 3rem 0 0 5%;
@@ -13,11 +11,11 @@
   }
 
   &__payment-main-div {
-    width: 35%;
-    margin: 1rem auto;
+    width: 55rem;
+    margin: 3rem auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
   }
 
   &__payment-div {
@@ -50,7 +48,89 @@
 
   &__to-check-out-button {
     width: 14rem;
-    margin: 1rem 0 0 53%;
+    margin: 1rem 0 7.5rem 53%;
     font-size: 1.1rem;
   }
+}
+
+@media screen and (max-width: 1650px) {
+  .payment-section {
+    &__to-check-out-button {
+      margin: 1rem 0 3rem 55%;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+}
+
+@media screen and (max-width: 1000px) {
+  .payment-section {
+    &__to-shopping-cart-link {
+      width: 13rem;
+      margin: 3rem 0 0 5%;
+      font-size: 1rem;
+      color: black;
+    }
+
+    &__to-shopping-cart-icon {
+      width: 1.7rem;
+    }
+
+    &__payment-main-div {
+      width: 30rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    &__payment-div {
+      width: 15rem;
+      height: 8rem;
+      margin: auto;
+    }
+
+    &__to-check-out-button {
+      width: 14rem;
+      margin: 1rem 0 5rem 55%;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .payment-section {
+    &__to-shopping-cart-link {
+      width: 13rem;
+      margin: 3rem 0 0 5%;
+      font-size: 15px;
+      color: black;
+    }
+
+    &__to-shopping-cart-icon {
+      width: 1.5rem;
+    }
+
+    &__payment-main-div {
+      width: 17rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+
+    &__payment-div {
+      width: 13rem;
+      height: 7.5rem;
+      margin: auto;
+    }
+
+    &__to-check-out-button {
+      width: 12rem;
+      margin: 1rem 0 5rem 23%;
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
 }

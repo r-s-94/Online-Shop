@@ -1,7 +1,7 @@
 $amagon-primary-color: #001f3f;
 $amagon-secondery-color: #ffff00;
 
-@media screen and (min-width: 1600px) {
+/*@media screen and (min-width: 1600px) {
   .online-shop-about-use-section {
     &__headline {
       font-size: 2.3rem;
@@ -98,473 +98,199 @@ $amagon-secondery-color: #ffff00;
       }
     }
   }
-}
+}*/
 
-@media screen and (max-width: 1600px) {
-  .online-shop-about-use-section {
-    &__headline {
-      font-size: 2rem;
-      padding: 7rem 0 1rem 0;
+@media screen and (max-width: 1650px) {
+  .about-use-section {
+    &__way-to-client-img-div {
+      width: 65%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 1.5rem;
     }
 
-    &__description-div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      column-gap: 7rem;
-      margin: 7rem auto 0 auto;
-      padding: 0 0 5rem 0;
-      max-width: 77rem;
-
-      &--text {
-        font-size: 1.3rem;
-        padding: 0;
-        row-gap: 0;
-        margin-top: -2.5rem;
-        width: 60%;
-
-        &--focus-word {
-          color: $amagon-secondery-color;
-          margin-right: 0.5rem;
-        }
-      }
-
-      &--img {
-        width: 35rem;
-      }
-    }
-
-    &__main-description-div {
-      padding-bottom: 2rem;
-      row-gap: 0;
-
-      &--first-description-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 25rem;
-
-        &--first-description {
-          width: 25rem;
-          height: 100%;
-
-          .about-use-first-text {
-            padding: 1rem 1.5rem 2.5rem 1.5rem;
-            font-size: 1.2rem;
-          }
-        }
-
-        &--second-description {
-          width: 25rem;
-
-          .about-use-second-text {
-            padding: 1rem 1.5rem 4.2rem 1.5rem;
-            font-size: 1.2rem;
-          }
-        }
-
-        &--third-description {
-          width: 25rem;
-
-          .about-use-third-text {
-            padding: 1rem 1.5rem;
-            font-size: 1.2rem;
-          }
-        }
-      }
-
-      &--second-description-div {
-        margin: 7rem 0 0 0;
-        width: 100%;
-
-        &--headline {
-          font-size: 1.2rem;
-          margin: 1rem 7%;
-          padding: 2.5rem 2.7rem;
-        }
-
-        &--img-div {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          width: 90%;
-          column-gap: 1.5rem;
-          margin-top: 5rem;
-
-          .airplane-img,
-          .ship-img,
-          .truck-img,
-          .train-img {
-            width: 25%;
-          }
-        }
-      }
+    .img {
+      margin: auto;
     }
   }
 }
 
-@media screen and (max-width: 1300px) {
-  .online-shop-about-use-section {
+@media screen and (max-width: 1400px) {
+  .about-use-section {
     &__headline {
-      font-size: 2rem;
-      padding: 7rem 0 1rem 0;
+      width: 9rem;
+      height: 2.7rem;
+      font-size: 1.5rem;
     }
 
-    &__description-div {
-      display: flex;
+    &__description-div,
+    &__generally-description-div {
       flex-direction: column;
-      align-items: center;
       row-gap: 3rem;
-      margin: 0 auto;
-      padding: 6rem 0 5rem 0;
-      max-width: 35rem;
+    }
 
-      &--text {
-        font-size: 1.3rem;
-        padding: 2rem 0 0 0;
+    &__text {
+      font-size: 1.2rem;
+    }
 
-        &--focus-word {
-          color: $amagon-secondery-color;
-          margin-right: 0.5rem;
-        }
-      }
-
-      &--img {
-        width: 100%;
-      }
+    &__focus-word {
     }
 
     &__main-description-div {
-      padding-bottom: 1rem;
+      margin: 3rem 0;
+    }
 
-      &--first-description-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        row-gap: 1.3rem;
-        max-height: 18rem;
+    &__way-to-client-text {
+      margin: 5rem 5% 3rem 5%;
+      padding: 1.3rem 2%;
+      font-size: 1.2rem;
+    }
 
-        //
-
-        &--first-description {
-          width: 18rem;
-          height: 100%;
-
-          .about-use-first-text {
-            padding: auto 1rem auto 1rem;
-            font-size: 1.1rem;
-          }
-        }
-
-        &--second-description {
-          width: 18rem;
-          height: 100%;
-
-          .about-use-second-text {
-            padding: 1rem 1rem 4rem 1rem;
-            font-size: 1.1rem;
-            line-height: 1.5rem;
-            display: flex;
-          }
-        }
-
-        &--third-description {
-          width: 18rem;
-          height: 100%;
-
-          .about-use-third-text {
-            padding: 1rem;
-            font-size: 1.1rem;
-          }
-        }
-      }
-
-      &--second-description-div {
-        margin: 5rem 0 3rem 0;
-        width: 100%;
-
-        &--headline {
-          font-size: 1.1rem;
-          margin: 0 7%;
-          padding: 1.5rem 2rem;
-        }
-
-        &--img-div {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          width: 90%;
-          gap: 1.5rem;
-          margin-top: 3rem;
-
-          .airplane-img,
-          .ship-img,
-          .truck-img,
-          .train-img {
-            width: 100%;
-          }
-        }
-      }
+    &__way-to-client-img-div {
+      width: 85%;
+      column-gap: 1rem;
     }
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .online-shop-about-use-section {
+  .about-use-section {
     &__headline {
-      font-size: 2rem;
-      padding: 5rem 0 0 0;
+      width: 7rem;
+      height: 2.5rem;
+      margin: 3rem 0 1.5rem 7.5%;
+      font-size: 1.3rem;
+    }
+
+    &__description-div,
+    &__generally-description-div {
+      flex-direction: column;
+      row-gap: 3rem;
     }
 
     &__description-div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 2rem;
-      margin: 0 auto;
-      padding: 4rem 0;
-      max-width: 35rem;
+      padding: 1rem 7.7% 3rem 7.5%;
+    }
 
-      &--text {
-        font-size: 1.3rem;
+    &__text {
+      font-size: 1.2rem;
+    }
 
-        &--focus-word {
-          color: $amagon-secondery-color;
-          margin-right: 0.5rem;
-        }
-      }
+    &__focus-word {
+    }
 
-      &--img {
-        width: 100%;
-      }
+    &__img {
+      width: 75%;
+    }
+
+    &__generally-description-div {
     }
 
     &__main-description-div {
-      margin: 0 auto;
-      max-width: 35rem;
+      margin: 1.5rem 0;
+    }
 
-      &--first-description-div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 2.5rem;
+    &__first-description,
+    &__second-description,
+    &__third-description {
+      width: 50%;
+    }
 
-        &--first-description,
-        &--second-description,
-        &--third-description {
-          width: 100%;
+    &__first-text,
+    &__second-text {
+      padding: 1rem;
+    }
 
-          .about-use-first-text,
-          .about-use-second-text,
-          .about-use-third-text {
-            font-size: 1.1rem;
-            width: 100%;
-            padding: 1rem 5%;
-            box-sizing: border-box;
-          }
-        }
-      }
+    &__way-to-client-description-div {
+      padding-bottom: 3rem;
+    }
 
-      &--second-description-div {
-        margin: 5rem 0 0 0;
-        max-width: 35rem;
+    &__way-to-client-text {
+      margin: 3rem 3% 1.5rem 3%;
+      padding: 1rem 3%;
+      font-size: 1.1rem;
+    }
 
-        &--headline {
-          font-size: 1.3rem;
-          margin: 0 7%;
-          padding: 1rem 1.5rem;
-        }
-
-        &--img-div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          row-gap: 2rem;
-          margin-top: 3rem;
-
-          .airplane-img,
-          .ship-img,
-          .truck-img,
-          .train-img {
-            margin: 0 auto;
-            width: 100%;
-          }
-        }
-      }
+    &__way-to-client-img-div {
+      grid-template-columns: 1fr;
     }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .online-shop-about-use-section {
+  .about-use-section {
     &__headline {
-      font-size: 1.7rem;
-      padding: 3rem 1% 1rem 1%;
+      width: 6rem;
+      height: 2rem;
+      margin: 3rem 0 1.5rem 3%;
+      font-size: 1.2rem;
+    }
+
+    &__description-div,
+    &__generally-description-div {
+      flex-direction: column;
+      row-gap: 3rem;
     }
 
     &__description-div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 1.5rem;
-      padding: 2rem 5% 3rem 5%;
+      padding: 1rem 3% 3rem 3%;
+    }
 
-      &--text {
-        font-size: 1.1rem;
+    &__text {
+      font-size: 1rem;
+    }
 
-        &--focus-word {
-          color: $amagon-secondery-color;
-          margin-right: 0.5rem;
-          padding: 0.1rem 0.2rem;
-        }
-      }
+    &__focus-word {
+    }
 
-      &--img {
-        width: 100%;
-      }
+    &__img {
+      width: 95%;
+    }
+
+    &__generally-description-div {
     }
 
     &__main-description-div {
-      &--first-description-div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1.5rem;
+      margin: 1rem 0;
+    }
 
-        &--first-description,
-        &--second-description,
-        &--third-description {
-          width: 90%;
+    &__first-description,
+    &__second-description,
+    &__third-description {
+      width: 95%;
+    }
 
-          .about-use-first-text,
-          .about-use-second-text,
-          .about-use-third-text {
-            font-size: 1rem;
-            width: 100%;
-            padding: 0.7rem 3%;
-            box-sizing: border-box;
-          }
-        }
-      }
+    &__first-text,
+    &__second-text,
+    &__third-text {
+      font-size: 0.9rem;
+    }
 
-      &--second-description-div {
-        margin: 3rem 0 0 0;
-        width: 100%;
+    &__first-text,
+    &__second-text {
+      padding: 1rem;
+    }
 
-        &--headline {
-          font-size: 1rem;
-          margin: 0 7%;
-          padding: 0.7rem 0.5rem;
-        }
+    &__way-to-client-description-div {
+      padding-bottom: 3rem;
+    }
 
-        &--img-div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+    &__way-to-client-text {
+      margin: 1.5rem 3% 1rem 3%;
+      padding: 1rem 3%;
+      font-size: 0.9rem;
+    }
 
-          width: 90%;
-          row-gap: 1.5rem;
-          margin-top: 2rem;
+    &__way-to-client-img-div {
+      grid-template-columns: 1fr;
+    }
 
-          .airplane-img,
-          .ship-img,
-          .truck-img,
-          .train-img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-          }
-        }
-      }
+    .img {
+      width: 100%;
+      height: auto;
     }
   }
 }
 
 @media screen and (max-width: 300px) {
-  .online-shop-about-use-section {
-    &__headline {
-      font-size: 1.5rem;
-      padding: 2rem 0 1rem 0;
-    }
-
-    &__description-div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 1.5rem;
-      margin: 1rem 0 3rem 0;
-      padding: 0 5%;
-      box-sizing: border-box;
-
-      &--text {
-        font-size: 0.9rem;
-
-        &--focus-word {
-          color: $amagon-secondery-color;
-          margin-right: 0.3rem;
-          padding: 0.1rem 0.2rem;
-        }
-      }
-
-      &--img {
-        width: 100%;
-      }
-    }
-
-    &__main-description-div {
-      padding-bottom: 0;
-
-      &--first-description-div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1rem;
-
-        &--first-description,
-        &--second-description,
-        &--third-description {
-          width: 90%;
-
-          .about-use-first-text,
-          .about-use-second-text,
-          .about-use-third-text {
-            font-size: 0.9rem;
-            padding: 0.5rem 3%;
-            width: 100%;
-            box-sizing: border-box;
-          }
-        }
-      }
-
-      &--second-description-div {
-        margin: 3rem 0 0 0;
-        width: 100%;
-
-        &--headline {
-          font-size: 0.9rem;
-          padding: 0.7rem 0.5rem;
-        }
-
-        &--img-div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 90%;
-          row-gap: 0.7rem;
-          margin-top: 2rem;
-
-          .airplane-img,
-          .ship-img,
-          .truck-img,
-          .train-img {
-            height: 25%;
-          }
-        }
-      }
-    }
-  }
 }
