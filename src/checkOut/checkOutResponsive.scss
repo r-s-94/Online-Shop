@@ -37,7 +37,7 @@ $amagon-secondery-color: #ffff00;
   .online-shop-checkOut {
     &__headline {
       line-height: 3rem;
-      margin: 5rem 0 27rem 0;
+      margin: 5rem 0 13rem 0;
       padding: 0 5%;
     }
 
@@ -67,7 +67,7 @@ $amagon-secondery-color: #ffff00;
 @media screen and (max-width: 600px) {
   .online-shop-checkOut {
     &__headline {
-      margin: 7rem 0 13rem 0;
+      margin: 5rem 0 3rem 0;
       font-size: 1.3rem;
       line-height: 2rem;
       padding: 0 5%;
