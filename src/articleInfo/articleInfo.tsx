@@ -338,11 +338,25 @@ export default function ArticleInfo() {
             />
 
             <div className="selected-article__article-price-div">
-              {
-                <EditArticlePriceComponent
-                  articlePrice={selectedArticle.oldPrice}
-                />
-              }
+              {selectedArticle.discount && (
+                <span
+                  className={`article__discount ${selectedArticle.discount ? "red" : "black"}`}
+                >
+                  {selectedArticle.discountrate.toLocaleString("de-DE", {
+                    style: "percent",
+                  })}
+                </span>
+              )}{" "}
+              <span
+                className={`article__price ${selectedArticle.discount ? "black line-through" : "gray"}`}
+              >
+                {
+                  <EditArticlePriceComponent
+                    articlePrice={selectedArticle.oldPrice}
+                  />
+                }
+              </span>
+              <br />
               <p className="selected-article__article-price">
                 {" "}
                 Preis:

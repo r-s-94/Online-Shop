@@ -9,8 +9,10 @@ import GooglePay from "../assets/google-pay.png";
 import Visa from "../assets/visa.png";
 import Klarna from "../assets/Klarna.png";
 import LogoShoppingcartEl from "../logoShoppingcart/logoShoppingcartEl";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LOCALE_STORAGE_KEY } from "../App";
 import FooterComponent from "../footer/footer";
+import { ShoppingCartContext } from "../CustomContext";
 
 export default function Payment() {
   interface PaymentOptionObject {
@@ -34,6 +36,8 @@ export default function Payment() {
     visa: false,
     klarna: false,
   });
+
+  const { setShoppingCart } = useContext(ShoppingCartContext);
 
   function choosePayment(payment: string) {
     switch (payment) {
@@ -130,6 +134,8 @@ export default function Payment() {
   }
 
   function toCheckOut() {
+    setShoppingCart([]);
+    localStorage.setItem(LOCALE_STORAGE_KEY, JSON.stringify([]));
     navigate("/checkOut");
   }
 
